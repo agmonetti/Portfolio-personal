@@ -30,11 +30,21 @@ const Experience: React.FC = () => {
             </ul>
           </div>
 
-          {/* Education Placeholder */}
-          <div className="relative">
-            <span className="absolute -left-[39px] top-0 h-4 w-4 rounded-full border-2 border-white/20 bg-surface"></span>
-            <h3 className="text-lg font-bold text-text/60">Education</h3>
-            <p className="text-sm text-text/60 mt-1">Computer Engineering Student</p>
+          {/* Item 2 */}
+          <div className="relative group">
+            <span className="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-background bg-secondary shadow-[0_0_0_4px_rgba(69,162,158,0.2)]"></span>
+            
+            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+              <h3 className="text-xl font-bold text-white group-hover:text-secondary transition-colors">Computer Engineering</h3>
+              <span className="font-mono text-sm text-secondary bg-secondary/10 px-2 py-1 rounded border border-secondary/20 mt-2 sm:mt-0 w-fit">In Progress</span>
+            </div>
+            
+            <h4 className="text-secondary font-medium mb-1">Universidad Argentina de la Empresa (UADE)</h4>
+            <p className="text-text/60 text-sm mb-4">Buenos Aires, Argentina</p>
+            
+            <p className="text-text/80 leading-relaxed">
+              Currently pursuing a degree in Computer Engineering, focusing on software architecture, data structures, and backend systems.
+            </p>
           </div>
 
         </div>

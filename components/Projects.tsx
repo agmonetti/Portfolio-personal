@@ -9,7 +9,7 @@ const Projects: React.FC = () => {
       description: "Production-grade microservices infrastructure on a restricted 1GB RAM instance. Hosts a heavy Selenium bot and a custom observability dashboard, optimized via advanced Linux swap management and Docker orchestration.",
       tags: ["Google Cloud", "Docker", "Linux Admin", "DevOps"],
       icon: Server,
-      links: { code: "https://github.com/agmonetti/gcp-free-tier-linux-server", demo: "#" },
+      links: { code: "https://github.com/agmonetti/gcp-free-tier-linux-server" },
       color: "from-indigo-500/40"
     },
     {
@@ -17,7 +17,7 @@ const Projects: React.FC = () => {
       description: "A highly optimized macOS Ventura environment running on non-Apple hardware. Features a custom OpenCore EFI, ACPI hot-patching, and specific driver tuning for ALPS I2C input devices.",
       tags: ["OpenCore", "ACPI/ASL", "Systems Engineering"],
       icon: Laptop,
-      links: { code: "https://github.com/agmonetti/Hackintosh-Dell-Latitude-7480", demo: "#" },
+      links: { code: "https://github.com/agmonetti/Hackintosh-Dell-Latitude-7480" },
       color: "from-purple-900/40"
     },
     {
@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
       description: "An automated Telegram bot that provides real-time alerts for the Buenos Aires subway system. It scrapes data efficiently to keep commuters informed instantly.",
       tags: ["Python", "Telegram API", "Scraping"],
       icon: Bot,
-      links: { code: "https://github.com/agmonetti/Bot-Subte", demo: "#" },
+      links: { code: "https://github.com/agmonetti/Bot-Subte" },
       color: "from-blue-900/40"
     },
     {
@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
       description: "A browser-based security tool to analyze tracking cookies, visualizing data flow and privacy risks for end-users in an intuitive interface.",
       tags: ["JavaScript", "Privacy", "DOM API"],
       icon: ShieldCheck,
-      links: { code: "https://github.com/agmonetti/cookie_analyzer", demo: "#" },
+      links: { code: "https://github.com/agmonetti/cookie_analyzer"},
       color: "from-emerald-900/40"
     }
   ];
@@ -143,11 +143,6 @@ const Projects: React.FC = () => {
                         {project.links.code && (
                           <a href={project.links.code} target="_blank" rel="noopener noreferrer" className="text-text hover:text-white transition-colors" title="View Source">
                             <Code size={20} />
-                          </a>
-                        )}
-                        {project.links.demo && (
-                          <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="text-text hover:text-white transition-colors" title="Live Demo">
-                            <ExternalLink size={20} />
                           </a>
                         )}
                       </div>

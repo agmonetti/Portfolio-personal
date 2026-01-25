@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Briefcase } from 'lucide-react';
+import { Github, Linkedin, Code, Briefcase } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -14,22 +14,41 @@ const Footer: React.FC = () => {
 
         <a 
           href="mailto:agus.monetti01@gmail.com" 
-          className="text-primary font-mono text-lg md:text-xl hover:text-primary/80 transition-colors duration-300 mb-16 tracking-wide"
+          className="text-primary font-mono text-lg md:text-xl hover:text-primary/80 transition-colors duration-300 mb-12 tracking-wide"
         >
           agus.monetti01@gmail.com
         </a>
 
-        <div className="flex gap-12 mb-16">
-           <Code className="text-text/40 w-6 h-6" />
-           <Briefcase className="text-text/40 w-6 h-6" />
+        {/* Social Links */}
+        <div className="flex gap-6 mb-16">
+          <a 
+            href="https://github.com/agmonetti" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="p-3 rounded-full border border-white/10 bg-surface hover:border-primary hover:bg-primary/10 transition-all duration-300 group"
+            aria-label="GitHub Profile"
+          >
+            <Github className="w-6 h-6 text-text group-hover:text-primary transition-colors" />
+          </a>
+          <a 
+            href="https://linkedin.com/in/agustin-monetti" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="p-3 rounded-full border border-white/10 bg-surface hover:border-primary hover:bg-primary/10 transition-all duration-300 group"
+            aria-label="LinkedIn Profile"
+          >
+            <Linkedin className="w-6 h-6 text-text group-hover:text-primary transition-colors" />
+          </a>
         </div>
+
+
 
         <div className="flex flex-col items-center gap-2">
             <p className="text-text/40 text-xs font-mono">
             Designed & Built by Agustín Monetti
             </p>
             <p className="text-text/40 text-xs font-mono">
-            © 2023 All rights reserved.
+            © 2026 All rights reserved.
             </p>
         </div>
       </div>

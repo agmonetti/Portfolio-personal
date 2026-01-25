@@ -25,11 +25,11 @@ const Arsenal: React.FC = () => {
   ];
 
   return (
-    <section id="arsenal" className="py-24 px-6 bg-surface/30">
+    <section id="technologies" className="py-24 px-6 bg-surface/30">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col gap-2 mb-12">
           <h2 className="text-3xl font-bold text-white flex items-center gap-3">
-            <span className="text-primary font-mono text-xl">01.</span> Technical Arsenal
+            <span className="text-primary font-mono text-xl">01.</span> Technologies
           </h2>
           <p className="text-text/70 max-w-2xl">My stack is built for performance, scalability, and clean architecture.</p>
         </div>

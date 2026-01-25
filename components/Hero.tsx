@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Right Column: Code Window */}
-        <div className="relative w-full max-w-lg mx-auto lg:mr-0 perspective-1000 group hidden md:block">
+        <div className="relative w-full max-w-xl mx-auto lg:mr-0 perspective-1000 group hidden md:block">
            {/* Abstract Glow Background */}
           <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
           
@@ -56,65 +56,121 @@ const Hero: React.FC = () => {
                 <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
               </div>
-              <div className="text-xs text-slate-500">developer.py</div>
+              <div className="text-xs text-slate-500">softwareEngineer.java</div>
               <div className="w-10"></div> 
             </div>
 
             {/* Code Content */}
             <div className="p-6 overflow-x-auto text-slate-300 leading-relaxed">
               <div className="flex">
-                <span className="text-slate-600 select-none mr-4 text-right w-6">1</span>
+                <span className="text-slate-600 mr-4 w-6">1</span>
                 <div>
-                    <span className="text-purple-400">class</span> <span className="text-yellow-300">SoftwareEngineer</span>:
+                  <span className="text-purple-400">public class</span>{" "}
+                  <span className="text-yellow-300">softwareEngineer</span> {"{"}
                 </div>
               </div>
+
+
+
               <div className="flex">
-                <span className="text-slate-600 select-none mr-4 text-right w-6">2</span>
+                <span className="text-slate-600 mr-4 w-6">3</span>
                 <div className="pl-4">
-                    name <span className="text-purple-400">=</span> <span className="text-green-400">"Agustín Monetti"</span>
+                  <span className="text-purple-400">private</span>{" "}
+                  <span className="text-blue-400">String</span> name;
                 </div>
               </div>
+
               <div className="flex">
-                <span className="text-slate-600 select-none mr-4 text-right w-6">3</span>
+                <span className="text-slate-600 mr-4 w-6">4</span>
                 <div className="pl-4">
-                    role <span className="text-purple-400">=</span> <span className="text-green-400">"Backend Specialist"</span>
+                  <span className="text-purple-400">private</span>{" "}
+                  <span className="text-blue-400">int</span> age;
                 </div>
               </div>
+
               <div className="flex">
-                <span className="text-slate-600 select-none mr-4 text-right w-6">4</span>
-                <div className="pl-4"></div>
+                <span className="text-slate-600 mr-4 w-6">5</span>
+                <div></div>
               </div>
+
               <div className="flex">
-                <span className="text-slate-600 select-none mr-4 text-right w-6">5</span>
+                <span className="text-slate-600 mr-4 w-6">6</span>
                 <div className="pl-4">
-                    <span className="text-purple-400">def</span> <span className="text-blue-400">get_skills</span>(self):
+                  <span className="text-purple-400">public</span>{" "}
+                  <span className="text-yellow-300">softwareEngineer</span>(
+                  <span className="text-blue-400">String</span> name,{" "}
+                  <span className="text-blue-400">int</span> age) {"{"}
                 </div>
               </div>
+
               <div className="flex">
-                <span className="text-slate-600 select-none mr-4 text-right w-6">6</span>
+                <span className="text-slate-600 mr-4 w-6">7</span>
                 <div className="pl-8">
-                    <span className="text-purple-400">return</span> [
+                  <span className="text-purple-400">this</span>.name = name;
                 </div>
               </div>
+
               <div className="flex">
-                <span className="text-slate-600 select-none mr-4 text-right w-6">7</span>
-                <div className="pl-12">
-                    <span className="text-green-400">"Python"</span>, <span className="text-green-400">"Java"</span>,
-                </div>
-              </div>
-              <div className="flex">
-                <span className="text-slate-600 select-none mr-4 text-right w-6">8</span>
-                <div className="pl-12">
-                    <span className="text-green-400">"Docker"</span>, <span className="text-green-400">"GCP"</span>
-                </div>
-              </div>
-               <div className="flex">
-                <span className="text-slate-600 select-none mr-4 text-right w-6">9</span>
+                <span className="text-slate-600 mr-4 w-6">8</span>
                 <div className="pl-8">
-                    ]
+                  <span className="text-purple-400">this</span>.age = age;
                 </div>
+              </div>
+
+              <div className="flex">
+                <span className="text-slate-600 mr-4 w-6">9</span>
+                <div className="pl-4">{"}"}</div>
+              </div>
+
+              <div className="flex">
+                <span className="text-slate-600 mr-4 w-6">10</span>
+                <div></div>
+              </div>
+
+              <div className="flex">
+                <span className="text-slate-600 mr-4 w-6">11</span>
+                <div className="pl-4">
+                  <span className="text-purple-400">public</span>{" "}
+                  <span className="text-blue-400">String[]</span> getSkills() {"{"}
+                </div>
+              </div>
+
+              <div className="flex">
+                <span className="text-slate-600 mr-4 w-6">12</span>
+                <div className="pl-8">
+                  <span className="text-purple-400">return</span>{" "}
+                  <span className="text-purple-400">new</span>{" "}
+                  <span className="text-blue-400">String[]</span> {"{"}
+                </div>
+              </div>
+
+              <div className="flex">
+                <span className="text-slate-600 mr-4 w-6">13</span>
+                <div className="pl-12">
+                  <span className="text-green-400">"Python"</span>,{" "}
+                  <span className="text-green-400">"Java"</span>,{" "}
+                  <span className="text-green-400">"Docker"</span>,{" "}
+                  <span className="text-green-400">"GCP"</span>,{" "}
+                  <span className="text-green-400">"Linux"</span>
+                </div>
+              </div>
+
+              <div className="flex">
+                <span className="text-slate-600 mr-4 w-6">14</span>
+                <div className="pl-8">{"};"}</div>
+              </div>
+
+              <div className="flex">
+                <span className="text-slate-600 mr-4 w-6">15</span>
+                <div className="pl-4">{"}"}</div>
+              </div>
+
+              <div className="flex">
+                <span className="text-slate-600 mr-4 w-6">16</span>
+                <div>{"}"}</div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
