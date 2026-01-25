@@ -1,4 +1,4 @@
-##Stack
+## Stack
 
 - React 19: La última versión de la librería, utilizando Hooks (useState, useEffect) para la lógica de estado.
 - TypeScript: Para tipado estático robusto (Interfaces para Proyectos, Experiencia, etc.), lo que reduce errores y mejora la mantenibilidad.
