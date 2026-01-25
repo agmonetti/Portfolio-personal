@@ -1,20 +1,7 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+##Stack
 
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/drive/1CRl5vEeu6yB0ZmS8YfZ7wGT5Hcoy6-Y0
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- React 19: La última versión de la librería, utilizando Hooks (useState, useEffect) para la lógica de estado.
+- TypeScript: Para tipado estático robusto (Interfaces para Proyectos, Experiencia, etc.), lo que reduce errores y mejora la mantenibilidad.
+- Tailwind CSS (v3.4): Framework de utilidad para el diseño. Estamos usando una configuración personalizada para los colores "Neon/Cyberpunk" (#66fcf1, #0b0c10).
+- Lucide React: Una librería de iconos ligera, moderna y consistente (SVG).
+- Google Fonts: Tipografías Inter (para textos generales) y JetBrains Mono (para código y detalles técnicos).
