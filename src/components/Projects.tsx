@@ -6,7 +6,7 @@ const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       title: "GCP Free-Tier Home Lab",
-      description: "Production-grade microservices infrastructure on a restricted 1GB RAM instance. Hosts a heavy Selenium bot and a custom observability dashboard, optimized via advanced Linux swap management and Docker orchestration.",
+      description: "Production-grade microservices infrastructure on a restricted 1GB RAM instance. Hosts a Selenium bot, this landing page and more, all optimized via Linux swap management and Docker orchestration.",
       tags: ["Google Cloud", "Docker", "Linux Admin", "DevOps"],
       icon: Server,
       links: { code: "https://github.com/agmonetti/gcp-free-tier-linux-server" },
@@ -136,30 +136,34 @@ const Projects: React.FC = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors truncate pr-2">{project.title}</h3>
-                      <div className="flex gap-3 shrink-0">
-                        {project.links.code && (
-                          <a href={project.links.code} target="_blank" rel="noopener noreferrer" className="text-text hover:text-white transition-colors" title="View Source">
-                            <Code size={20} />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-
-                    <p className="text-text/80 text-sm mb-6 flex-1 leading-relaxed overflow-hidden text-ellipsis">
-                      {project.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                      {project.tags.map((tag, tIdx) => (
-                        <span key={tIdx} className="text-xs font-mono px-2 py-1 rounded bg-primary/5 text-primary border border-primary/20">
-                          {tag}
-                        </span>
-                      ))}
+                  <div className="p-6 flex flex-col flex-1 h-full">
+                  {/* Header: Title & Link */}
+                  <div className="flex justify-between items-start mb-4 gap-4 shrink-0"> 
+                    <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors line-clamp-1" title={project.title}>
+                      {project.title}
+                    </h3>
+                    <div className="flex gap-3 shrink-0">
+                      {project.links.code && (
+                        <a href={project.links.code} target="_blank" rel="noopener noreferrer" className="text-text hover:text-white transition-colors" title="View Source">
+                          <Code size={20} />
+                        </a>
+                      )}
                     </div>
                   </div>
+                  <div className="flex-1 overflow-y-auto pr-2 mb-4 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent hover:scrollbar-thumb-primary/50">
+                    <p className="text-text/80 text-sm leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mt-auto shrink-0">
+                    {project.tags.map((tag, tIdx) => (
+                      <span key={tIdx} className="text-xs font-mono px-2 py-1 rounded bg-primary/5 text-primary border border-primary/20">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                </div>
                 </article>
               </div>
             ))}
