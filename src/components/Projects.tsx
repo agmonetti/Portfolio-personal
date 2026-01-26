@@ -130,7 +130,7 @@ const Projects: React.FC = () => {
                   className="bg-surface rounded-lg overflow-hidden border border-white/5 hover:border-primary transition-all duration-300 flex flex-col h-[480px] md:h-[450px] group shadow-lg"
                 >
                   {/* Visual Header */}
-                  <div className={`h-42 md:h-48 bg-background relative overflow-hidden border-b border-white/5 flex items-center justify-center shrink-0`}>
+                  <div className={`h-40 md:h-48 bg-background relative overflow-hidden border-b border-white/5 flex items-center justify-center shrink-0`}>
                     <div className={`absolute inset-0 bg-gradient-radial ${project.color} via-background to-background opacity-60 group-hover:opacity-100 transition-opacity duration-500`}></div>
                     <project.icon className="w-16 h-16 text-primary/50 group-hover:scale-110 group-hover:text-primary transition-all duration-300 relative z-10" />
                   </div>
@@ -139,7 +139,7 @@ const Projects: React.FC = () => {
                   <div className="p-6 flex flex-col flex-1 h-full">
                   {/* Header: Title & Link */}
                   <div className="flex justify-between items-start mb-4 gap-4 shrink-0"> 
-                    <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors line-clamp-1" title={project.title}>
+                    <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors line-clamp-2" title={project.title}>
                       {project.title}
                     </h3>
                     <div className="flex gap-3 shrink-0">
