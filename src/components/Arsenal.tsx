@@ -13,7 +13,7 @@ const Arsenal: React.FC = () => {
     {
       title: "Infrastructure",
       icon: Cloud,
-      skills: ["Docker", "Google Cloud Platform", "CI/CD Pipelines"],
+      skills: ["Docker", "Google Cloud Platform", "Linux"],
       color: "bg-purple-500"
     },
     {

@@ -97,23 +97,21 @@ const Hero: React.FC = () => {
                 <span className="text-slate-600 mr-4 w-6">6</span>
                 <div className="pl-4">
                   <span className="text-purple-400">public</span>{" "}
-                  <span className="text-yellow-300">softwareEngineer</span>(
-                  <span className="text-blue-400">String</span> name,{" "}
-                  <span className="text-blue-400">int</span> age) {"{"}
+                  <span className="text-yellow-300">softwareEngineer</span>()
                 </div>
               </div>
 
               <div className="flex">
                 <span className="text-slate-600 mr-4 w-6">7</span>
                 <div className="pl-8">
-                  <span className="text-purple-400">this</span>.name = name;
+                  <span className="text-purple-400">this</span>.name = Agustin Monetti;
                 </div>
               </div>
 
               <div className="flex">
                 <span className="text-slate-600 mr-4 w-6">8</span>
                 <div className="pl-8">
-                  <span className="text-purple-400">this</span>.age = age;
+                  <span className="text-purple-400">this</span>.age = 22;
                 </div>
               </div>
 
