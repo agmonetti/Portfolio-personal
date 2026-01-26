@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-12 items-center">
         
         {/* Left Column: Text */}
-        <div className="flex flex-col gap-6"> // animate-fade-in-up
+        <div className="flex flex-col gap-6 animate-fade-in-up"> 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
             <span className="text-xs font-mono text-primary font-medium">Open to work</span>
