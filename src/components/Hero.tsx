@@ -3,7 +3,7 @@ import { ArrowRight, Mail } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-24 pb-12 px-6">
+  <section className="min-h-[100dvh] flex items-center justify-center pt-24 pb-12 px-6">
       <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-12 items-center">
         
         {/* Left Column: Text */}
