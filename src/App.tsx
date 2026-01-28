@@ -1,12 +1,23 @@
-import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Arsenal from './components/Arsenal';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
+import React, { useEffect, useState } from 'react';
 
 const App: React.FC = () => {
+  const [setVisits] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch('/api/visit')
+      .then(res => res.json())
+      .then(data => {
+        console.log("Visita registrada:", data.visits); // Para que verlo por consola
+        setVisits(data.visits);
+      })
+      .catch(err => console.error("Error contando visita:", err));
+  }, []);
   return (
     <div className="bg-background text-text font-sans antialiased selection:bg-primary selection:text-background overflow-x-hidden">
       <div className="fixed inset-0 z-0 pointer-events-none hidden md:block">
