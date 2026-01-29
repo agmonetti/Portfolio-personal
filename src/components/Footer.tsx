@@ -66,7 +66,7 @@ const Footer: React.FC<FooterProps> = ({ count })=> {
             </p>
             {count !== null && count !== undefined && (
               <p className="text-text/20 text-[10px] font-mono mt-2">
-                Visitas #{count}
+                Visitas {count}
               </p>
               )}
         </div>
