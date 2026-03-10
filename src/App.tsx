@@ -4,17 +4,9 @@ import Arsenal from './components/Arsenal';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
-import React, { useEffect ,useState} from 'react';
+import React from 'react';
 
 const App: React.FC = () => {
- const [visits, setVisits] = useState<number | null>(null);
-
-  useEffect(() => {
-    fetch('/api/visit')
-        .then(res => res.json())
-        .then(data => setVisits(data.visits))
-        .catch(err => console.error("Error contador:", err));
-}, []);// []  "ejecutar solo una vez al cargar"
   return (
     <div className="bg-background text-text font-sans antialiased selection:bg-primary selection:text-background overflow-x-hidden">
       <div className="fixed inset-0 z-0 pointer-events-none hidden md:block">
@@ -30,7 +22,7 @@ const App: React.FC = () => {
           <Projects />
           <Experience />
         </main>
-        <Footer count={visits}/>
+        <Footer />
       </div>
     </div>
   );
