@@ -1,44 +1,48 @@
 import React, { useState, useEffect } from 'react';
 import { ExternalLink, Code, Bot, LayoutGrid, ShieldCheck, ChevronLeft, ChevronRight, Server, Laptop } from 'lucide-react';
 import { Project } from '../types';
+import { useLanguage } from '../context/LanguageContext'; 
 
 const Projects: React.FC = () => {
+  // funcion traductura tomada del context
+  const { t } = useLanguage();
+
   const projects: Project[] = [
     {
-      title: "GCP Free-Tier Home Lab",
-      description: "Production-grade microservices infrastructure on a restricted 1GB RAM instance. Hosts a Selenium bot, this landing page and more, all optimized via Linux swap management and Docker orchestration.",
+      title: t('projects.items.homelab.title'),
+      description: t('projects.items.homelab.description'),
       tags: ["Google Cloud", "Docker", "Linux Admin", "DevOps"],
       icon: Server,
       links: { code: "https://github.com/agmonetti/gcp-free-tier-linux-server" },
       color: "from-indigo-500/40"
     },
     {
-      title: "Dell Latitude 7480 Hackintosh",
-      description: "A highly optimized macOS Ventura environment running on non-Apple hardware. Features a custom OpenCore EFI, ACPI hot-patching, and specific driver tuning for ALPS I2C input devices.",
+      title: t('projects.items.hackintosh.title'),
+      description: t('projects.items.hackintosh.description'),
       tags: ["OpenCore", "ACPI/ASL", "Systems Engineering"],
       icon: Laptop,
       links: { code: "https://github.com/agmonetti/Hackintosh-Dell-Latitude-7480" },
       color: "from-purple-900/40"
     },
     {
-      title: "Persistencia Políglota",
-      description: "A comprehensive architecture showcase demonstrating data handling across multiple database paradigms simultaneously, ensuring data integrity.",
+      title: t('projects.items.polyglot.title'),
+      description: t('projects.items.polyglot.description'),
       tags: ["Java", "MongoDB", "Redis", "Neo4j"],
       icon: LayoutGrid,
       links: { code: "https://github.com/agmonetti/Sistema-Clima_TUI" },
       color: "from-pink-900/40"
     },
     {
-      title: "Subte Alerta Bot",
-      description: "An automated Telegram bot that provides real-time alerts for the Buenos Aires subway system. It scrapes data efficiently to keep commuters informed instantly.",
+      title: t('projects.items.subteBot.title'),
+      description: t('projects.items.subteBot.description'),
       tags: ["Python", "Telegram API", "Scraping"],
       icon: Bot,
       links: { code: "https://github.com/agmonetti/Bot-Subte" },
       color: "from-blue-900/40"
     },
     {
-      title: "Cookie Analyzer",
-      description: "A browser-based security tool to analyze tracking cookies, visualizing data flow and privacy risks for end-users in an intuitive interface.",
+      title: t('projects.items.cookieAnalyzer.title'),
+      description: t('projects.items.cookieAnalyzer.description'),
       tags: ["JavaScript", "Privacy", "DOM API"],
       icon: ShieldCheck,
       links: { code: "https://github.com/agmonetti/cookie_analyzer"},
@@ -49,7 +53,7 @@ const Projects: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(1);
 
-  // Responsive logic to determine how many items are visible
+  // logica de items a mostrar del carrousel
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
@@ -61,15 +65,12 @@ const Projects: React.FC = () => {
       }
     };
 
-    // Initial check
     handleResize();
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Calculate the maximum index we can scroll to
-  // If we have 5 items and show 3, max index is 2 (shows items 2, 3, 4)
   const maxIndex = Math.max(0, projects.length - itemsPerPage);
 
   const handlePrev = () => {
@@ -83,14 +84,15 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        {/* Header with Navigation Controls */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="flex flex-col gap-2">
             <h2 className="text-3xl font-bold text-white flex items-center gap-3">
-              <span className="text-primary font-mono text-xl">02.</span> Featured Projects
+              <span className="text-primary font-mono text-xl">02.</span> 
+              {/* hecho asi para no perder el diseño del titulo */}
+              {t('projects.title').replace('02. ', '')}
             </h2>
             <p className="text-text/70 max-w-2xl">
-              Swipe through selected works demonstrating engineering capabilities.
+              {t('projects.subtitle')}
             </p>
           </div>
           
@@ -114,7 +116,6 @@ const Projects: React.FC = () => {
           </div>
         </div>
 
-        {/* Carousel Window */}
         <div className="relative overflow-hidden -mx-4">
           <div 
             className="flex transition-transform duration-500 ease-out will-change-transform"
@@ -124,20 +125,16 @@ const Projects: React.FC = () => {
               <div 
                 key={idx}
                 className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" 
-                // We use padding (px-4) to create the gap effect instead of flex gap, making math easier
               >
                 <article 
                   className="bg-surface rounded-lg overflow-hidden border border-white/5 hover:border-primary transition-all duration-300 flex flex-col h-[480px] md:h-[450px] group shadow-lg"
                 >
-                  {/* Visual Header */}
                   <div className={`h-40 md:h-48 bg-background relative overflow-hidden border-b border-white/5 flex items-center justify-center shrink-0`}>
                     <div className={`absolute inset-0 bg-gradient-radial ${project.color} via-background to-background opacity-60 group-hover:opacity-100 transition-opacity duration-500`}></div>
                     <project.icon className="w-16 h-16 text-primary/50 group-hover:scale-110 group-hover:text-primary transition-all duration-300 relative z-10" />
                   </div>
 
-                  {/* Content */}
                   <div className="p-6 flex flex-col flex-1 h-full">
-                  {/* Header: Title & Link */}
                   <div className="flex justify-between items-start mb-4 gap-4 shrink-0"> 
                     <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors line-clamp-2" title={project.title}>
                       {project.title}
@@ -169,8 +166,6 @@ const Projects: React.FC = () => {
             ))}
           </div>
         </div>
-        
-        {/* Progress Indicator */}
         <div className="flex justify-center mt-8 gap-2">
           {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
             <button

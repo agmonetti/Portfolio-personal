@@ -5,9 +5,11 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
 import React from 'react';
+import { LanguageProvider } from './context/LanguageContext'; 
 
 const App: React.FC = () => {
   return (
+  <LanguageProvider>
     <div className="bg-background text-text font-sans antialiased selection:bg-primary selection:text-background overflow-x-hidden">
       <div className="fixed inset-0 z-0 pointer-events-none hidden md:block">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
@@ -25,6 +27,7 @@ const App: React.FC = () => {
         <Footer />
       </div>
     </div>
+    </LanguageProvider>
   );
 };
 

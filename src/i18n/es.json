@@ -1,0 +1,81 @@
+
+{
+  "navbar": {
+    "projects": "Proyectos",
+    "technologies": "Tecnologías",
+    "experience": "Experiencia",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "openToWork": "Open to work",
+    "greeting": "Hola Mundo! Soy",
+    "role": "Ingeniero de Software | Entusiasta de la Tecnología",
+    "viewProjects": "Ver Proyectos",
+    "contactMe": "Contacto"
+  },
+  "technologies": {
+    "title": "01. Tecnologías",
+    "subtitle": "Mi stack está construido para rendimiento, escalabilidad y una arquitectura limpia.",
+    "backend": "Backend",
+    "infrastructure": "Infraestructura",
+    "data": "Datos"
+  },
+  "projects": {
+    "title": "02. Proyectos Destacados",
+    "subtitle": "Desliza para explorar trabajos que demuestran mis capacidades de ingeniería.",
+    "items": {
+      "homelab": {
+        "title": "GCP Free-Tier Home Lab",
+        "description": "Infraestructura de microservicios a nivel de producción en una instancia restringida de 1GB de RAM. Aloja un bot de Selenium, esta landing page y más, todo optimizado mediante gestión de swap en Linux y orquestación con Docker."
+      },
+      "hackintosh": {
+        "title": "Hackintosh Dell Latitude 7480",
+        "description": "Entorno macOS Ventura altamente optimizado ejecutándose en hardware no nativo de Apple. Cuenta con un EFI de OpenCore personalizado, hot-patching de ACPI y ajuste de controladores específicos para dispositivos de entrada ALPS I2C."
+      },
+      "polyglot": {
+        "title": "Persistencia Políglota",
+        "description": "Exhibición de arquitectura integral que demuestra el manejo de datos a través de múltiples paradigmas de bases de datos simultáneamente, asegurando la integridad de los mismos."
+      },
+      "subteBot": {
+        "title": "Subte Alerta Bot",
+        "description": "Bot automatizado de Telegram que proporciona alertas en tiempo real sobre el estado de la red de subtes de Buenos Aires. Extrae datos eficientemente para mantener a los usuarios informados al instante."
+      },
+      "cookieAnalyzer": {
+        "title": "Cookie Analyzer",
+        "description": "Herramienta de seguridad para navegador diseñada para analizar cookies de seguimiento, visualizando el flujo de datos y los riesgos de privacidad para los usuarios finales a través de una interfaz intuitiva."
+      }
+    }
+  },
+  "experience": {
+    "title": "03. Experiencia",
+    "freelance": {
+      "role": "Soporte IT Freelance",
+      "date": "2021 - Presente",
+      "company": "Trabajo independiente",
+      "tasks": [
+        "Diagnóstico y resolución de problemas complejos de hardware y software.",
+        "Optimización del rendimiento de sistemas e implementación de soluciones de respaldo.",
+        "Consultoría sobre actualizaciones de hardware y configuraciones de red."
+      ]
+    },
+    "university": {
+      "role": "Ingeniería en Informática",
+      "date": "En curso",
+      "company": "Universidad Argentina de la Empresa (UADE)",
+      "location": "Buenos Aires, Argentina",
+      "description": "Actualmente cursando la carrera de Ingeniería en Informática, con un enfoque en arquitectura de software, estructuras de datos y sistemas backend."
+    }
+  },
+  "contact": {
+    "title": "Contáctame",
+    "subtitle": "Si tenés alguna pregunta o simplemente querés hablar, podes escribirme."
+  },
+  "footer": {
+    "builtBy": "Diseñado y desarrollado por Agustín Monetti",
+    "copyright": "© 2026 Todos los derechos reservados.",
+    "downloadCv": "Descargar CV"
+  },
+  "seo": {
+    "description": "Agustín Monetti — Futuro ingeniero de software especializado en backend, cloud e infraestructura. Construyendo sistemas escalables y automatizando procesos."
+  }
+}

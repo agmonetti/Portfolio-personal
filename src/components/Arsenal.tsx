@@ -1,25 +1,29 @@
 import React from 'react';
 import { Server, Cloud, Database } from 'lucide-react';
 import { SkillCategory } from '../types';
+import { useLanguage } from '../context/LanguageContext';
 
 const Arsenal: React.FC = () => {
+  // funcion de traduccion tomada del context
+  const { t } = useLanguage();
+
   const categories: SkillCategory[] = [
     {
-      title: "Backend",
+      title: t('technologies.backend'),
       icon: Server,
       skills: ["Python", "Java", "Node.js"],
       color: "bg-blue-500"
     },
     {
-      title: "Infrastructure",
+      title: t('technologies.infrastructure'),
       icon: Cloud,
-      skills: ["Docker", "Google Cloud Platform", "Linux"],
+      skills: ["Docker", "Google Cloud Platform", "Linux"], 
       color: "bg-purple-500"
     },
     {
-      title: "Data",
+      title: t('technologies.data'),
       icon: Database,
-      skills: ["PostgreSQL", "MongoDB", "Redis"],
+      skills: ["PostgreSQL", "MongoDB", "Redis"], 
       color: "bg-emerald-500"
     }
   ];
@@ -29,9 +33,9 @@ const Arsenal: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col gap-2 mb-12">
           <h2 className="text-3xl font-bold text-white flex items-center gap-3">
-            <span className="text-primary font-mono text-xl">01.</span> Technologies
+            <span className="text-primary font-mono text-xl">01.</span> {t('navbar.technologies')}
           </h2>
-          <p className="text-text/70 max-w-2xl">My stack is built for performance, scalability, and clean architecture.</p>
+          <p className="text-text/70 max-w-2xl">{t('technologies.subtitle')}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -40,7 +44,6 @@ const Arsenal: React.FC = () => {
               key={idx}
               className="group bg-surface border border-white/5 p-6 rounded-lg hover:border-primary/50 transition-all duration-300 hover:shadow-neon relative overflow-hidden"
             >
-              {/* Background Icon Watermark */}
               <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
                 <cat.icon size={120} />
               </div>

@@ -1,0 +1,80 @@
+{
+  "navbar": {
+    "projects": "Projects",
+    "technologies": "Technologies",
+    "experience": "Experience",
+    "contact": "Contact Me"
+  },
+  "hero": {
+    "openToWork": "Open to work",
+    "greeting": "Hello World! I'm",
+    "role": "Software Engineer | Technology Enthusiast",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me"
+  },
+  "technologies": {
+    "title": "01. Technologies",
+    "subtitle": "My stack is built for performance, scalability, and clean architecture.",
+    "backend": "Backend",
+    "infrastructure": "Infrastructure",
+    "data": "Data"
+  },
+  "projects": {
+    "title": "02. Featured Projects",
+    "subtitle": "Swipe through selected works demonstrating engineering capabilities.",
+    "items": {
+      "homelab": {
+        "title": "GCP Free-Tier Home Lab",
+        "description": "Production-grade microservices infrastructure on a restricted 1GB RAM instance. Hosts a Selenium bot, this landing page and more, all optimized via Linux swap management and Docker orchestration."
+      },
+      "hackintosh": {
+        "title": "Dell Latitude 7480 Hackintosh",
+        "description": "A highly optimized macOS Ventura environment running on non-Apple hardware. Features a custom OpenCore EFI, ACPI hot-patching, and specific driver tuning for ALPS I2C input devices."
+      },
+      "polyglot": {
+        "title": "Polyglot Persistence",
+        "description": "A comprehensive architecture showcase demonstrating data handling across multiple database paradigms simultaneously, ensuring data integrity."
+      },
+      "subteBot": {
+        "title": "Subte Alerta Bot",
+        "description": "An automated Telegram bot that provides real-time alerts for the Buenos Aires subway system. It scrapes data efficiently to keep commuters informed instantly."
+      },
+      "cookieAnalyzer": {
+        "title": "Cookie Analyzer",
+        "description": "A browser-based security tool to analyze tracking cookies, visualizing data flow and privacy risks for end-users in an intuitive interface."
+      }
+    }
+  },
+  "experience": {
+    "title": "03. Experience",
+    "freelance": {
+      "role": "Freelance IT Support",
+      "date": "2021 - Present",
+      "company": "Self-Employed",
+      "tasks": [
+        "Diagnosed and resolved complex hardware and software issues for a diverse client base.",
+        "Optimized system performance and implemented backup solutions for small businesses.",
+        "Provided consultation on hardware upgrades and network configurations."
+      ]
+    },
+    "university": {
+      "role": "Computer Engineering",
+      "date": "In Progress",
+      "company": "Universidad Argentina de la Empresa (UADE)",
+      "location": "Buenos Aires, Argentina",
+      "description": "Currently pursuing a degree in Computer Engineering, focusing on software architecture, data structures, and backend systems."
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Whether you have a question or just want to say hi, I'll try my best to get back to you!"
+  },
+  "footer": {
+    "builtBy": "Designed & Built by Agustín Monetti",
+    "copyright": "© 2026 All rights reserved.",
+    "downloadCv": "Download CV"
+  },
+  "seo": {
+    "description": "Agustín Monetti — Software engineer in progess focused on backend, cloud infrastructure, and automation. Building scalable systems and automating processes."
+  }
+}
