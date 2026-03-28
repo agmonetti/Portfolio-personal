@@ -91,9 +91,6 @@ const Projects: React.FC = () => {
               {/* hecho asi para no perder el diseño del titulo */}
               {t('projects.title').replace('02. ', '')}
             </h2>
-            <p className="text-text/70 max-w-2xl">
-              {t('projects.subtitle')}
-            </p>
           </div>
           
           <div className="flex gap-4">

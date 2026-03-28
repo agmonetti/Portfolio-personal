@@ -15,14 +15,12 @@
   },
   "technologies": {
     "title": "01. Tecnologías",
-    "subtitle": "Mi stack está construido para rendimiento, escalabilidad y una arquitectura limpia.",
     "backend": "Backend",
     "infrastructure": "Infraestructura",
     "data": "Datos"
   },
   "projects": {
     "title": "02. Proyectos Destacados",
-    "subtitle": "Desliza para explorar trabajos que demuestran mis capacidades de ingeniería.",
     "items": {
       "homelab": {
         "title": "GCP Free-Tier Home Lab",
@@ -67,8 +65,7 @@
     }
   },
   "contact": {
-    "title": "Contáctame",
-    "subtitle": "Si tenés alguna pregunta o simplemente querés hablar, podes escribirme."
+    "title": "Contáctame"
   },
   "footer": {
     "builtBy": "Diseñado y desarrollado por Agustín Monetti",

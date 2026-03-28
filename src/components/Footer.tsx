@@ -16,10 +16,6 @@ const Footer: React.FC<FooterProps> = ({ count })=> {
         
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{t('contact.title')}</h2>
         
-        <p className="text-text/60 text-lg leading-relaxed mb-8 max-w-md">
-          {t('contact.subtitle')}
-        </p>
-
         <a 
           href="mailto:agus.monetti01@gmail.com" 
           className="text-primary font-mono text-lg md:text-xl hover:text-primary/80 transition-colors duration-300 mb-12 tracking-wide"
