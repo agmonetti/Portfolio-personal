@@ -22,6 +22,7 @@ const Navbar: React.FC = () => {
     { name: t('navbar.projects'), href: '#projects' },
     { name: t('navbar.technologies'), href: '#technologies' },
     { name: t('navbar.experience'), href: '#experience' },
+    { name: 'Curriculum', href: t('footer.cv')}
   ];
 
   // toggle visual
