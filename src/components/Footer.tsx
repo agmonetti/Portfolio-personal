@@ -44,16 +44,15 @@ const Footer: React.FC<FooterProps> = ({ count })=> {
           </a>
           <a
             href={t('footer.cv')}
-            download="Agustin_Monetti_CV.pdf"
             className="p-3 rounded-full border border-white/10 bg-surface text-white hover:border-primary hover:bg-primary/10 transition-all duration-300 group relative"
             title={t('footer.downloadCv')} 
             aria-label={t('footer.downloadCv')} 
           >
             <FileText size={24} />
-            
-            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-surface border border-white/10 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-              {t('footer.downloadCv')} 
-            </span>
+              <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-surface border border-white/10 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                {t('footer.downloadCv')} 
+              </span>
+             
           </a>
         </div>
         <div className="flex flex-col items-center gap-2">
