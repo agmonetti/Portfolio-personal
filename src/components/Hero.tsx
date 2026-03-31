@@ -1,62 +1,36 @@
 import React from 'react';
-import { ArrowRight, Mail } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero: React.FC = () => {
-  // funcion traductura tomada del context
   const { t } = useLanguage();
-
+  
   return (
-    <section className="min-h-[100dvh] flex items-center justify-center pt-24 pb-12 px-6">
-      <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-12 items-center">
-        
+    <section className="h-auto sm:min-h-screen flex items-center justify-center pt-24 pb-12 px-6 mt-16 mb-8 sm:my-0">
+      <div className="max-w-5xl w-full grid lg:grid-cols-2 gap-12 items-center">
         <div className="flex flex-col gap-6 animate-fade-in-up"> 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            
             <span className="text-xs font-mono text-primary font-medium">{t('hero.openToWork')}</span>
           </div>
 
           <div className="space-y-2">
-            
             <h2 className="text-xl md:text-2xl font-mono text-primary font-medium">{t('hero.greeting')}</h2>
-            <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-none">
+            <h1 className="text-5xl md:text-7xl font-bold text-darker dark:text-text-dark tracking-tight leading-none">
               Agustín <br />
-              <span className="text-slate-400">Monetti</span>
+              <span className="text-primary">Monetti</span>
             </h1>
           </div>
 
-          <h3 className="text-xl text-text/80 font-light max-w-lg border-l-2 border-primary pl-4">
-           
+          <h3 className="text-xl text-text/80 dark:text-text-dark/80 font-light max-w-lg border-l-2 border-primary/40 pl-4">
             {t('hero.role')}
           </h3>
 
-          <div className="flex flex-wrap gap-4 mt-4">
-            <a 
-              href="#projects" 
-              className="px-6 py-3 bg-primary text-background font-bold rounded hover:bg-white hover:shadow-neon transition-all duration-300 flex items-center gap-2 group"
-            >
-              
-              {t('hero.viewProjects')}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a 
-              href="#contact" 
-              className="px-6 py-3 bg-transparent border border-white/20 text-white font-medium rounded hover:border-primary hover:text-primary transition-all duration-300 flex items-center gap-2"
-            >
-              
-              {t('hero.contactMe')}
-              <Mail className="w-4 h-4" />
-            </a>
-          </div>
         </div>
 
         {/* bloque derecho */}
-        <div className="relative w-full max-w-xl mx-auto lg:mr-0 perspective-1000 group hidden md:block">
-          <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-          
-          <div className="relative bg-[#151b24] border border-white/10 rounded-xl shadow-2xl overflow-hidden font-mono text-sm md:text-base">
-            <div className="flex items-center justify-between px-4 py-3 bg-[#0d1117] border-b border-white/5">
+        <div className="relative w-full max-w-xl mx-auto lg:mr-0 hidden md:block">
+          <div className="relative bg-white dark:bg-surface-dark border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-sm dark:shadow-lg overflow-hidden font-mono text-sm md:text-base">
+            <div className="flex items-center justify-between px-4 py-3 bg-surface dark:bg-surface-dark/80 border-b border-neutral-200 dark:border-neutral-700">
               <div className="flex gap-2">
                 <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
@@ -66,7 +40,7 @@ const Hero: React.FC = () => {
               <div className="w-10"></div> 
             </div>
 
-            <div className="p-6 overflow-x-auto text-slate-300 leading-relaxed">
+            <div className="p-6 overflow-x-auto text-slate-800 dark:text-slate-200 leading-relaxed">
               <div className="flex">
                 <span className="text-slate-600 mr-4 w-6">1</span>
                 <div>
