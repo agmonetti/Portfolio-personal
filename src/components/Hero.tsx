@@ -5,7 +5,7 @@ const Hero: React.FC = () => {
   const { t } = useLanguage();
   
   return (
-    <section className="min-h-[100dvh] flex items-center justify-center pt-24 pb-12 px-6">
+    <section className="h-auto sm:min-h-screen flex items-center justify-center pt-24 pb-12 px-6 mt-16 mb-8 sm:my-0">
       <div className="max-w-5xl w-full grid lg:grid-cols-2 gap-12 items-center">
         <div className="flex flex-col gap-6 animate-fade-in-up"> 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit">
