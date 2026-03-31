@@ -15,13 +15,13 @@ const Hero: React.FC = () => {
 
           <div className="space-y-2">
             <h2 className="text-xl md:text-2xl font-mono text-primary font-medium">{t('hero.greeting')}</h2>
-            <h1 className="text-5xl md:text-7xl font-bold text-darker tracking-tight leading-none">
+            <h1 className="text-5xl md:text-7xl font-bold text-darker dark:text-text-dark tracking-tight leading-none">
               Agustín <br />
               <span className="text-primary">Monetti</span>
             </h1>
           </div>
 
-          <h3 className="text-xl text-text/80 font-light max-w-lg border-l-2 border-primary/40 pl-4">
+          <h3 className="text-xl text-text/80 dark:text-text-dark/80 font-light max-w-lg border-l-2 border-primary/40 pl-4">
             {t('hero.role')}
           </h3>
 
@@ -29,8 +29,8 @@ const Hero: React.FC = () => {
 
         {/* bloque derecho */}
         <div className="relative w-full max-w-xl mx-auto lg:mr-0 hidden md:block">
-          <div className="relative bg-white border border-neutral-200 rounded-xl shadow-sm overflow-hidden font-mono text-sm md:text-base">
-            <div className="flex items-center justify-between px-4 py-3 bg-surface border-b border-neutral-200">
+          <div className="relative bg-white dark:bg-surface-dark border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-sm dark:shadow-lg overflow-hidden font-mono text-sm md:text-base">
+            <div className="flex items-center justify-between px-4 py-3 bg-surface dark:bg-surface-dark/80 border-b border-neutral-200 dark:border-neutral-700">
               <div className="flex gap-2">
                 <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
               <div className="w-10"></div> 
             </div>
 
-            <div className="p-6 overflow-x-auto text-slate-800 leading-relaxed">
+            <div className="p-6 overflow-x-auto text-slate-800 dark:text-slate-200 leading-relaxed">
               <div className="flex">
                 <span className="text-slate-600 mr-4 w-6">1</span>
                 <div>

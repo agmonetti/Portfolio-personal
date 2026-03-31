@@ -32,23 +32,23 @@ const Arsenal: React.FC = () => {
     <section id="technologies" className="py-16 px-6">
       <div className="max-w-5xl mx-auto space-y-10">
         <div className="flex items-center gap-3">
-          <h2 className="text-3xl font-bold text-darker">{t('navbar.technologies')}</h2>
+          <h2 className="text-3xl font-bold text-darker dark:text-text-dark">{t('navbar.technologies')}</h2>
         </div>
 
         <div className="space-y-6">
           {categories.map((cat, idx) => (
             <div 
               key={idx}
-              className="border-b border-neutral-200 pb-6 last:border-none"
+              className="border-b border-neutral-200 dark:border-neutral-700 pb-6 last:border-none"
             >
               <div className="flex items-center gap-3">
                 <cat.icon className="text-primary w-5 h-5" />
-                <h3 className="text-lg font-semibold text-darker">{cat.title}</h3>
+                <h3 className="text-lg font-semibold text-darker dark:text-text-dark">{cat.title}</h3>
               </div>
 
               <div className="flex flex-wrap gap-2 mt-4 text-sm">
                 {cat.skills.map((skill, sIdx) => (
-                  <span key={sIdx} className="px-3 py-1 rounded-full border border-neutral-200 text-text/80">
+                  <span key={sIdx} className="px-3 py-1 rounded-full border border-neutral-200 dark:border-neutral-700 text-text/80 dark:text-text-dark/80">
                     {skill}
                   </span>
                 ))}

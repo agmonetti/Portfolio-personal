@@ -53,14 +53,14 @@ const Projects: React.FC = () => {
     <section id="projects" className="pt-24 pb-16 px-6">
       <div className="max-w-5xl mx-auto space-y-8">
         <div className="flex items-center gap-3">
-          <h2 className="text-3xl font-bold text-darker">{t('projects.title')}</h2>
+          <h2 className="text-3xl font-bold text-darker dark:text-text-dark">{t('projects.title')}</h2>
         </div>
 
         <div className="space-y-6">
           {projects.map((project, idx) => (
             <article 
               key={idx}
-              className="border border-neutral-200 rounded-lg p-6 bg-white shadow-[0_10px_30px_-24px_rgba(0,0,0,0.25)]"
+              className="border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 bg-white dark:bg-surface-dark shadow-[0_10px_30px_-24px_rgba(0,0,0,0.25)] dark:shadow-[0_10px_30px_-24px_rgba(15,159,110,0.1)]"
             >
               <div className="flex justify-between items-start gap-4">
                 <div className="space-y-2">
@@ -68,10 +68,10 @@ const Projects: React.FC = () => {
                     <project.icon className="w-5 h-5" />
                     <span className="text-xs font-mono uppercase tracking-wide">{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-darker" title={project.title}>
+                  <h3 className="text-xl font-semibold text-darker dark:text-text-dark" title={project.title}>
                     {project.title}
                   </h3>
-                  <p className="text-text/80 text-sm leading-relaxed">
+                  <p className="text-text/80 dark:text-text-dark/80 text-sm leading-relaxed">
                     {project.description}
                   </p>
                 </div>
@@ -81,7 +81,7 @@ const Projects: React.FC = () => {
                     href={project.links.code} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-text hover:text-primary transition-colors" 
+                    className="text-text dark:text-text-dark hover:text-primary transition-colors" 
                     title="View Source"
                   >
                     <Code size={18} />
@@ -91,7 +91,7 @@ const Projects: React.FC = () => {
 
               <div className="flex flex-wrap gap-2 mt-4">
                 {project.tags.map((tag, tIdx) => (
-                  <span key={tIdx} className="text-xs font-mono px-3 py-1 rounded-full border border-neutral-200 text-text/80">
+                  <span key={tIdx} className="text-xs font-mono px-3 py-1 rounded-full border border-neutral-200 dark:border-neutral-700 text-text/80 dark:text-text-dark/80">
                     {tag}
                   </span>
                 ))}

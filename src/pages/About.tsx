@@ -20,11 +20,11 @@ const About: React.FC = () => {
 
   return (
     <section className="py-16 px-6" id="about">
-      <div className="max-w-5xl mx-auto border-t border-neutral-200 pt-10 space-y-8">
+      <div className="max-w-5xl mx-auto border-t border-neutral-200 dark:border-neutral-700 pt-10 space-y-8">
         <div>
-          <h1 className="text-3xl font-bold text-darker mb-6">{t('about.title')}</h1>
+          <h1 className="text-3xl font-bold text-darker dark:text-text-dark mb-6">{t('about.title')}</h1>
           {Array.isArray(points) && points.length > 0 ? (
-            <ul className="space-y-3 text-text/90 leading-relaxed">
+            <ul className="space-y-3 text-text/90 dark:text-text-dark/90 leading-relaxed">
               {points.map((point: string, idx: number) => (
                 <li key={idx} className="flex gap-3">
                   <span className="mt-2 h-2 w-2 rounded-full bg-primary/70 inline-flex"></span>
@@ -33,18 +33,18 @@ const About: React.FC = () => {
               ))}
             </ul>
           ) : (
-            <p className="text-lg text-text/90 leading-relaxed">{body}</p>
+            <p className="text-lg text-text/90 dark:text-text-dark/90 leading-relaxed">{body}</p>
           )}
         </div>
 
         <div className="space-y-3">
-          <h2 className="text-xl font-semibold text-darker">{t('contact.title')}</h2>
+          <h2 className="text-xl font-semibold text-darker dark:text-text-dark">{t('contact.title')}</h2>
           <div className="flex flex-wrap gap-3">
             {contacts.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full border border-neutral-200 text-text hover:border-primary hover:text-primary transition-colors shadow-[0_6px_18px_-14px_rgba(0,0,0,0.35)]"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full border border-neutral-200 dark:border-neutral-700 text-text dark:text-text-dark hover:border-primary hover:text-primary transition-colors shadow-[0_6px_18px_-14px_rgba(0,0,0,0.35)] dark:shadow-[0_6px_18px_-14px_rgba(15,159,110,0.15)]"
                 target={item.href.startsWith('http') ? '_blank' : undefined}
                 rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 title={item.title}
