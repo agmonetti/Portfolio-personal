@@ -1,7 +1,7 @@
 import React from 'react';
 import { Server, Cloud, Database } from 'lucide-react';
 import { SkillCategory } from '../types';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Arsenal: React.FC = () => {
   // funcion de traduccion tomada del context

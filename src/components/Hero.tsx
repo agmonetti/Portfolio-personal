@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();

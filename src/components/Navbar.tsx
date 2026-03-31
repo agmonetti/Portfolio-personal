@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Menu, X, Terminal } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Navbar: React.FC = () => {
+  
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
   
   // extraemos con las 3 opciones el idioma actual, la funcion para cambiarlo y el traductor
   const { language, setLanguage, t } = useLanguage();
@@ -81,7 +83,7 @@ const Navbar: React.FC = () => {
           <LanguageToggle />
 
           <a 
-            href="#about" 
+            href="/#about" 
             className="border border-primary text-primary px-4 py-2 rounded text-sm font-medium hover:bg-primary hover:text-white transition-all"
           >
             {t('navbar.contact')} {/* botón de contacto */}
@@ -130,7 +132,7 @@ const Navbar: React.FC = () => {
           </div>
 
            <a 
-            href="#contact" 
+            href="/#about" 
             className="border border-primary text-primary px-4 py-2 rounded text-center font-medium mt-2 hover:bg-primary hover:text-white transition-colors"
             onClick={() => setIsOpen(false)}
           >

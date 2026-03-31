@@ -1,7 +1,7 @@
 import React from 'react';
 import { Code, Bot, LayoutGrid, ShieldCheck, Server, Laptop } from 'lucide-react';
 import { Project } from '../types';
-import { useLanguage } from '../context/LanguageContext'; 
+import { useLanguage } from '../contexts/LanguageContext'; 
 
 const Projects: React.FC = () => {
   // funcion traductura tomada del context
