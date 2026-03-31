@@ -4,23 +4,27 @@
     "projects": "Proyectos",
     "technologies": "Tecnologías",
     "experience": "Experiencia",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "home": "Inicio",
+    "about": "Sobre mí"
   },
   "hero": {
     "openToWork": "Open to work",
     "greeting": "Hola Mundo! Soy",
-    "role": "Ingeniero de Software | Entusiasta de la Tecnología",
-    "viewProjects": "Ver Proyectos",
-    "contactMe": "Contacto"
+    "role": "Ingeniero de Software | Entusiasta de la Tecnología"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "body": "Actualmente estoy cursando la carrera de Ingeniería Informática sin ninguna especialidad en particular. Me gusta construir sistemas que resuelvan problemas de mi día a día y que ayuden a seguir aprendiendo sobre las distintas tecnologías actuales. Me motiva la curiosidad de seguir aprendiendo y creando soluciones; no me limito a trabajar con cosas que conozco, sino que me encanta leer nuevas documentaciones y trabajar con la IA."
   },
   "technologies": {
-    "title": "01. Tecnologías",
+    "title": "Tecnologías",
     "backend": "Backend",
     "infrastructure": "Infraestructura",
     "data": "Datos"
   },
   "projects": {
-    "title": "02. Proyectos Destacados",
+    "title": "Proyectos Destacados",
     "items": {
       "homelab": {
         "title": "GCP Free-Tier Home Lab",
@@ -45,7 +49,7 @@
     }
   },
   "experience": {
-    "title": "03. Experiencia",
+    "title": "Experiencia",
     "freelance": {
       "role": "Soporte IT Freelance",
       "date": "2021 - Presente",
@@ -68,8 +72,6 @@
     "title": "Contáctame"
   },
   "footer": {
-    "builtBy": "Diseñado y desarrollado por Agustín Monetti",
-    "copyright": "© 2026 Todos los derechos reservados.",
     "downloadCv": "Descargar CV",
     "cv": "/cv-es.pdf"
   },

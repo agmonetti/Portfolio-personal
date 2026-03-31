@@ -29,37 +29,30 @@ const Arsenal: React.FC = () => {
   ];
 
   return (
-    <section id="technologies" className="py-24 px-6 bg-surface/30">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col gap-2 mb-12">
-          <h2 className="text-3xl font-bold text-white flex items-center gap-3">
-            <span className="text-primary font-mono text-xl">01.</span> {t('navbar.technologies')}
-          </h2>
+    <section id="technologies" className="py-16 px-6">
+      <div className="max-w-5xl mx-auto space-y-10">
+        <div className="flex items-center gap-3">
+          <h2 className="text-3xl font-bold text-darker">{t('navbar.technologies')}</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="space-y-6">
           {categories.map((cat, idx) => (
             <div 
               key={idx}
-              className="group bg-surface border border-white/5 p-6 rounded-lg hover:border-primary/50 transition-all duration-300 hover:shadow-neon relative overflow-hidden"
+              className="border-b border-neutral-200 pb-6 last:border-none"
             >
-              <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-                <cat.icon size={120} />
+              <div className="flex items-center gap-3">
+                <cat.icon className="text-primary w-5 h-5" />
+                <h3 className="text-lg font-semibold text-darker">{cat.title}</h3>
               </div>
 
-              <div className="flex items-center gap-3 mb-6 relative z-10">
-                <cat.icon className="text-primary w-8 h-8" />
-                <h3 className="text-xl font-bold text-white">{cat.title}</h3>
-              </div>
-
-              <ul className="space-y-3 font-mono text-sm text-text/80 relative z-10">
+              <div className="flex flex-wrap gap-2 mt-4 text-sm">
                 {cat.skills.map((skill, sIdx) => (
-                  <li key={sIdx} className="flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_8px_rgba(102,252,241,0.8)]"></span>
+                  <span key={sIdx} className="px-3 py-1 rounded-full border border-neutral-200 text-text/80">
                     {skill}
-                  </li>
+                  </span>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>

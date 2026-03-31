@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Terminal } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 const Navbar: React.FC = () => {
@@ -19,25 +20,25 @@ const Navbar: React.FC = () => {
 
   // traducimos enlaces del navbar
   const navLinks = [
-    { name: t('navbar.projects'), href: '#projects' },
-    { name: t('navbar.technologies'), href: '#technologies' },
-    { name: t('navbar.experience'), href: '#experience' },
-    { name: 'Curriculum', href: t('footer.cv')}
+    { name: t('navbar.home'), href: '/', external: false },
+    { name: t('navbar.projects'), href: '/projects', external: false },
+    { name: 'Curriculum', href: t('footer.cv'), external: true }
+
   ];
 
   // toggle visual
   const LanguageToggle = () => (
-    <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-md px-3 py-1.5 text-xs font-mono backdrop-blur-sm">
+    <div className="flex items-center gap-2 bg-surface border border-neutral-200 rounded-full px-3 py-1 text-xs font-mono">
       <button
         onClick={() => setLanguage('es')}
-        className={`transition-colors duration-200 ${language === 'es' ? 'text-primary font-bold' : 'text-text hover:text-white'}`}
+        className={`transition-colors duration-200 ${language === 'es' ? 'text-primary font-bold' : 'text-text hover:text-primary'}`}
       >
         ES
       </button>
-      <span className="text-white/20 select-none">|</span>
+      <span className="text-text/40 select-none">|</span>
       <button
         onClick={() => setLanguage('en')}
-        className={`transition-colors duration-200 ${language === 'en' ? 'text-primary font-bold' : 'text-text hover:text-white'}`}
+        className={`transition-colors duration-200 ${language === 'en' ? 'text-primary font-bold' : 'text-text hover:text-primary'}`}
       >
         EN
       </button>
@@ -45,31 +46,43 @@ const Navbar: React.FC = () => {
   );
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-background/90 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-2 group">
-            <Terminal className="text-primary w-6 h-6 group-hover:rotate-12 transition-transform" />
-            <span className="font-bold text-xl text-white tracking-tight group-hover:text-primary transition-colors">Agustín.dev</span>
-        </a>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-background/95 backdrop-blur border-b border-neutral-200 shadow-sm' : 'bg-background'}`}>
+      <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        <Link to="/" className="flex items-center gap-2 group">
+          <Terminal className="text-primary w-5 h-5" />
+          <span className="font-semibold text-lg text-darker tracking-tight group-hover:text-primary transition-colors">Agustín.dev</span>
+        </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <a 
-              key={link.href} // href como key porque queda constante, en cambio, el 'name' ahora cambia dinamicamente con el idioma
-              href={link.href} 
-              className="text-sm font-medium text-text hover:text-primary transition-colors hover:-translate-y-0.5"
-            >
-              {link.name}
-            </a>
+            link.external ? (
+              <a 
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-text hover:text-primary transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link 
+                key={link.href}
+                to={link.href}
+                className="text-sm font-medium text-text hover:text-primary transition-colors"
+              >
+                {link.name}
+              </Link>
+            )
           ))}
           
           {/* toggle idioma desktop */}
           <LanguageToggle />
 
           <a 
-            href="#contact" 
-            className="border border-primary text-primary px-4 py-2 rounded text-sm font-medium hover:bg-primary/10 transition-all"
+            href="#about" 
+            className="border border-primary text-primary px-4 py-2 rounded text-sm font-medium hover:bg-primary hover:text-white transition-all"
           >
             {t('navbar.contact')} {/* botón de contacto */}
           </a>
@@ -86,26 +99,39 @@ const Navbar: React.FC = () => {
 
       {/* Mobile menu overlay */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-surface border-b border-white/10 p-6 md:hidden flex flex-col gap-4 shadow-2xl">
+        <div className="absolute top-full left-0 w-full bg-background border-b border-neutral-200 p-6 md:hidden flex flex-col gap-4 shadow-sm">
            {navLinks.map((link) => (
-            <a 
-              key={link.href} 
-              href={link.href} 
-              className="text-text hover:text-primary block py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              {link.name}
-            </a>
+            link.external ? (
+              <a 
+                key={link.href}
+                href={link.href}
+                className="text-text hover:text-primary block py-2"
+                onClick={() => setIsOpen(false)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link 
+                key={link.href}
+                to={link.href}
+                className="text-text hover:text-primary block py-2"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </Link>
+            )
           ))}
           
           {/* toggle idioma mobile */}
-          <div className="flex justify-center py-2 border-y border-white/5 my-2">
+          <div className="flex justify-center py-2 border-y border-neutral-200 my-2">
             <LanguageToggle />
           </div>
 
            <a 
             href="#contact" 
-            className="border border-primary text-primary px-4 py-2 rounded text-center font-medium mt-2"
+            className="border border-primary text-primary px-4 py-2 rounded text-center font-medium mt-2 hover:bg-primary hover:text-white transition-colors"
             onClick={() => setIsOpen(false)}
           >
             {t('navbar.contact')}

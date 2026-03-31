@@ -3,23 +3,27 @@
     "projects": "Projects",
     "technologies": "Technologies",
     "experience": "Experience",
-    "contact": "Contact Me"
+    "contact": "Connect",
+    "home": "Home",
+    "about": "About"
   },
   "hero": {
     "openToWork": "Open to work",
     "greeting": "Hello World! I'm",
-    "role": "Software Engineer | Technology Enthusiast",
-    "viewProjects": "View Projects",
-    "contactMe": "Contact Me"
+    "role": "Software Engineer | Technology Enthusiast"
+  },
+  "about": {
+    "title": "About",
+    "body": "I'm currently pursuing a Computer Engineering degree. I enjoy building systems that solve day-to-day problems and help me learn new technologies. Curiosity keeps me learning and creating; I don't limit myself to what I already know and I like diving into new docs and AI tooling."
   },
   "technologies": {
-    "title": "01. Technologies",
+    "title": "Technologies",
     "backend": "Backend",
     "infrastructure": "Infrastructure",
     "data": "Data"
   },
   "projects": {
-    "title": "02. Featured Projects",
+    "title": "Featured Projects",
     "items": {
       "homelab": {
         "title": "GCP Free-Tier Home Lab",
@@ -44,7 +48,7 @@
     }
   },
   "experience": {
-    "title": "03. Experience",
+    "title": "Experience",
     "freelance": {
       "role": "Freelance IT Support",
       "date": "2021 - Present",
@@ -67,8 +71,6 @@
     "title": "Get In Touch"
   },
   "footer": {
-    "builtBy": "Designed & Built by Agustín Monetti",
-    "copyright": "© 2026 All rights reserved.",
     "downloadCv": "Download CV",
     "cv": "/cv-en.pdf"
   },

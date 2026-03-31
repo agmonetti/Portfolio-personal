@@ -7,12 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#0b0c10',
-        surface: '#1f2833',
-        primary: '#66fcf1',
-        secondary: '#45a29e',
-        text: '#c5c6c7',
-        darker: '#050505'
+        background: '#ffffff',
+        surface: '#f6f6f6',
+        primary: '#0f9f6e',
+        secondary: '#0c7a58',
+        text: '#111827',
+        darker: '#0b0b0b'
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
