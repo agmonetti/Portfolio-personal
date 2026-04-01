@@ -11,10 +11,18 @@ const Projects: React.FC = () => {
     {
       title: t('projects.items.homelab.title'),
       description: t('projects.items.homelab.description'),
-      tags: ["Google Cloud", "Docker", "Linux Admin", "DevOps"],
+      tags: ["Google Cloud", "Docker", "Linux", "DevOps"],
       icon: Server,
       links: { code: "https://github.com/agmonetti/gcp-free-tier-linux-server" },
       color: "from-indigo-500/40"
+    },
+    {
+      title: t('projects.items.subteBot.title'),
+      description: t('projects.items.subteBot.description'),
+      tags: ["Python", "Telegram API", "Scraping"],
+      icon: Bot,
+      links: { code: "https://github.com/agmonetti/Bot-Subte" },
+      color: "from-blue-900/40"
     },
     {
       title: t('projects.items.hackintosh.title'),
@@ -33,17 +41,9 @@ const Projects: React.FC = () => {
       color: "from-pink-900/40"
     },
     {
-      title: t('projects.items.subteBot.title'),
-      description: t('projects.items.subteBot.description'),
-      tags: ["Python", "Telegram API", "Scraping"],
-      icon: Bot,
-      links: { code: "https://github.com/agmonetti/Bot-Subte" },
-      color: "from-blue-900/40"
-    },
-    {
       title: t('projects.items.cookieAnalyzer.title'),
       description: t('projects.items.cookieAnalyzer.description'),
-      tags: ["JavaScript", "Privacy", "DOM API"],
+      tags: ["JavaScript", "Privacy", "API"],
       icon: ShieldCheck,
       links: { code: "https://github.com/agmonetti/cookie_analyzer"},
       color: "from-emerald-900/40"

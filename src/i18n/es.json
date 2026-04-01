@@ -24,7 +24,7 @@
     "data": "Datos"
   },
   "projects": {
-    "title": "Proyectos Destacados",
+    "title": "Proyectos",
     "items": {
       "homelab": {
         "title": "GCP Free-Tier Home Lab",
@@ -53,7 +53,7 @@
     "freelance": {
       "role": "Soporte IT Freelance",
       "date": "2021 - Presente",
-      "company": "Trabajo Freelance",
+      "company": "Freelance",
       "tasks": [
         "Diagnóstico y resolución de problemas complejos de hardware y software.",
         "Optimización del rendimiento de sistemas e implementación de soluciones de respaldo.",
