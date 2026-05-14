@@ -11,9 +11,14 @@ const App: React.FC = () => {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <div className="min-h-screen bg-transparent text-text dark:text-text-dark font-sans antialiased selection:bg-primary/15 selection:text-darker dark:selection:text-text-dark transition-colors duration-300">
+        {/*
+          ⚠️ Se eliminó bg-background dark:bg-background-dark de este wrapper.
+          El fondo (dot grid) vive en body dentro de App.css.
+          Cualquier div sin bg explícito hereda el dot grid automáticamente.
+        */}
+        <div className="min-h-screen text-text dark:text-text-dark font-sans antialiased selection:bg-primary/15 selection:text-darker dark:selection:text-text-dark transition-colors duration-300">
           <Navbar />
-          <main className="relative z-10 mx-auto w-full max-w-4xl px-4 pt-24 pb-20 sm:px-6">
+          <main className="max-w-5xl mx-auto px-6">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<ProjectsPage />} />
