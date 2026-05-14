@@ -74,6 +74,12 @@
     "downloadCv": "Download CV",
     "cv": "/cv-en.pdf"
   },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "View and download my resume.",
+    "download": "Download",
+    "open": "Open in a new tab"
+  },
   "seo": {
     "description": "Agustín Monetti — Software engineer in progess focused on backend, cloud infrastructure, and automation. Building scalable systems and automating processes."
   }

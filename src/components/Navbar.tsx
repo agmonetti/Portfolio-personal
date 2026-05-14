@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { name: t('navbar.home'), href: '/', external: false },
     { name: t('navbar.projects'), href: '/projects', external: false },
-    { name: 'Curriculum', href: t('footer.cv'), external: true }
+    { name: 'Curriculum', href: '/resume', external: false }
   ];
 
   const LanguageToggle = () => (

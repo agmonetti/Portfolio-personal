@@ -15,7 +15,7 @@ const About: React.FC = () => {
     { label: 'GitHub', href: 'https://github.com/agmonetti', icon: Github },
     { label: 'LinkedIn', href: 'https://linkedin.com/in/agustin-monetti', icon: Linkedin },
     { label: 'Mail', href: 'mailto:agus.monetti01@gmail.com', icon: Mail },
-    { label: 'CV', href: t('footer.cv') as string, icon: FileText, title: downloadTitle },
+    { label: 'CV', href: '/resume', icon: FileText, title: downloadTitle },
   ];
 
   return (

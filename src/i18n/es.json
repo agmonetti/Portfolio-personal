@@ -75,6 +75,12 @@
     "downloadCv": "Descargar CV",
     "cv": "/cv-es.pdf"
   },
+  "resume": {
+    "title": "Curriculum",
+    "subtitle": "Mira y descarga mi curriculum.",
+    "download": "Descargar",
+    "open": "Abrir en una pestana nueva"
+  },
   "seo": {
     "description": "Agustín Monetti — Futuro ingeniero de software especializado en backend, cloud e infraestructura. Construyendo sistemas escalables y automatizando procesos."
   }
