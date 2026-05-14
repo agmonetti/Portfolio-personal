@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 
 const About: React.FC = () => {
   const { t } = useLanguage();
@@ -9,14 +8,6 @@ const About: React.FC = () => {
     ?.split(/(?<=[.!?])\s+/)
     .map((s: string) => s.trim())
     .filter((s: string) => s.length > 0);
-
-  const downloadTitle = t('footer.downloadCv') as string;
-  const contacts = [
-    { label: 'GitHub', href: 'https://github.com/agmonetti', icon: Github },
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/agustin-monetti', icon: Linkedin },
-    { label: 'Mail', href: 'mailto:agus.monetti01@gmail.com', icon: Mail },
-    { label: 'CV', href: '/resume', icon: FileText, title: downloadTitle },
-  ];
 
   return (
       <section className="mt-8 py-6" id="about">
@@ -35,27 +26,6 @@ const About: React.FC = () => {
           ) : (
             <p className="max-w-3xl text-sm leading-7 text-text/85 dark:text-text-dark/85 sm:text-base">{body}</p>
           )}
-        </div>
-
-        <div className="space-y-3 pt-4">
-          <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-text/45 dark:text-text-dark/45">{t('contact.title')}</h3>
-          <div className="flex flex-wrap gap-4 text-sm">
-            {contacts.map((item, idx) => (
-              <React.Fragment key={item.label}>
-                <a
-                  href={item.href}
-                  target={item.href.startsWith('http') ? '_blank' : undefined}
-                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  title={item.title}
-                  aria-label={item.title || item.label}
-                  className="hover:underline text-text/80 dark:text-text-dark/80"
-                >
-                  {item.label}
-                </a>
-                {idx < contacts.length - 1 && <span className="text-text/40 dark:text-text-dark/40">·</span>}
-              </React.Fragment>
-            ))}
-          </div>
         </div>
       </div>
       <hr className="section-divider" />
