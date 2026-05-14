@@ -32,11 +32,12 @@ const Resume: React.FC = () => {
           </a>
         </div>
 
-        <div className="overflow-hidden border border-neutral-300/70 dark:border-neutral-800 bg-white/40 dark:bg-surface-dark/40 backdrop-blur-sm">
+        <div className="overflow-hidden bg-transparent">
           <iframe
             src={cvEmbedUrl}
             title={t('resume.title') as string}
             className="w-full h-[70vh] md:h-[80vh]"
+            style={{ border: 'none' }}
           />
         </div>
       </div>

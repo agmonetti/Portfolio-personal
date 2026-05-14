@@ -37,22 +37,23 @@ const About: React.FC = () => {
           )}
         </div>
 
-        <div className="space-y-3 pt-2">
+        <div className="space-y-3 pt-4">
           <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-text/45 dark:text-text-dark/45">{t('contact.title')}</h3>
-          <div className="flex flex-wrap gap-2">
-            {contacts.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/55 dark:bg-black/55 px-3.5 py-2 text-sm font-medium text-text dark:text-text-dark transition-colors hover:border-primary/30 hover:text-primary"
-                target={item.href.startsWith('http') ? '_blank' : undefined}
-                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                title={item.title}
-                aria-label={item.title || item.label}
-              >
-                <item.icon className="h-4 w-4" />
-                <span>{item.label}</span>
-              </a>
+          <div className="flex flex-wrap gap-4 text-sm text-text/80">
+            {contacts.map((item, idx) => (
+              <React.Fragment key={item.label}>
+                <a
+                  href={item.href}
+                  target={item.href.startsWith('http') ? '_blank' : undefined}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  title={item.title}
+                  aria-label={item.title || item.label}
+                  className="hover:underline"
+                >
+                  {item.label}
+                </a>
+                {idx < contacts.length - 1 && <span className="text-text/40">·</span>}
+              </React.Fragment>
             ))}
           </div>
         </div>

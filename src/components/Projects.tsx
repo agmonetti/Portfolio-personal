@@ -62,7 +62,7 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
 
         <div className="border-t border-neutral-300/70 dark:border-neutral-800">
           {visibleProjects.map((project, idx) => (
-            <article key={idx} className="grid gap-4 border-b border-neutral-300/70 dark:border-neutral-800 py-6 lg:grid-cols-[220px_1fr] lg:gap-8 last:border-b-0">
+            <article key={idx} className="grid gap-6 py-6 lg:grid-cols-[220px_1fr] lg:gap-8">
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-primary">
                   <project.icon className="h-4 w-4" />
@@ -78,11 +78,9 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3 text-sm text-text/65">
                   {project.tags.map((tag, tIdx) => (
-                    <span key={tIdx} className="rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/55 dark:bg-surface-dark/55 px-3 py-1 text-xs font-mono text-text/75 dark:text-text-dark/75">
-                      {tag}
-                    </span>
+                    <span key={tIdx} className="text-xs text-text/60">{tag}</span>
                   ))}
                 </div>
 

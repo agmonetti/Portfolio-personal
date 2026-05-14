@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
   const ThemeToggle = () => (
     <button
       onClick={toggleTheme}
-      className="inline-flex items-center justify-center h-10 w-10 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/90 dark:bg-black/80 text-text dark:text-text-dark hover:text-primary transition-colors"
+      className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-transparent text-text dark:text-text-dark hover:text-[var(--accent)] transition-colors"
       aria-label="Toggle theme"
     >
       {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
@@ -58,16 +58,16 @@ const Navbar: React.FC = () => {
 
   const Logo = () => (
     <Link to="/" className="inline-flex items-center gap-2 text-darker dark:text-text-dark group">
-      <Terminal className="h-5 w-5 text-primary" />
-      <span className="text-lg font-semibold tracking-tight group-hover:text-primary transition-colors">Agustín.dev</span>
+      <Terminal className="h-5 w-5 text-[var(--accent)]" />
+      <span className="text-lg font-semibold tracking-tight">Agustín.dev</span>
     </Link>
   );
 
   return (
     <>
-      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/90 dark:bg-background-dark/90 backdrop-blur-xl' : 'bg-background/80 dark:bg-background-dark/80 backdrop-blur-xl'}`}>
-        <div className="mx-auto flex w-full max-w-4xl flex-col items-center gap-3 px-4 py-3 sm:px-6">
-          <div className="flex w-full items-center justify-between gap-3 sm:justify-center sm:gap-10">
+      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/90 dark:bg-background-dark/90' : 'bg-background/80 dark:bg-background-dark/80'}`}>
+        <div className="mx-auto flex w-full max-w-4xl items-center gap-3 px-4 py-3 sm:px-6">
+          <div className="flex w-full items-center justify-center gap-6">
             <Logo />
 
             <div className="hidden md:flex items-center gap-2">
@@ -81,11 +81,10 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
-          <nav className="flex items-center justify-center gap-2 overflow-x-auto pb-1 text-sm whitespace-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <nav className="flex items-center justify-center gap-6 text-sm text-text/80">
             {navLinks.map((link) => {
               const active = isActive(link.href, link.external);
-              const className = `inline-flex items-center rounded-full px-3 py-1.5 transition-colors ${active ? 'bg-primary/10 text-primary' : 'text-text/75 dark:text-text-dark/75 hover:text-primary'}`;
-
+              const className = `${active ? 'font-semibold' : 'text-text/70'} px-2`;
               return link.external ? (
                 <a key={link.href} href={link.href} className={className}>
                   {link.name}
@@ -96,7 +95,6 @@ const Navbar: React.FC = () => {
                 </Link>
               );
             })}
-
           </nav>
         </div>
       </header>
