@@ -71,14 +71,28 @@ html.dark body {
   color: inherit;
 }
 
-/* subtle noise overlay - aesthetic elements: dots, lines, shapes */
+/* aesthetic background overlay - dots, accents, subtle movement */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><defs><pattern id='dots' x='0' y='0' width='120' height='120' patternUnits='userSpaceOnUse'><circle cx='15' cy='15' r='0.8' fill='%23666' fill-opacity='0.04'/><circle cx='60' cy='40' r='0.5' fill='%23666' fill-opacity='0.03'/><circle cx='85' cy='70' r='0.6' fill='%23666' fill-opacity='0.035'/><line x1='25' y1='20' x2='35' y2='28' stroke='%23666' stroke-width='0.3' stroke-opacity='0.015'/><polygon points='50,50 53,58 45,58' fill='%23666' fill-opacity='0.02'/><line x1='70' y1='15' x2='75' y2='25' stroke='%23666' stroke-width='0.3' stroke-opacity='0.015'/><circle cx='40' cy='85' r='0.7' fill='%23666' fill-opacity='0.04'/><line x1='10' y1='100' x2='20' y2='110' stroke='%23666' stroke-width='0.4' stroke-opacity='0.012'/><circle cx='100' cy='100' r='0.5' fill='%23666' fill-opacity='0.03'/></pattern></defs><rect width='120' height='120' fill='url(%23dots)'/></svg>");
-  opacity: 0.6;
+  background-image: 
+    radial-gradient(circle, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    radial-gradient(circle, rgba(15, 159, 110, 0.03) 0.5px, transparent 0.5px),
+    linear-gradient(45deg, rgba(15, 159, 110, 0.008) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(15, 159, 110, 0.008) 1px, transparent 1px);
+  background-size: 
+    80px 80px,
+    150px 150px,
+    100px 100px,
+    100px 100px;
+  background-position: 
+    0 0,
+    40px 40px,
+    0 0,
+    0 0;
+  opacity: 0.8;
   mix-blend-mode: normal;
   z-index: 0;
 }
