@@ -156,7 +156,7 @@ html.dark body::before {
 .section-divider {
   border: none;
   height: 1px;
-  margin: 4rem 0;
+  margin: 2.5rem 0;
   background-color: var(--border);
 }
 

@@ -9,11 +9,11 @@ const Experience: React.FC = () => {
   const freelanceTasks: string[] = t('experience.freelance.tasks') || [];
 
   return (
-    <section id="experience" className="py-12 sm:py-16">
-      <div className="mx-auto max-w-4xl pb-8 space-y-6">
+    <section id="experience" className="py-8 sm:py-10">
+      <div className="mx-auto max-w-4xl pb-4 space-y-5">
         <h2 className="text-2xl font-semibold tracking-tight text-darker dark:text-text-dark sm:text-3xl">{t('experience.title')}</h2>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           <article className="grid gap-4 py-4 md:grid-cols-[220px_1fr] md:gap-8">
             <div className="space-y-1">
               <h3 className="text-lg font-semibold text-darker dark:text-text-dark">{t('experience.freelance.role')}</h3>

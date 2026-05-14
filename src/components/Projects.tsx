@@ -56,8 +56,8 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
   const visibleProjects = typeof limit === 'number' ? projects.slice(0, limit) : projects;
 
   return (
-    <section id="projects" className="py-12 sm:py-16">
-      <div className="mx-auto max-w-4xl pb-10 space-y-6">
+    <section id="projects" className="py-8 sm:py-10">
+      <div className="mx-auto max-w-4xl pb-4 space-y-5">
         <h2 className="text-2xl font-semibold tracking-tight text-darker dark:text-text-dark sm:text-3xl">{t('projects.title')}</h2>
 
         <div className="border-t border-neutral-300/70 dark:border-neutral-800">
