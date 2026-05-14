@@ -10,7 +10,7 @@ const About: React.FC = () => {
     .filter((s: string) => s.length > 0);
 
   return (
-      <section className="mt-8 py-6" id="about">
+      <section className="mt-2 py-6" id="about">
       <div className="mx-auto max-w-4xl pb-10 space-y-8">
         <div className="space-y-3">
           <h2 className="text-2xl font-semibold tracking-tight text-darker dark:text-text-dark sm:text-3xl">{t('about.title')}</h2>
