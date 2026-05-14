@@ -36,8 +36,31 @@ html.dark body {
 }
 
 ::selection {
-  background: rgba(15, 159, 110, 0.16);
+  background: rgba(15, 159, 110, 0.12);
   color: inherit;
+}
+
+/* subtle noise overlay to add texture without competing */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'><circle cx='1' cy='1' r='0.5' fill='%23cfcfcf' fill-opacity='0.03'/></svg>");
+  opacity: 0.7;
+  mix-blend-mode: normal;
+  z-index: 0;
+}
+
+/* Section divider: thin typographic rule */
+.section-divider {
+  border: none;
+  height: 1px;
+  margin: 3.5rem 0;
+  background-color: rgba(0,0,0,0.06);
+}
+html.dark .section-divider {
+  background-color: rgba(255,255,255,0.04);
 }
 
 /* --- Scrollbar --- */

@@ -20,7 +20,7 @@ const About: React.FC = () => {
 
   return (
       <section className="mt-8 py-6" id="about">
-        <div className="mx-auto max-w-4xl border-b border-neutral-300/70 dark:border-neutral-800 pb-8 space-y-6">
+      <div className="mx-auto max-w-4xl pb-10 space-y-8">
         <div className="space-y-3">
           <h2 className="text-2xl font-semibold tracking-tight text-darker dark:text-text-dark sm:text-3xl">{t('about.title')}</h2>
           {Array.isArray(points) && points.length > 0 ? (
@@ -58,6 +58,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
+      <hr className="section-divider" />
     </section>
   );
 };

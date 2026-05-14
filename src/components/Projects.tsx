@@ -57,7 +57,7 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
 
   return (
     <section id="projects" className="py-12 sm:py-16">
-      <div className="mx-auto max-w-4xl border-b border-neutral-300/70 dark:border-neutral-800 pb-10 space-y-6">
+      <div className="mx-auto max-w-4xl pb-10 space-y-6">
         <h2 className="text-2xl font-semibold tracking-tight text-darker dark:text-text-dark sm:text-3xl">{t('projects.title')}</h2>
 
         <div className="border-t border-neutral-300/70 dark:border-neutral-800">
@@ -111,6 +111,7 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
           </div>
         )}
       </div>
+      <hr className="section-divider" />
     </section>
   );
 };
