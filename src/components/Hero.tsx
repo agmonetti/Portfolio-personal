@@ -1,151 +1,65 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { BadgeCheck, Mail, Github, Linkedin, FileText, MapPin } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
   
   return (
-    <section className="h-auto sm:min-h-screen flex items-center justify-center pt-24 pb-12 px-6 mt-16 mb-8 sm:my-0">
-      <div className="max-w-5xl w-full grid lg:grid-cols-2 gap-12 items-center">
-        <div className="flex flex-col gap-6 animate-fade-in-up"> 
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-xs font-mono text-primary font-medium">{t('hero.openToWork')}</span>
-          </div>
+    <section className="pt-4 pb-12 sm:pb-16">
+      <div className="mx-auto max-w-4xl space-y-8 border-b border-neutral-300/70 dark:border-neutral-800 pb-10">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-6">
+          <button className="group relative flex h-24 w-24 shrink-0 items-center justify-center rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white dark:bg-black shadow-[0_12px_30px_-24px_rgba(0,0,0,0.4)] transition-transform hover:-translate-y-0.5" aria-label="Avatar">
+            <span className="text-2xl font-bold tracking-[0.2em] text-darker dark:text-text-dark">AM</span>
+            <span className="absolute -bottom-1 -right-1 inline-flex h-8 w-8 items-center justify-center rounded-full border border-primary/20 bg-primary text-white shadow-[0_0_0_6px_rgba(15,159,110,0.14)]">
+              <BadgeCheck className="h-4 w-4" />
+            </span>
+          </button>
 
-          <div className="space-y-2">
-            <h2 className="text-xl md:text-2xl font-mono text-primary font-medium">{t('hero.greeting')}</h2>
-            <h1 className="text-5xl md:text-7xl font-bold text-darker dark:text-text-dark tracking-tight leading-none">
-              Agustín <br />
-              <span className="text-primary">Monetti</span>
-            </h1>
-          </div>
-
-          <h3 className="text-xl text-text/80 dark:text-text-dark/80 font-light max-w-lg border-l-2 border-primary/40 pl-4">
-            {t('hero.role')}
-          </h3>
-
-        </div>
-
-        {/* bloque derecho */}
-        <div className="relative w-full max-w-xl mx-auto lg:mr-0 hidden md:block">
-          <div className="relative bg-white dark:bg-surface-dark border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-sm dark:shadow-lg overflow-hidden font-mono text-sm md:text-base">
-            <div className="flex items-center justify-between px-4 py-3 bg-surface dark:bg-surface-dark/80 border-b border-neutral-200 dark:border-neutral-700">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-              </div>
-              <div className="text-xs text-slate-500">softwareEngineer.java</div>
-              <div className="w-10"></div> 
+          <div className="flex-1 space-y-4">
+            <div className="space-y-2">
+              <h1 className="flex flex-wrap items-center gap-3 text-4xl font-semibold tracking-tight text-darker dark:text-text-dark sm:flex-nowrap sm:text-5xl">
+                Agustín Monetti
+                <span className="inline-flex shrink-0 items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-mono uppercase tracking-[0.28em] text-primary whitespace-nowrap">
+                  <BadgeCheck className="h-3.5 w-3.5" />
+                  {t('hero.openToWork')}
+                </span>
+              </h1>
+              <p className="max-w-2xl text-lg text-text/75 dark:text-text-dark/75">
+                {t('hero.role')}
+              </p>
             </div>
 
-            <div className="p-6 overflow-x-auto text-slate-800 dark:text-slate-200 leading-relaxed">
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">1</span>
-                <div>
-                  <span className="text-purple-400">public class</span>{" "}
-                  <span className="text-yellow-300">softwareEngineer</span> {"{"}
-                </div>
-              </div>
+            <p className="max-w-2xl text-sm leading-7 text-text/80 dark:text-text-dark/80 sm:text-base">
+              Hola, soy un apasionado por la tecnología, combinando mi experiencia como especialista en Soporte IT con mis estudios en Ingeniería en Informática. Me enfoco en resolver problemas complejos y aprender constantemente nuevas tecnologías para construir soluciones simples y eficientes.
+            </p>
 
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">3</span>
-                <div className="pl-4">
-                  <span className="text-purple-400">private</span>{" "}
-                  <span className="text-blue-400">String</span> name;
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">4</span>
-                <div className="pl-4">
-                  <span className="text-purple-400">private</span>{" "}
-                  <span className="text-blue-400">int</span> age;
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">5</span>
-                <div></div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">6</span>
-                <div className="pl-4">
-                  <span className="text-purple-400">public</span>{" "}
-                  <span className="text-yellow-300">softwareEngineer</span>()
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">7</span>
-                <div className="pl-8">
-                  <span className="text-purple-400">this</span>.name = Agustin Monetti;
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">8</span>
-                <div className="pl-8">
-                  <span className="text-purple-400">this</span>.age = 22;
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">9</span>
-                <div className="pl-4">{"}"}</div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">10</span>
-                <div></div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">11</span>
-                <div className="pl-4">
-                  <span className="text-purple-400">public</span>{" "}
-                  <span className="text-blue-400">String[]</span> getSkills() {"{"}
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">12</span>
-                <div className="pl-8">
-                  <span className="text-purple-400">return</span>{" "}
-                  <span className="text-purple-400">new</span>{" "}
-                  <span className="text-blue-400">String[]</span> {"{"}
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">13</span>
-                <div className="pl-12">
-                  <span className="text-green-400">"Python"</span>,{" "}
-                  <span className="text-green-400">"Java"</span>,{" "}
-                  <span className="text-green-400">"Docker"</span>,{" "}
-                  <span className="text-green-400">"GCP"</span>,{" "}
-                  <span className="text-green-400">"Linux"</span>
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">14</span>
-                <div className="pl-8">{"};"}</div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">15</span>
-                <div className="pl-4">{"}"}</div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">16</span>
-                <div>{"}"}</div>
-              </div>
+            <div className="flex flex-wrap gap-2 pt-2 text-sm text-text/70 dark:text-text-dark/70">
+              <span className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/60 dark:bg-black/60 px-3 py-1.5">
+                <MapPin className="h-3.5 w-3.5 text-primary" /> Buenos Aires, Argentina
+              </span>
             </div>
 
+            <div className="flex flex-wrap gap-2 pt-2">
+              <a href="/#about" className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/15">
+                Sobre mí
+              </a>
+              <a href="/#projects" className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/60 dark:bg-surface-dark/60 px-4 py-2 text-sm font-medium text-text dark:text-text-dark transition-colors hover:border-primary/30 hover:text-primary">
+                Proyectos
+              </a>
+              <a href="mailto:agus.monetti01@gmail.com" className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/60 dark:bg-surface-dark/60 px-4 py-2 text-sm font-medium text-text dark:text-text-dark transition-colors hover:border-primary/30 hover:text-primary">
+                <Mail className="h-4 w-4" /> Mail
+              </a>
+              <a href="https://github.com/agmonetti" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/60 dark:bg-surface-dark/60 px-4 py-2 text-sm font-medium text-text dark:text-text-dark transition-colors hover:border-primary/30 hover:text-primary">
+                <Github className="h-4 w-4" /> GitHub
+              </a>
+              <a href="https://linkedin.com/in/agustin-monetti" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/60 dark:bg-surface-dark/60 px-4 py-2 text-sm font-medium text-text dark:text-text-dark transition-colors hover:border-primary/30 hover:text-primary">
+                <Linkedin className="h-4 w-4" /> LinkedIn
+              </a>
+              <a href="/resume" className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/60 dark:bg-black/60 px-4 py-2 text-sm font-medium text-text dark:text-text-dark transition-colors hover:border-primary/30 hover:text-primary">
+                <FileText className="h-4 w-4" /> CV
+              </a>
+            </div>
           </div>
         </div>
       </div>

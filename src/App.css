@@ -2,38 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* --- Estilos base y Scrollbar --- */
+/* --- Base visual --- */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #ffffff;
+  background-color: #f8f8f6;
+  background-image:
+    linear-gradient(rgba(17, 24, 39, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 24, 39, 0.02) 1px, transparent 1px),
+    radial-gradient(circle at top, rgba(15, 159, 110, 0.035), transparent 28%);
+  background-size: 160px 160px, 160px 160px, 100% 100%;
+  background-position: center top;
   color: #111827;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
 }
 
 html.dark body {
-  background-color: #0b0b0b;
-  color: #f0f0f0;
+  background-color: #090909;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    radial-gradient(circle at top, rgba(15, 159, 110, 0.09), transparent 28%);
+  background-size: 160px 160px, 160px 160px, 100% 100%;
+  color: #f3f3f0;
 }
 
-/* Custom Scrollbar - Light Mode */
+::selection {
+  background: rgba(15, 159, 110, 0.16);
+  color: inherit;
+}
+
+/* --- Scrollbar --- */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f2f2f2;
+  background: #eceae5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c5c5c5;
+  background: #c9c3b9;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #0f9f6e;
 }
 
-/* Custom Scrollbar - Dark Mode */
 html.dark ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: #141414;
 }
 html.dark ::-webkit-scrollbar-thumb {
-  background: #404040;
+  background: #4c4c4c;
   border-radius: 4px;
 }
 html.dark ::-webkit-scrollbar-thumb:hover {

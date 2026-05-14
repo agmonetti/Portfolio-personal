@@ -1,9 +1,13 @@
 import React from 'react';
-import { Code, Bot, LayoutGrid, ShieldCheck, Server, Laptop } from 'lucide-react';
+import { Code, Bot, LayoutGrid, ShieldCheck, Server, Laptop, ArrowUpRight } from 'lucide-react';
 import { Project } from '../types';
 import { useLanguage } from '../contexts/LanguageContext'; 
 
-const Projects: React.FC = () => {
+interface ProjectsProps {
+  limit?: number;
+}
+
+const Projects: React.FC<ProjectsProps> = ({ limit }) => {
   // funcion traductura tomada del context
   const { t } = useLanguage();
 
@@ -49,31 +53,37 @@ const Projects: React.FC = () => {
       color: "from-emerald-900/40"
     }
   ];
-  return (
-    <section id="projects" className="pt-24 pb-16 px-6">
-      <div className="max-w-5xl mx-auto space-y-8">
-        <div className="flex items-center gap-3">
-          <h2 className="text-3xl font-bold text-darker dark:text-text-dark">{t('projects.title')}</h2>
-        </div>
+  const visibleProjects = typeof limit === 'number' ? projects.slice(0, limit) : projects;
 
-        <div className="space-y-6">
-          {projects.map((project, idx) => (
-            <article 
-              key={idx}
-              className="border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 bg-white dark:bg-surface-dark shadow-[0_10px_30px_-24px_rgba(0,0,0,0.25)] dark:shadow-[0_10px_30px_-24px_rgba(15,159,110,0.1)]"
-            >
-              <div className="flex justify-between items-start gap-4">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-primary">
-                    <project.icon className="w-5 h-5" />
-                    <span className="text-xs font-mono uppercase tracking-wide">{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-darker dark:text-text-dark" title={project.title}>
-                    {project.title}
-                  </h3>
-                  <p className="text-text/80 dark:text-text-dark/80 text-sm leading-relaxed">
-                    {project.description}
-                  </p>
+  return (
+    <section id="projects" className="py-12 sm:py-16">
+      <div className="mx-auto max-w-4xl border-b border-neutral-300/70 dark:border-neutral-800 pb-10 space-y-6">
+        <h2 className="text-2xl font-semibold tracking-tight text-darker dark:text-text-dark sm:text-3xl">{t('projects.title')}</h2>
+
+        <div className="border-t border-neutral-300/70 dark:border-neutral-800">
+          {visibleProjects.map((project, idx) => (
+            <article key={idx} className="grid gap-4 border-b border-neutral-300/70 dark:border-neutral-800 py-6 lg:grid-cols-[220px_1fr] lg:gap-8 last:border-b-0">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-primary">
+                  <project.icon className="h-4 w-4" />
+                  <span className="text-xs font-mono uppercase tracking-[0.3em] text-text/55 dark:text-text-dark/55">{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}</span>
+                </div>
+                <h3 className="text-lg font-semibold text-darker dark:text-text-dark" title={project.title}>
+                  {project.title}
+                </h3>
+              </div>
+
+              <div className="space-y-4">
+                <p className="max-w-3xl text-sm leading-7 text-text/85 dark:text-text-dark/85 sm:text-base">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag, tIdx) => (
+                    <span key={tIdx} className="rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/55 dark:bg-surface-dark/55 px-3 py-1 text-xs font-mono text-text/75 dark:text-text-dark/75">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
 
                 {project.links.code && (
@@ -81,24 +91,27 @@ const Projects: React.FC = () => {
                     href={project.links.code} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-text dark:text-text-dark hover:text-primary transition-colors" 
+                    className="inline-flex items-center gap-2 text-sm font-medium text-text dark:text-text-dark transition-colors hover:text-primary"
                     title="View Source"
                   >
-                    <Code size={18} />
+                    <Code className="h-4 w-4" />
+                    Ver código
+                    <ArrowUpRight className="h-4 w-4" />
                   </a>
                 )}
-              </div>
-
-              <div className="flex flex-wrap gap-2 mt-4">
-                {project.tags.map((tag, tIdx) => (
-                  <span key={tIdx} className="text-xs font-mono px-3 py-1 rounded-full border border-neutral-200 dark:border-neutral-700 text-text/80 dark:text-text-dark/80">
-                    {tag}
-                  </span>
-                ))}
               </div>
             </article>
           ))}
         </div>
+
+        {typeof limit === 'number' && projects.length > limit && (
+          <div className="pt-2">
+            <a href="/projects" className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/55 dark:bg-surface-dark/55 px-4 py-2 text-sm font-medium text-text dark:text-text-dark transition-colors hover:border-primary/30 hover:text-primary">
+              Ver todos los proyectos
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

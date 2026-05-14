@@ -19,39 +19,39 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 px-6" id="about">
-      <div className="max-w-5xl mx-auto border-t border-neutral-200 dark:border-neutral-700 pt-10 space-y-8">
-        <div>
-          <h1 className="text-3xl font-bold text-darker dark:text-text-dark mb-6">{t('about.title')}</h1>
+    <section className="mt-16 py-10 sm:mt-20 sm:py-12" id="about">
+      <div className="mx-auto max-w-4xl border-b border-neutral-300/70 dark:border-neutral-800 pb-8 space-y-6">
+        <div className="space-y-3">
+          <h2 className="text-2xl font-semibold tracking-tight text-darker dark:text-text-dark sm:text-3xl">{t('about.title')}</h2>
           {Array.isArray(points) && points.length > 0 ? (
-            <ul className="space-y-3 text-text/90 dark:text-text-dark/90 leading-relaxed">
+            <ul className="space-y-3 text-sm leading-7 text-text/85 dark:text-text-dark/85 sm:text-base">
               {points.map((point: string, idx: number) => (
                 <li key={idx} className="flex gap-3">
-                  <span className="mt-2 h-2 w-2 rounded-full bg-primary/70 inline-flex"></span>
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                   <span>{point}</span>
                 </li>
               ))}
             </ul>
           ) : (
-            <p className="text-lg text-text/90 dark:text-text-dark/90 leading-relaxed">{body}</p>
+            <p className="max-w-3xl text-sm leading-7 text-text/85 dark:text-text-dark/85 sm:text-base">{body}</p>
           )}
         </div>
 
-        <div className="space-y-3">
-          <h2 className="text-xl font-semibold text-darker dark:text-text-dark">{t('contact.title')}</h2>
-          <div className="flex flex-wrap gap-3">
+        <div className="space-y-3 pt-2">
+          <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-text/45 dark:text-text-dark/45">{t('contact.title')}</h3>
+          <div className="flex flex-wrap gap-2">
             {contacts.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full border border-neutral-200 dark:border-neutral-700 text-text dark:text-text-dark hover:border-primary hover:text-primary transition-colors shadow-[0_6px_18px_-14px_rgba(0,0,0,0.35)] dark:shadow-[0_6px_18px_-14px_rgba(15,159,110,0.15)]"
+                className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/55 dark:bg-black/55 px-3.5 py-2 text-sm font-medium text-text dark:text-text-dark transition-colors hover:border-primary/30 hover:text-primary"
                 target={item.href.startsWith('http') ? '_blank' : undefined}
                 rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 title={item.title}
                 aria-label={item.title || item.label}
               >
-                <item.icon className="w-4 h-4" />
-                <span className="text-sm font-medium">{item.label}</span>
+                <item.icon className="h-4 w-4" />
+                <span>{item.label}</span>
               </a>
             ))}
           </div>

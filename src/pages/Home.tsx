@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import Arsenal from '../components/Arsenal';
 import Experience from '../components/Experience';
+import Projects from '../components/Projects';
 import About from '../pages/About';
 
 const Home: React.FC = () => {
@@ -10,7 +10,7 @@ const Home: React.FC = () => {
       <Hero />
       <About />
       <Experience />
-      <Arsenal />
+      <Projects limit={3} />
 
     </>
   );

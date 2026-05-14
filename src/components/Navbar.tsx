@@ -21,143 +21,85 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { name: t('navbar.home'), href: '/', external: false },
     { name: t('navbar.projects'), href: '/projects', external: false },
-    { name: 'Curriculum', href: '/resume', external: false }
+    { name: t('navbar.resume'), href: '/resume', external: false },
   ];
 
-  const LanguageToggle = () => (
-    <div className="flex items-center gap-2 bg-surface dark:bg-surface-dark border border-neutral-200 dark:border-neutral-700 rounded-full px-3 py-1 text-xs font-mono">
-      <button
-        onClick={() => setLanguage('es')}
-        className={`transition-colors duration-200 ${language === 'es' ? 'text-primary font-bold' : 'text-text dark:text-text-dark hover:text-primary'}`}
-      >
-        ES
-      </button>
-      <span className="text-text/40 dark:text-text-dark/40 select-none">|</span>
-      <button
-        onClick={() => setLanguage('en')}
-        className={`transition-colors duration-200 ${language === 'en' ? 'text-primary font-bold' : 'text-text dark:text-text-dark hover:text-primary'}`}
-      >
-        EN
-      </button>
-    </div>
-  );
+  const isActive = (href: string, external: boolean) => {
+    if (external) return false;
+    return location.pathname === href;
+  };
 
   const ThemeToggle = () => (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full bg-surface dark:bg-surface-dark border border-neutral-200 dark:border-neutral-700 text-text dark:text-text-dark hover:text-primary transition-colors"
+      className="inline-flex items-center justify-center h-10 w-10 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/90 dark:bg-black/80 text-text dark:text-text-dark hover:text-primary transition-colors"
       aria-label="Toggle theme"
     >
       {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
     </button>
   );
 
+  const LanguageToggle = () => (
+    <div className="inline-flex items-center gap-1 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/90 dark:bg-black/80 px-2 py-1 text-[11px] font-mono">
+      <button
+        onClick={() => setLanguage('es')}
+        className={`rounded-full px-2 py-1 transition-colors ${language === 'es' ? 'bg-primary/10 text-primary' : 'text-text/70 dark:text-text-dark/70 hover:text-primary'}`}
+      >
+        ES
+      </button>
+      <button
+        onClick={() => setLanguage('en')}
+        className={`rounded-full px-2 py-1 transition-colors ${language === 'en' ? 'bg-primary/10 text-primary' : 'text-text/70 dark:text-text-dark/70 hover:text-primary'}`}
+      >
+        EN
+      </button>
+    </div>
+  );
+
+  const Logo = () => (
+    <Link to="/" className="inline-flex items-center gap-2 text-darker dark:text-text-dark group">
+      <Terminal className="h-5 w-5 text-primary" />
+      <span className="text-lg font-semibold tracking-tight group-hover:text-primary transition-colors">Agustín.dev</span>
+    </Link>
+  );
+
   return (
     <>
-      {/*desktop*/}
-      <nav className={`hidden md:block fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-background/95 dark:bg-background-dark/95 backdrop-blur border-b border-neutral-200 dark:border-neutral-700 shadow-sm' : 'bg-background dark:bg-background-dark'}`}>
-        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2 group">
-            <Terminal className="text-primary w-5 h-5" />
-            <span className="font-semibold text-lg text-darker dark:text-text-dark tracking-tight group-hover:text-primary transition-colors">Agustín.dev</span>
-          </Link>
+      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/90 dark:bg-background-dark/90 backdrop-blur-xl' : 'bg-background/80 dark:bg-background-dark/80 backdrop-blur-xl'}`}>
+        <div className="mx-auto flex w-full max-w-4xl flex-col items-center gap-3 px-4 py-3 sm:px-6">
+          <div className="flex w-full items-center justify-between gap-3 sm:justify-center sm:gap-10">
+            <Logo />
 
-          <div className="flex items-center gap-6">
-            {navLinks.map((link) => (
-              link.external ? (
-                <a 
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm font-medium text-text dark:text-text-dark hover:text-primary transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+            <div className="hidden md:flex items-center gap-2">
+              <ThemeToggle />
+              <LanguageToggle />
+            </div>
+
+            <div className="flex items-center gap-2 md:hidden">
+              <ThemeToggle />
+              <LanguageToggle />
+            </div>
+          </div>
+
+          <nav className="flex items-center justify-center gap-2 overflow-x-auto pb-1 text-sm whitespace-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {navLinks.map((link) => {
+              const active = isActive(link.href, link.external);
+              const className = `inline-flex items-center rounded-full px-3 py-1.5 transition-colors ${active ? 'bg-primary/10 text-primary' : 'text-text/75 dark:text-text-dark/75 hover:text-primary'}`;
+
+              return link.external ? (
+                <a key={link.href} href={link.href} className={className}>
                   {link.name}
                 </a>
               ) : (
-                <Link 
-                  key={link.href}
-                  to={link.href}
-                  className={`text-sm font-medium transition-colors ${location.pathname === link.href ? 'text-primary' : 'text-text dark:text-text-dark hover:text-primary'}`}
-                >
+                <Link key={link.href} to={link.href} className={className}>
                   {link.name}
                 </Link>
-              )
-            ))}
-            
-            <ThemeToggle />
-            <LanguageToggle />
+              );
+            })}
 
-            <a 
-              href="/#about" 
-              className="border border-primary text-primary px-4 py-2 rounded text-sm font-medium hover:bg-primary hover:text-white transition-all"
-            >
-              {t('navbar.contact')}
-            </a>
-          </div>
+          </nav>
         </div>
-      </nav>
-
-      {/*mobile*/}
- <div className="md:hidden fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-sm">
-        <nav className="flex justify-evenly items-center bg-background/95 dark:bg-background-dark/95 backdrop-blur-xl border border-neutral-200 dark:border-neutral-700 shadow-[0_8px_32px_-4px_rgba(0,0,0,0.1)] rounded-full px-3 py-3">
-          
-          {navLinks.map((link) => {
-            const isActive = location.pathname === link.href;
-            // Para que no se rompa en celulares chicos, mostramos "CV" en lugar de "Curriculum"
-            const displayName = link.name === 'Curriculum' ? 'CV' : link.name;
-            
-            return link.external ? (
-              <a 
-                key={link.href} 
-                href={link.href} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={`px-2 py-1 text-xs sm:text-sm font-medium transition-colors ${isActive ? 'text-primary' : 'text-text/70 dark:text-text-dark/70 hover:text-primary'}`}
-              >
-                {displayName}
-              </a>
-            ) : (
-              <Link 
-                key={link.href} 
-                to={link.href} 
-                className={`px-2 py-1 text-xs sm:text-sm font-medium transition-colors ${isActive ? 'text-primary' : 'text-text/70 dark:text-text-dark/70 hover:text-primary'}`}
-              >
-                {displayName}
-              </Link>
-            );
-          })}
-          
-          <div className="w-px h-5 bg-neutral-200 dark:bg-neutral-700 mx-1"></div>
-          
-          {/* Toggle Tema Mobile Compacto */}
-          <button
-            onClick={toggleTheme}
-            className="p-1.5 rounded-full text-text dark:text-text-dark hover:text-primary transition-colors"
-            aria-label="Toggle theme"
-          >
-            {theme === 'light' ? <Moon className="w-3 h-3" /> : <Sun className="w-3 h-3" />}
-          </button>
-          
-          {/* Toggle Idioma Mobile Compacto */}
-          <div className="flex items-center gap-1 bg-surface dark:bg-surface-dark rounded-full px-2 py-1 text-[10px] sm:text-xs font-mono border border-neutral-200 dark:border-neutral-700">
-            <button 
-              onClick={() => setLanguage('es')} 
-              className={`${language === 'es' ? 'text-primary font-bold' : 'text-text/60 dark:text-text-dark/60'}`}
-            >
-              ES
-            </button>
-            <span className="text-text/30 dark:text-text-dark/30">|</span>
-            <button 
-              onClick={() => setLanguage('en')} 
-              className={`${language === 'en' ? 'text-primary font-bold' : 'text-text/60 dark:text-text-dark/60'}`}
-            >
-              EN
-            </button>
-          </div>
-
-        </nav>
-      </div>
+      </header>
     </>
   );
 };

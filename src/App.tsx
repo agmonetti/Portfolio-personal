@@ -11,9 +11,9 @@ const App: React.FC = () => {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <div className="bg-background dark:bg-background-dark text-text dark:text-text-dark font-sans antialiased selection:bg-primary/15 selection:text-darker dark:selection:text-text-dark min-h-screen transition-colors duration-300">
+        <div className="min-h-screen bg-transparent text-text dark:text-text-dark font-sans antialiased selection:bg-primary/15 selection:text-darker dark:selection:text-text-dark transition-colors duration-300">
           <Navbar />
-          <main className="max-w-5xl mx-auto px-6">
+          <main className="relative z-10 mx-auto w-full max-w-4xl px-4 pt-24 pb-20 sm:px-6">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<ProjectsPage />} />

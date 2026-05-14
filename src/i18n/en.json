@@ -2,8 +2,7 @@
   "navbar": {
     "projects": "Projects",
     "technologies": "Technologies",
-    "experience": "Experience",
-    "contact": "Connect",
+    "resume": "Resume",
     "home": "Home",
     "about": "About"
   },
