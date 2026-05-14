@@ -19,8 +19,8 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section className="mt-16 py-10 sm:mt-20 sm:py-12" id="about">
-      <div className="mx-auto max-w-4xl border-b border-neutral-300/70 dark:border-neutral-800 pb-8 space-y-6">
+      <section className="mt-8 py-6" id="about">
+        <div className="mx-auto max-w-4xl border-b border-neutral-300/70 dark:border-neutral-800 pb-8 space-y-6">
         <div className="space-y-3">
           <h2 className="text-2xl font-semibold tracking-tight text-darker dark:text-text-dark sm:text-3xl">{t('about.title')}</h2>
           {Array.isArray(points) && points.length > 0 ? (
@@ -39,7 +39,7 @@ const About: React.FC = () => {
 
         <div className="space-y-3 pt-4">
           <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-text/45 dark:text-text-dark/45">{t('contact.title')}</h3>
-          <div className="flex flex-wrap gap-4 text-sm text-text/80">
+          <div className="flex flex-wrap gap-4 text-sm">
             {contacts.map((item, idx) => (
               <React.Fragment key={item.label}>
                 <a
@@ -48,11 +48,11 @@ const About: React.FC = () => {
                   rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   title={item.title}
                   aria-label={item.title || item.label}
-                  className="hover:underline"
+                  className="hover:underline text-text/80 dark:text-text-dark/80"
                 >
                   {item.label}
                 </a>
-                {idx < contacts.length - 1 && <span className="text-text/40">·</span>}
+                {idx < contacts.length - 1 && <span className="text-text/40 dark:text-text-dark/40">·</span>}
               </React.Fragment>
             ))}
           </div>

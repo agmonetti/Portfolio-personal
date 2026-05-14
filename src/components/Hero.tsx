@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { BadgeCheck, Mail, Github, Linkedin, FileText, MapPin } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
+  const [visits, setVisits] = useState<number | null>(null);
+
+  useEffect(() => {
+    try {
+      const key = 'portfolio_visits_v1';
+      const raw = localStorage.getItem(key);
+      const n = raw ? parseInt(raw, 10) : 0;
+      const next = n + 1;
+      localStorage.setItem(key, String(next));
+      setVisits(next);
+    } catch (e) {
+      setVisits(null);
+    }
+  }, []);
   
   return (
   <section className="pt-20 pb-12 sm:pb-16">
@@ -25,14 +39,9 @@ const Hero: React.FC = () => {
               </p>
             </div>
 
-            <p className="max-w-2xl text-sm leading-7 text-text/80 dark:text-text-dark/80 sm:text-base">
-              Hola, soy un apasionado por la tecnología, combinando mi experiencia como especialista en Soporte IT con mis estudios en Ingeniería en Informática. Me enfoco en resolver problemas complejos y aprender constantemente nuevas tecnologías para construir soluciones simples y eficientes.
-            </p>
 
             <div className="pt-4">
               <nav className="text-sm text-text/80 dark:text-text-dark/80 flex flex-wrap items-center gap-4">
-                <a href="/#about" className="hover:underline">Sobre mí</a>
-                <span className="text-text/40">·</span>
                 <a href="/#projects" className="hover:underline">Proyectos</a>
                 <span className="text-text/40">·</span>
                 <a href="mailto:agus.monetti01@gmail.com" className="hover:underline">Mail</a>
@@ -44,6 +53,9 @@ const Hero: React.FC = () => {
                 <a href="/resume" className="hover:underline">Resume</a>
               </nav>
             </div>
+            {visits !== null && (
+              <div className="mt-3 text-xs text-gray-600 dark:text-gray-400">Visitas locales: {visits}</div>
+            )}
           </div>
         </div>
       </div>

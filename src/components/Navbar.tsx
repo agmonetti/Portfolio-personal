@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
   const ThemeToggle = () => (
     <button
       onClick={toggleTheme}
-      className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-transparent text-text dark:text-text-dark hover:text-[var(--accent)] transition-colors"
+      className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-transparent text-text dark:text-text-dark hover:text-[var(--accent)] transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800"
       aria-label="Toggle theme"
     >
       {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
@@ -43,13 +43,17 @@ const Navbar: React.FC = () => {
     <div className="inline-flex items-center gap-1 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/90 dark:bg-black/80 px-2 py-1 text-[11px] font-mono">
       <button
         onClick={() => setLanguage('es')}
-        className={`rounded-full px-2 py-1 transition-colors ${language === 'es' ? 'bg-primary/10 text-primary' : 'text-text/70 dark:text-text-dark/70 hover:text-primary'}`}
+        className={`rounded-full px-2 py-1 transition-colors ${language === 'es' ? 'font-semibold text-[var(--accent)]' : 'text-text/70 dark:text-text-dark/70 hover:text-[var(--accent)]'}`}
+        aria-label="ES"
+        title="ES"
       >
         ES
       </button>
       <button
         onClick={() => setLanguage('en')}
-        className={`rounded-full px-2 py-1 transition-colors ${language === 'en' ? 'bg-primary/10 text-primary' : 'text-text/70 dark:text-text-dark/70 hover:text-primary'}`}
+        className={`rounded-full px-2 py-1 transition-colors ${language === 'en' ? 'font-semibold text-[var(--accent)]' : 'text-text/70 dark:text-text-dark/70 hover:text-[var(--accent)]'}`}
+        aria-label="EN"
+        title="EN"
       >
         EN
       </button>
