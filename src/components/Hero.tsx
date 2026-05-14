@@ -1,23 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { BadgeCheck, Mail, Github, Linkedin, FileText, MapPin } from 'lucide-react';
+import { BadgeCheck, Mail, Github, Linkedin, FileText } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
-  const [visits, setVisits] = useState<number | null>(null);
-
-  useEffect(() => {
-    try {
-      const key = 'portfolio_visits_v1';
-      const raw = localStorage.getItem(key);
-      const n = raw ? parseInt(raw, 10) : 0;
-      const next = n + 1;
-      localStorage.setItem(key, String(next));
-      setVisits(next);
-    } catch (e) {
-      setVisits(null);
-    }
-  }, []);
   
   return (
   <section className="pt-20 pb-12 sm:pb-16">
@@ -39,23 +25,27 @@ const Hero: React.FC = () => {
               </p>
             </div>
 
-
-            <div className="pt-4">
-              <nav className="text-sm text-text/80 dark:text-text-dark/80 flex flex-wrap items-center gap-4">
-                <a href="/#projects" className="hover:underline">Proyectos</a>
-                <span className="text-text/40">·</span>
-                <a href="mailto:agus.monetti01@gmail.com" className="hover:underline">Mail</a>
-                <span className="text-text/40">·</span>
-                <a href="https://github.com/agmonetti" target="_blank" rel="noopener noreferrer" className="hover:underline">GitHub</a>
-                <span className="text-text/40">·</span>
-                <a href="https://linkedin.com/in/agustin-monetti" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
-                <span className="text-text/40">·</span>
-                <a href="/resume" className="hover:underline">Resume</a>
-              </nav>
+            <div className="pt-6 border-t border-neutral-200 dark:border-neutral-800">
+              <p className="text-xs tracking-widest text-text/50 dark:text-text-dark/50 mb-4">CONNECT</p>
+              <div className="flex flex-wrap gap-2">
+                <a href="https://github.com/agmonetti" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-neutral-300/60 dark:border-neutral-700 text-sm text-text/80 dark:text-text-dark/80 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors">
+                  <Github className="h-4 w-4" />
+                  GitHub
+                </a>
+                <a href="https://linkedin.com/in/agustin-monetti" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-neutral-300/60 dark:border-neutral-700 text-sm text-text/80 dark:text-text-dark/80 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors">
+                  <Linkedin className="h-4 w-4" />
+                  LinkedIn
+                </a>
+                <a href="mailto:agus.monetti01@gmail.com" className="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-neutral-300/60 dark:border-neutral-700 text-sm text-text/80 dark:text-text-dark/80 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors">
+                  <Mail className="h-4 w-4" />
+                  Mail
+                </a>
+                <a href="/resume" className="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-neutral-300/60 dark:border-neutral-700 text-sm text-text/80 dark:text-text-dark/80 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors">
+                  <FileText className="h-4 w-4" />
+                  Resume
+                </a>
+              </div>
             </div>
-            {visits !== null && (
-              <div className="mt-3 text-xs text-gray-600 dark:text-gray-400">Visitas locales: {visits}</div>
-            )}
           </div>
         </div>
       </div>
