@@ -3,8 +3,7 @@
   "navbar": {
     "projects": "Proyectos",
     "technologies": "Tecnologías",
-    "experience": "Experiencia",
-    "contact": "Contacto",
+    "resume": "Curriculum",
     "home": "Inicio",
     "about": "Sobre mí"
   },
@@ -52,7 +51,7 @@
     "title": "Experiencia",
     "freelance": {
       "role": "Soporte IT Freelance",
-      "date": "2021 - Presente",
+      "date": "2022 - Presente",
       "company": "Freelance",
       "tasks": [
         "Diagnóstico y resolución de problemas complejos de hardware y software.",
@@ -73,7 +72,9 @@
   },
   "footer": {
     "downloadCv": "Descargar CV",
-    "cv": "/cv-es.pdf"
+    "cv": "/cv-es.pdf",
+    "copyright": "© 2026 Agustín Monetti",
+    "builtWith": "Hecho con IA y mucha imaginación "
   },
   "resume": {
     "title": "Curriculum",

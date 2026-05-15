@@ -1,151 +1,55 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { BadgeCheck, Mail, Github, Linkedin, FileText } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
   
   return (
-    <section className="h-auto sm:min-h-screen flex items-center justify-center pt-24 pb-12 px-6 mt-16 mb-8 sm:my-0">
-      <div className="max-w-5xl w-full grid lg:grid-cols-2 gap-12 items-center">
-        <div className="flex flex-col gap-6 animate-fade-in-up"> 
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-xs font-mono text-primary font-medium">{t('hero.openToWork')}</span>
-          </div>
+    <section className="w-full" id="hero">
+      <div className="mx-auto max-w-4xl px-6 py-5 lg:px-10 border-x border-b border-neutral-300/70 dark:border-neutral-800 bg-diagonal">
+        <h1 className="text-3xl heading-display text-darker dark:text-text-dark sm:text-4xl">
+          Agustín Monetti
+        </h1>
+      </div>
 
-          <div className="space-y-2">
-            <h2 className="text-xl md:text-2xl font-mono text-primary font-medium">{t('hero.greeting')}</h2>
-            <h1 className="text-5xl md:text-7xl font-bold text-darker dark:text-text-dark tracking-tight leading-none">
-              Agustín <br />
-              <span className="text-primary">Monetti</span>
-            </h1>
-          </div>
+      <div className="mx-auto max-w-4xl px-6 py-8 lg:px-10 border-x border-b border-neutral-300/70 dark:border-neutral-800 bg-white dark:bg-[#0a0a0a]">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-6">
+          <button className="group relative flex h-24 w-24 shrink-0 items-center justify-center rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white dark:bg-black shadow-[0_12px_30px_-24px_rgba(0,0,0,0.4)] transition-transform hover:-translate-y-0.5" aria-label="Avatar">
+            <span className="text-2xl font-bold tracking-[0.2em] text-darker dark:text-text-dark">AM</span>
+            <span className="absolute -bottom-1 -right-1 inline-flex h-8 w-8 items-center justify-center rounded-full border border-primary/20 bg-primary text-white shadow-[0_0_0_6px_rgba(15,159,110,0.14)]">
+              <BadgeCheck className="h-4 w-4" />
+            </span>
+          </button>
 
-          <h3 className="text-xl text-text/80 dark:text-text-dark/80 font-light max-w-lg border-l-2 border-primary/40 pl-4">
-            {t('hero.role')}
-          </h3>
-
-        </div>
-
-        {/* bloque derecho */}
-        <div className="relative w-full max-w-xl mx-auto lg:mr-0 hidden md:block">
-          <div className="relative bg-white dark:bg-surface-dark border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-sm dark:shadow-lg overflow-hidden font-mono text-sm md:text-base">
-            <div className="flex items-center justify-between px-4 py-3 bg-surface dark:bg-surface-dark/80 border-b border-neutral-200 dark:border-neutral-700">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-              </div>
-              <div className="text-xs text-slate-500">softwareEngineer.java</div>
-              <div className="w-10"></div> 
+          <div className="flex-1 space-y-4">
+            <div className="space-y-2">
+              <p className="max-w-2xl text-lg text-text/75 dark:text-text-dark/75">
+                {t('hero.role')}
+              </p>
             </div>
 
-            <div className="p-6 overflow-x-auto text-slate-800 dark:text-slate-200 leading-relaxed">
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">1</span>
-                <div>
-                  <span className="text-purple-400">public class</span>{" "}
-                  <span className="text-yellow-300">softwareEngineer</span> {"{"}
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">3</span>
-                <div className="pl-4">
-                  <span className="text-purple-400">private</span>{" "}
-                  <span className="text-blue-400">String</span> name;
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">4</span>
-                <div className="pl-4">
-                  <span className="text-purple-400">private</span>{" "}
-                  <span className="text-blue-400">int</span> age;
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">5</span>
-                <div></div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">6</span>
-                <div className="pl-4">
-                  <span className="text-purple-400">public</span>{" "}
-                  <span className="text-yellow-300">softwareEngineer</span>()
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">7</span>
-                <div className="pl-8">
-                  <span className="text-purple-400">this</span>.name = Agustin Monetti;
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">8</span>
-                <div className="pl-8">
-                  <span className="text-purple-400">this</span>.age = 22;
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">9</span>
-                <div className="pl-4">{"}"}</div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">10</span>
-                <div></div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">11</span>
-                <div className="pl-4">
-                  <span className="text-purple-400">public</span>{" "}
-                  <span className="text-blue-400">String[]</span> getSkills() {"{"}
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">12</span>
-                <div className="pl-8">
-                  <span className="text-purple-400">return</span>{" "}
-                  <span className="text-purple-400">new</span>{" "}
-                  <span className="text-blue-400">String[]</span> {"{"}
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">13</span>
-                <div className="pl-12">
-                  <span className="text-green-400">"Python"</span>,{" "}
-                  <span className="text-green-400">"Java"</span>,{" "}
-                  <span className="text-green-400">"Docker"</span>,{" "}
-                  <span className="text-green-400">"GCP"</span>,{" "}
-                  <span className="text-green-400">"Linux"</span>
-                </div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">14</span>
-                <div className="pl-8">{"};"}</div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">15</span>
-                <div className="pl-4">{"}"}</div>
-              </div>
-
-              <div className="flex">
-                <span className="text-slate-600 mr-4 w-6">16</span>
-                <div>{"}"}</div>
+            <div className="pt-6 border-t border-neutral-200 dark:border-neutral-800">
+              <p className="text-xs tracking-widest text-text/50 dark:text-text-dark/50 mb-4">CONNECT</p>
+              <div className="flex flex-wrap gap-2">
+                <a href="https://github.com/agmonetti" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-neutral-300/60 dark:border-neutral-700 text-sm text-text/80 dark:text-text-dark/80 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors">
+                  <Github className="h-4 w-4" />
+                  GitHub
+                </a>
+                <a href="https://linkedin.com/in/agustin-monetti" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-neutral-300/60 dark:border-neutral-700 text-sm text-text/80 dark:text-text-dark/80 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors">
+                  <Linkedin className="h-4 w-4" />
+                  LinkedIn
+                </a>
+                <a href="mailto:agus.monetti01@gmail.com" className="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-neutral-300/60 dark:border-neutral-700 text-sm text-text/80 dark:text-text-dark/80 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors">
+                  <Mail className="h-4 w-4" />
+                  Mail
+                </a>
+                <a href="/resume" className="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-neutral-300/60 dark:border-neutral-700 text-sm text-text/80 dark:text-text-dark/80 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors">
+                  <FileText className="h-4 w-4" />
+                  Resume
+                </a>
               </div>
             </div>
-
           </div>
         </div>
       </div>

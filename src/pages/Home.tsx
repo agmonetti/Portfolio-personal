@@ -1,16 +1,18 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import Arsenal from '../components/Arsenal';
 import Experience from '../components/Experience';
+import Projects from '../components/Projects';
 import About from '../pages/About';
+import GithubCalendar from '../components/GithubCalendar';
 
 const Home: React.FC = () => {
   return (
     <>
       <Hero />
       <About />
-      <Experience />
-      <Arsenal />
+       <Experience />
+      <GithubCalendar />
+      <Projects limit={3} />
 
     </>
   );
