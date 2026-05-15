@@ -9,7 +9,7 @@ const Resume: React.FC = () => {
   return (
     <section className="w-full" id="resume">
       <div className="mx-auto max-w-4xl px-6 py-5 lg:px-10 border-x border-b border-neutral-300/70 dark:border-neutral-800 bg-diagonal">
-        <h1 className="text-4xl heading-sketch text-darker dark:text-text-dark sm:text-5xl">
+        <h1 className="text-4xl heading-display text-darker dark:text-text-dark sm:text-5xl">
           {t('resume.title')}
         </h1>
       </div>

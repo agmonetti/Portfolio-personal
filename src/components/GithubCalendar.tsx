@@ -34,7 +34,7 @@ const GithubCalendar: React.FC = () => {
   return (
     <section id="github-calendar" className="w-full">
       <div className="mx-auto max-w-4xl px-6 py-5 lg:px-10 border-x border-b border-neutral-300/70 dark:border-neutral-800 bg-diagonal">
-        <h2 className="text-4xl heading-sketch text-darker dark:text-text-dark">
+        <h2 className="text-4xl heading-display text-darker dark:text-text-dark">
           GitHub Contributions
         </h2>
       </div>

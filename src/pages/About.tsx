@@ -11,8 +11,7 @@ const About: React.FC = () => {
       
       {/* 1. Caja del Header (Fondo con rayas diagonales) */}
       <div className="mx-auto max-w-4xl px-6 py-5 lg:px-10 border-x border-b border-neutral-300/70 dark:border-neutral-800 bg-diagonal">
-        {/* Usamos heading-sketch para la fuente de dibujo */}
-        <h2 className="text-4xl heading-sketch text-darker dark:text-text-dark">
+        <h2 className="text-4xl heading-display text-darker dark:text-text-dark">
           {t('about.title')}
         </h2>
       </div>
