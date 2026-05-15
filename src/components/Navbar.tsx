@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-5xl mx-auto w-full px-6 py-4 flex justify-between items-center">
+        <div className="max-w-4xl mx-auto w-full px-6 lg:px-10 py-4 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 group">
             <Terminal className="text-primary w-5 h-5" />
             <span className="font-semibold text-lg text-darker dark:text-text-dark tracking-tight group-hover:text-primary transition-colors">
