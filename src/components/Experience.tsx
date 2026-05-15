@@ -9,10 +9,14 @@ const Experience: React.FC = () => {
   const freelanceTasks: string[] = t('experience.freelance.tasks') || [];
 
   return (
-    <section id="experience" className="py-8 sm:py-10">
-      <div className="mx-auto max-w-4xl pb-4 space-y-5">
-        <h2 className="text-2xl font-semibold tracking-tight text-darker dark:text-text-dark sm:text-3xl">{t('experience.title')}</h2>
+    <section id="experience" className="w-full">
+      <div className="mx-auto max-w-4xl px-6 py-5 lg:px-10 border-x border-b border-neutral-300/70 dark:border-neutral-800 bg-diagonal">
+        <h2 className="text-4xl heading-sketch text-darker dark:text-text-dark">
+          {t('experience.title')}
+        </h2>
+      </div>
 
+      <div className="mx-auto max-w-4xl px-6 py-8 lg:px-10 border-x border-b border-neutral-300/70 dark:border-neutral-800 bg-white dark:bg-[#0a0a0a]">
         <div className="space-y-6">
           <article className="grid gap-4 py-4 md:grid-cols-[220px_1fr] md:gap-8">
             <div className="space-y-1">

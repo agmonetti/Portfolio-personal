@@ -72,7 +72,9 @@
   },
   "footer": {
     "downloadCv": "Descargar CV",
-    "cv": "/cv-es.pdf"
+    "cv": "/cv-es.pdf",
+    "copyright": "© 2026 Agustín Monetti",
+    "builtWith": "Hecho con IA y mucha imaginación "
   },
   "resume": {
     "title": "Curriculum",

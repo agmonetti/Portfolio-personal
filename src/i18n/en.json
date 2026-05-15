@@ -71,7 +71,9 @@
   },
   "footer": {
     "downloadCv": "Download CV",
-    "cv": "/cv-en.pdf"
+    "cv": "/cv-en.pdf",
+    "copyright": "© 2026 Agustín Monetti",
+    "builtWith": "Built with AI and lots of imagination"
   },
   "resume": {
     "title": "Resume",

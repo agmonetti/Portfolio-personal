@@ -32,14 +32,14 @@ const GithubCalendar: React.FC = () => {
   }), []);
 
   return (
-    <section id="github-calendar" className="py-8 sm:py-10">
-      <div className="mx-auto max-w-4xl pb-4 space-y-5">
-        {/* Aquí podrías usar t('github.title') si agregas la key en tus archivos .json */}
-        <h2 className="text-2xl font-semibold tracking-tight text-darker dark:text-text-dark sm:text-3xl">
+    <section id="github-calendar" className="w-full">
+      <div className="mx-auto max-w-4xl px-6 py-5 lg:px-10 border-x border-b border-neutral-300/70 dark:border-neutral-800 bg-diagonal">
+        <h2 className="text-4xl heading-sketch text-darker dark:text-text-dark">
           GitHub Contributions
         </h2>
-        
-        {/* Contenedor con los mismos estilos de tus "Cards" y bordes */}
+      </div>
+
+      <div className="mx-auto max-w-4xl px-6 py-8 lg:px-10 border-x border-b border-neutral-300/70 dark:border-neutral-800 bg-white dark:bg-[#0a0a0a]">
         <div className="flex justify-center p-6 border border-neutral-300/70 dark:border-neutral-800 rounded-xl bg-white/60 dark:bg-[#0b0f12]/70 overflow-x-auto">
           <GitHubCalendar 
             username={username} 
@@ -50,7 +50,6 @@ const GithubCalendar: React.FC = () => {
           />
         </div>
       </div>
-      <hr className="section-divider" />
     </section>
   );
 };

@@ -1,5 +1,5 @@
 /* ── Google Fonts ─────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -34,7 +34,7 @@
 /* ── Base ─────────────────────────────────────────── */
 html { scroll-behavior: smooth; }
 
-/* El dot grid vive en body — todo lo transparente lo hereda */
+/* Fondo de puntos para toda la página (como lo tenías al principio) */
 body {
   background-color: var(--bg);
   background-image: radial-gradient(
@@ -48,7 +48,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Vignette en los bordes */
 body::before {
   content: "";
   position: fixed;
@@ -89,13 +88,40 @@ html.dark body::before {
   background: radial-gradient(ellipse at center, transparent 55%, rgba(255,255,255,0.015) 100%);
 }
 
-/* ── Selection ────────────────────────────────────── */
+/* ── Fondos de Líneas Diagonales (NUEVO) ──────────── */
+.bg-diagonal {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(17, 24, 39, 0.04),
+    rgba(17, 24, 39, 0.04) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}
+
+html.dark .bg-diagonal {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}
+
+/* ── Headings estilo sketch (NUEVA FUENTE) ────────── */
+.heading-sketch {
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* ── Resto de tus estilos ─────────────────────────── */
 ::selection {
   background: var(--accent-subtle);
   color: inherit;
 }
 
-/* ── Cards ────────────────────────────────────────── */
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border-mid);
@@ -108,7 +134,6 @@ html.dark body::before {
   border-color: var(--border-strong);
 }
 
-/* ── Marcadores + en esquinas ─────────────────────── */
 .section-marked { position: relative; }
 .section-marked::before,
 .section-marked::after {
@@ -124,14 +149,6 @@ html.dark body::before {
 .section-marked::before { top: -7px; left: -7px; }
 .section-marked::after  { top: -7px; right: -7px; }
 
-/* ── Headings estilo sketch ───────────────────────── */
-.heading-sketch {
-  font-family: 'Caveat', cursive;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-}
-
-/* ── Botones outlined ─────────────────────────────── */
 .btn-outline {
   display: inline-flex;
   align-items: center;
@@ -152,7 +169,6 @@ html.dark body::before {
   background: var(--accent-subtle);
 }
 
-/* ── Divider ──────────────────────────────────────── */
 .section-divider {
   border: none;
   height: 1px;
@@ -160,7 +176,6 @@ html.dark body::before {
   background-color: var(--border);
 }
 
-/* ── Scrollbar ────────────────────────────────────── */
 ::-webkit-scrollbar       { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-secondary); }
 ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; }

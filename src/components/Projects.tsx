@@ -56,11 +56,16 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
   const visibleProjects = typeof limit === 'number' ? projects.slice(0, limit) : projects;
 
   return (
-    <section id="projects" className="pt-32 py-8 sm:pt-32 sm:py-10">
-      <div className="mx-auto max-w-4xl pb-4 space-y-5">
-        <h2 className="text-2xl font-semibold tracking-tight text-darker dark:text-text-dark sm:text-3xl">{t('projects.title')}</h2>
+    <section id="projects" className="w-full">
+      <div className="mx-auto max-w-4xl px-6 py-5 lg:px-10 border-x border-b border-neutral-300/70 dark:border-neutral-800 bg-diagonal">
+        <h2 className="text-4xl heading-sketch text-darker dark:text-text-dark">
+          {t('projects.title')}
+        </h2>
+      </div>
 
-        <div className="border-t border-neutral-300/70 dark:border-neutral-800">
+      <div className="mx-auto max-w-4xl px-6 py-8 lg:px-10 border-x border-b border-neutral-300/70 dark:border-neutral-800 bg-white dark:bg-[#0a0a0a]">
+        <div className="space-y-5">
+          <div className="border-t border-neutral-300/70 dark:border-neutral-800">
           {visibleProjects.map((project, idx) => (
             <article key={idx} className="grid gap-6 py-6 lg:grid-cols-[220px_1fr] lg:gap-8">
               <div className="space-y-2">
@@ -100,18 +105,18 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
               </div>
             </article>
           ))}
-        </div>
-
-        {typeof limit === 'number' && projects.length > limit && (
-          <div className="pt-2">
-            <a href="/projects" className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/55 dark:bg-surface-dark/55 px-4 py-2 text-sm font-medium text-text dark:text-text-dark transition-colors hover:border-primary/30 hover:text-primary">
-              Ver todos los proyectos
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
           </div>
-        )}
+
+          {typeof limit === 'number' && projects.length > limit && (
+            <div className="pt-2">
+              <a href="/projects" className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/55 dark:bg-surface-dark/55 px-4 py-2 text-sm font-medium text-text dark:text-text-dark transition-colors hover:border-primary/30 hover:text-primary">
+                Ver todos los proyectos
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
+          )}
+        </div>
       </div>
-      <hr className="section-divider" />
     </section>
   );
 };
