@@ -7,7 +7,7 @@ const Resume: React.FC = () => {
   const cvEmbedUrl = `${cvUrl}#zoom=80`;
 
   return (
-    <section className="py-8 sm:py-10" id="resume">
+    <section className="pt-32 py-8 sm:pt-32 sm:py-10" id="resume">
       <div className="mx-auto max-w-4xl border-b border-neutral-300/70 dark:border-neutral-800 pb-4 space-y-5">
         <div className="space-y-2">
           <h1 className="text-2xl font-semibold tracking-tight text-darker dark:text-text-dark sm:text-3xl">{t('resume.title')}</h1>
