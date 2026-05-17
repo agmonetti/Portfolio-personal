@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
               Sin scroll: completamente transparente — el grid del body
               es la única "textura".
             */
-            ? 'bg-white/92 dark:bg-[#0a0a0a]/92 backdrop-blur-md border-b border-neutral-200/60 dark:border-neutral-800/60 shadow-sm'
+            ? 'bg-white dark:bg-[#0a0a0a] border-b border-neutral-200/60 dark:border-neutral-800/60 shadow-sm'
             : 'bg-transparent'
         }`}
       >
