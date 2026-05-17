@@ -14,15 +14,19 @@ const App: React.FC = () => {
       <LanguageProvider>
         <div className="min-h-screen flex flex-col text-text dark:text-text-dark font-sans antialiased selection:bg-primary/15 selection:text-darker dark:selection:text-text-dark transition-colors duration-300">
           <Navbar />
-          <main className="flex-grow w-full flex flex-col pt-24"> 
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/resume" element={<Resume />} />
-            </Routes>
+
+          {/* Wrapper principal: añade marco y margen lateral solo en pantallas pequeñas */}
+          <main className="flex-grow w-full flex flex-col pt-24">
+            <div className="mx-2 sm:mx-4 md:mx-auto md:max-w-5xl w-auto bg-transparent md:bg-transparent rounded-lg md:rounded-none border border-neutral-200/60 dark:border-neutral-800/60 md:border-0 p-2 md:p-0">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/resume" element={<Resume />} />
+              </Routes>
+            </div>
           </main>
 
-          <Footer /> {/* 2. Agregas el Footer al final */}
+          <Footer />
         </div>
       </LanguageProvider>
     </ThemeProvider>

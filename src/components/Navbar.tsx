@@ -125,34 +125,36 @@ const Navbar: React.FC = () => {
       {/* Mobile */}
       <div className="md:hidden fixed top-0 left-0 right-0 z-50">
         <div className="relative">
-          <nav className="w-full bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur border-b border-neutral-200/70 dark:border-neutral-800/70 shadow-sm px-4 py-3 flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-3">
-              <Terminal className="text-primary w-5 h-5" />
-              <span className="font-semibold text-sm text-darker dark:text-text-dark">Agustín.dev</span>
-            </Link>
+          <nav className="w-full shadow-sm py-4 flex items-center justify-center">
+            <div className="w-full mx-2 sm:mx-4 md:mx-auto md:max-w-5xl flex items-center justify-between bg-white dark:bg-[#0a0a0a] border border-neutral-200/60 dark:border-neutral-800/60 rounded-lg p-3 mt-0 md:mt-0 mobile-frame-pattern">
+              <Link to="/" className="flex items-center gap-3">
+                <Terminal className="text-primary w-5 h-5" />
+                <span className="font-semibold text-sm text-darker dark:text-text-dark">Agustín.dev</span>
+              </Link>
 
-            <div className="flex items-center gap-2">
-              <div className="flex items-center">
-                <LanguageToggle />
+              <div className="flex items-center gap-2">
+                <div className="flex items-center">
+                  <LanguageToggle />
+                </div>
+                <ThemeToggle />
+
+                <button
+                  onClick={() => setMenuOpen((s) => !s)}
+                  className="p-1.5 ml-1 rounded-full text-text dark:text-text-dark hover:text-primary transition-colors"
+                  aria-label="Open menu"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
+                    <rect x="6" y="4" width="1.5" height="16" rx="0.35" />
+                    <rect x="11.25" y="4" width="1.5" height="16" rx="0.35" />
+                    <rect x="16.5" y="4" width="1.5" height="16" rx="0.35" />
+                  </svg>
+                </button>
               </div>
-              <ThemeToggle />
-
-              <button
-                onClick={() => setMenuOpen((s) => !s)}
-                className="p-1.5 ml-1 rounded-full text-text dark:text-text-dark hover:text-primary transition-colors"
-                aria-label="Open menu"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
-                  <rect x="6" y="4" width="1.5" height="16" rx="0.35" />
-                  <rect x="11.25" y="4" width="1.5" height="16" rx="0.35" />
-                  <rect x="16.5" y="4" width="1.5" height="16" rx="0.35" />
-                </svg>
-              </button>
             </div>
           </nav>
 
-          {menuOpen && (
-            <div ref={menuRef} className="absolute right-4 top-full mt-2 w-36 bg-white dark:bg-[#0a0a0a] border border-neutral-200/70 dark:border-neutral-800/70 rounded-md shadow-lg overflow-hidden">
+            {menuOpen && (
+            <div ref={menuRef} className="absolute right-2 sm:right-4 top-full mt-2 w-36 bg-white dark:bg-[#0a0a0a] border border-neutral-200/70 dark:border-neutral-800/70 rounded-md shadow-lg overflow-hidden">
               <div className="flex flex-col items-center py-1">
                 <Link
                   to="/"

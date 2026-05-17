@@ -188,3 +188,44 @@ html.dark .bg-diagonal {
 ::-webkit-scrollbar-track { background: var(--bg-secondary); }
 ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ── Patrón y doble recuadro para marcos móviles ───────── */
+.mobile-frame-pattern {
+  position: relative;
+  z-index: 0;
+  /* patrón de puntos sutil */
+  background-image: radial-gradient(rgba(17,24,39,0.03) 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+.mobile-frame-pattern::before,
+.mobile-frame-pattern::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: -1;
+}
+.mobile-frame-pattern::before {
+  /* línea fina interna */
+  transform: translateY(0) translateX(0);
+  border: 1px solid rgba(17,24,39,0.06);
+}
+.mobile-frame-pattern::after {
+  /* línea exterior punteada */
+  transform: translateY(-6px) translateX(-6px);
+  border: 1px dashed rgba(17,24,39,0.04);
+}
+
+html.dark .mobile-frame-pattern {
+  background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+}
+html.dark .mobile-frame-pattern::before {
+  border-color: rgba(255,255,255,0.06);
+}
+html.dark .mobile-frame-pattern::after {
+  border-color: rgba(255,255,255,0.03);
+}
