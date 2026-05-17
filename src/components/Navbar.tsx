@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
     <>
       {/* Desktop */}
       <nav
-        className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`hidden md:block fixed top-0 left-0 right-0 z-50 pt-1.5 transition-all duration-300 ${
           scrolled
             /*
               Al hacer scroll: fondo blanco 92% opaco + blur para que el
@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-4xl mx-auto w-full px-6 lg:px-10 py-4 flex justify-between items-center">
+        <div className="mx-2 sm:mx-4 md:mx-auto md:max-w-4xl w-auto px-2 sm:px-4 md:px-6 py-4 flex justify-between items-center bg-white dark:bg-[#0a0a0a] border border-neutral-200/60 dark:border-neutral-800/60 rounded-lg frame-pattern">
           <Link to="/" className="flex items-center gap-2 group">
             <Terminal className="text-primary w-5 h-5" />
             <span className="font-semibold text-lg text-darker dark:text-text-dark tracking-tight group-hover:text-primary transition-colors">
@@ -125,7 +125,7 @@ const Navbar: React.FC = () => {
       {/* Mobile */}
       <div className="md:hidden fixed top-0 left-0 right-0 z-50">
         <div className="relative">
-          <nav className="w-full shadow-sm py-4 flex items-center justify-center">
+          <nav className="w-full shadow-sm pt-1.5 pb-4 flex items-center justify-center">
             <div className="w-full mx-2 sm:mx-4 md:mx-auto md:max-w-5xl flex items-center justify-between bg-white dark:bg-[#0a0a0a] border border-neutral-200/60 dark:border-neutral-800/60 rounded-lg p-3 mt-0 md:mt-0 mobile-frame-pattern">
               <Link to="/" className="flex items-center gap-3">
                 <Terminal className="text-primary w-5 h-5" />

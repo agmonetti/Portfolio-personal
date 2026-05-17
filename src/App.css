@@ -217,7 +217,7 @@ html.dark .bg-diagonal {
   pointer-events: none;
   z-index: -1;
   outline: 1px dashed rgba(17,24,39,0.04);
-  outline-offset: 6px;
+  outline-offset: 0;
   box-sizing: border-box;
 }
 
@@ -237,3 +237,37 @@ html.dark .mobile-frame-pattern::after {
     overflow-x: hidden;
   }
 }
+
+/* Versión general del marco para desktop y mobile */
+.frame-pattern {
+  position: relative;
+  z-index: 0;
+  background-image: radial-gradient(rgba(17,24,39,0.03) 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+.frame-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(17,24,39,0.06);
+  pointer-events: none;
+  z-index: -1;
+  box-sizing: border-box;
+}
+.frame-pattern::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: -1;
+  outline: 1px dashed rgba(17,24,39,0.04);
+  outline-offset: 0;
+  box-sizing: border-box;
+}
+html.dark .frame-pattern {
+  background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+}
+html.dark .frame-pattern::before { border-color: rgba(255,255,255,0.06); }
+html.dark .frame-pattern::after  { outline-color: rgba(255,255,255,0.03); }
