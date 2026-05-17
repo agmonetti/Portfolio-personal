@@ -197,27 +197,28 @@ html.dark .bg-diagonal {
   background-image: radial-gradient(rgba(17,24,39,0.03) 1px, transparent 1px);
   background-size: 10px 10px;
 }
-.mobile-frame-pattern::before,
-.mobile-frame-pattern::after {
+.mobile-frame-pattern::before {
+  /* línea fina interna (no usa transform para evitar overflow) */
   content: "";
   position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(17,24,39,0.06);
+  pointer-events: none;
+  z-index: -1;
+  box-sizing: border-box;
+}
+.mobile-frame-pattern::after {
+  /* línea exterior punteada usando outline (no afecta layout) */
+  content: "";
+  position: absolute;
+  inset: 0;
   border-radius: inherit;
   pointer-events: none;
   z-index: -1;
-}
-.mobile-frame-pattern::before {
-  /* línea fina interna */
-  transform: translateY(0) translateX(0);
-  border: 1px solid rgba(17,24,39,0.06);
-}
-.mobile-frame-pattern::after {
-  /* línea exterior punteada */
-  transform: translateY(-6px) translateX(-6px);
-  border: 1px dashed rgba(17,24,39,0.04);
+  outline: 1px dashed rgba(17,24,39,0.04);
+  outline-offset: 6px;
+  box-sizing: border-box;
 }
 
 html.dark .mobile-frame-pattern {
@@ -228,4 +229,11 @@ html.dark .mobile-frame-pattern::before {
 }
 html.dark .mobile-frame-pattern::after {
   border-color: rgba(255,255,255,0.03);
+}
+
+/* Evita scroll horizontal en móviles si algo sigue provocando overflow */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
 }
