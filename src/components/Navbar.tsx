@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useTheme } from '../contexts/ThemeContext';
@@ -49,6 +49,19 @@ const Navbar: React.FC = () => {
       {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
     </button>
   );
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    if (menuOpen) document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [menuOpen]);
 
   return (
     <>
@@ -110,63 +123,62 @@ const Navbar: React.FC = () => {
       </nav>
 
       {/* Mobile */}
-      <div className="md:hidden fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-sm">
-        <nav className="flex justify-evenly items-center bg-white/90 dark:bg-[#0a0a0a]/90 backdrop-blur-xl border border-neutral-200/70 dark:border-neutral-800/70 shadow-[0_8px_32px_-4px_rgba(0,0,0,0.08)] rounded-full px-3 py-3">
-          {navLinks.map((link) => {
-            const isActive = location.pathname === link.href;
-            const displayName = link.name === 'Curriculum' ? 'CV' : link.name;
+      <div className="md:hidden fixed top-0 left-0 right-0 z-50">
+        <div className="relative">
+          <nav className="w-full bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur border-b border-neutral-200/70 dark:border-neutral-800/70 shadow-sm px-4 py-3 flex items-center justify-between">
+            <Link to="/" className="flex items-center gap-3">
+              <Terminal className="text-primary w-5 h-5" />
+              <span className="font-semibold text-sm text-darker dark:text-text-dark">Agustín.dev</span>
+            </Link>
 
-            return link.external ? (
-              <a
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`px-2 py-1 text-xs sm:text-sm font-medium transition-colors ${
-                  isActive ? 'text-primary' : 'text-text/70 dark:text-text-dark/70 hover:text-primary'
-                }`}
+            <div className="flex items-center gap-2">
+              <div className="flex items-center">
+                <LanguageToggle />
+              </div>
+              <ThemeToggle />
+
+              <button
+                onClick={() => setMenuOpen((s) => !s)}
+                className="p-1.5 ml-1 rounded-full text-text dark:text-text-dark hover:text-primary transition-colors"
+                aria-label="Open menu"
               >
-                {displayName}
-              </a>
-            ) : (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`px-2 py-1 text-xs sm:text-sm font-medium transition-colors ${
-                  isActive ? 'text-primary' : 'text-text/70 dark:text-text-dark/70 hover:text-primary'
-                }`}
-              >
-                {displayName}
-              </Link>
-            );
-          })}
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
+                  <rect x="6" y="4" width="1.5" height="16" rx="0.35" />
+                  <rect x="11.25" y="4" width="1.5" height="16" rx="0.35" />
+                  <rect x="16.5" y="4" width="1.5" height="16" rx="0.35" />
+                </svg>
+              </button>
+            </div>
+          </nav>
 
-          <div className="w-px h-5 bg-neutral-200 dark:bg-neutral-700 mx-1" />
-
-          <button
-            onClick={toggleTheme}
-            className="p-1.5 rounded-full text-text dark:text-text-dark hover:text-primary transition-colors"
-            aria-label="Toggle theme"
-          >
-            {theme === 'light' ? <Moon className="w-3 h-3" /> : <Sun className="w-3 h-3" />}
-          </button>
-
-          <div className="flex items-center gap-1 bg-surface dark:bg-surface-dark rounded-full px-2 py-1 text-[10px] sm:text-xs font-mono border border-neutral-200 dark:border-neutral-700">
-            <button
-              onClick={() => setLanguage('es')}
-              className={`${language === 'es' ? 'text-primary font-bold' : 'text-text/60 dark:text-text-dark/60'}`}
-            >
-              ES
-            </button>
-            <span className="text-text/30 dark:text-text-dark/30">|</span>
-            <button
-              onClick={() => setLanguage('en')}
-              className={`${language === 'en' ? 'text-primary font-bold' : 'text-text/60 dark:text-text-dark/60'}`}
-            >
-              EN
-            </button>
-          </div>
-        </nav>
+          {menuOpen && (
+            <div ref={menuRef} className="absolute right-4 top-full mt-2 w-36 bg-white dark:bg-[#0a0a0a] border border-neutral-200/70 dark:border-neutral-800/70 rounded-md shadow-lg overflow-hidden">
+              <div className="flex flex-col items-center py-1">
+                <Link
+                  to="/"
+                  onClick={() => setMenuOpen(false)}
+                  className="w-full text-center px-3 py-3 text-sm text-text dark:text-text-dark hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
+                >
+                  {t('navbar.home')}
+                </Link>
+                <Link
+                  to="/projects"
+                  onClick={() => setMenuOpen(false)}
+                  className="w-full text-center px-3 py-3 text-sm text-text dark:text-text-dark hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
+                >
+                  {t('navbar.projects')}
+                </Link>
+                <Link
+                  to="/resume"
+                  onClick={() => setMenuOpen(false)}
+                  className="w-full text-center px-3 py-3 text-sm text-text dark:text-text-dark hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
+                >
+                  CV
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
