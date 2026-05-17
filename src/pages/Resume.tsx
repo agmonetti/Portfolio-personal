@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Resume: React.FC = () => {
   const { t } = useLanguage();
   const cvUrl = t('footer.cv') as string;
-  const cvEmbedUrl = `${cvUrl}#zoom=80`;
+  const [cvEmbedUrl, setCvEmbedUrl] = useState(`${cvUrl}#zoom=80`);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const update = () => {
+      const zoom = window.innerWidth < 640 ? 50 : 80;
+      setCvEmbedUrl(`${cvUrl}#zoom=${zoom}`);
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, [cvUrl]);
 
   return (
     <section className="w-full" id="resume">
@@ -16,7 +27,6 @@ const Resume: React.FC = () => {
 
       <div className="mx-auto max-w-4xl px-6 py-8 lg:px-10 border-x border-b border-neutral-300/70 dark:border-neutral-800 bg-white dark:bg-[#0a0a0a]">
         <div className="space-y-5">
-          <p className="max-w-2xl text-sm leading-7 text-text/80 dark:text-text-dark/80 sm:text-base">{t('resume.subtitle')}</p>
 
           <div className="flex flex-wrap gap-3">
             <a
@@ -36,11 +46,11 @@ const Resume: React.FC = () => {
             </a>
           </div>
 
-          <div className="overflow-hidden bg-transparent">
+          <div className="overflow-hidden bg-transparent flex justify-center">
             <iframe
               src={cvEmbedUrl}
               title={t('resume.title') as string}
-              className="w-full h-[70vh] md:h-[80vh]"
+              className="w-full max-w-3xl h-[70vh] md:h-[80vh]"
               style={{ border: 'none' }}
             />
           </div>
