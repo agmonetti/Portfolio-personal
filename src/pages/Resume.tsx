@@ -4,7 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 const Resume: React.FC = () => {
   const { t } = useLanguage();
   const cvUrl = t('footer.cv') as string;
-  const [cvEmbedUrl, setCvEmbedUrl] = useState(`${cvUrl}#zoom=80`);
+  const [cvEmbedUrl, setCvEmbedUrl] = useState(`${cvUrl}#zoom=60`);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
