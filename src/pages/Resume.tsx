@@ -4,12 +4,15 @@ import { useLanguage } from '../contexts/LanguageContext';
 const Resume: React.FC = () => {
   const { t } = useLanguage();
   const cvUrl = t('footer.cv') as string;
-  const [cvEmbedUrl, setCvEmbedUrl] = useState(`${cvUrl}#zoom=60`);
+  const [cvEmbedUrl, setCvEmbedUrl] = useState(`${cvUrl}#zoom=80`);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const update = () => {
-      const zoom = window.innerWidth < 640 ? 50 : 80;
+      const mobile = window.innerWidth < 640;
+      const zoom = mobile ? 60 : 100;
+      setIsMobile(mobile);
       setCvEmbedUrl(`${cvUrl}#zoom=${zoom}`);
     };
     update();
@@ -46,13 +49,18 @@ const Resume: React.FC = () => {
             </a>
           </div>
 
-          <div className="overflow-hidden bg-transparent flex justify-center">
-            <iframe
-              src={cvEmbedUrl}
-              title={t('resume.title') as string}
-              className="w-full max-w-3xl h-[70vh] md:h-[80vh]"
-              style={{ border: 'none' }}
-            />
+          <div className="overflow-hidden bg-transparent">
+            <div
+              className="mx-auto w-full"
+              style={isMobile ? { transform: 'scale(1.12)', transformOrigin: 'top center', width: '89%' } : undefined}
+            >
+              <iframe
+                src={cvEmbedUrl}
+                title={t('resume.title') as string}
+                className="w-full h-[78vh] md:h-[80vh]"
+                style={{ border: 'none' }}
+              />
+            </div>
           </div>
         </div>
       </div>
