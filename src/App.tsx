@@ -17,7 +17,7 @@ const App: React.FC = () => {
 
           {/* Wrapper principal: añade marco y margen lateral solo en pantallas pequeñas */}
           <main className="flex-grow w-full flex flex-col pt-24">
-            <div className="mx-2 sm:mx-4 md:mx-auto md:max-w-5xl w-full bg-transparent md:bg-transparent rounded-lg md:rounded-none border border-neutral-200/60 dark:border-neutral-800/60 md:border-0 p-2 md:p-0">
+            <div className="mx-2 sm:mx-4 md:mx-auto md:max-w-5xl w-auto bg-transparent md:bg-transparent rounded-lg md:rounded-none border border-neutral-200/60 dark:border-neutral-800/60 md:border-0 p-2 md:p-0">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/projects" element={<ProjectsPage />} />
