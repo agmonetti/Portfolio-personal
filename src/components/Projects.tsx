@@ -141,10 +141,10 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="ml-5 inline-flex items-center gap-2 text-sm font-medium text-text dark:text-text-dark transition-colors hover:text-primary"
-                    title="View Demo"
+                    title="Docs"
                   >
                     <ExternalLink className="h-4 w-4" />
-                    Ver demo
+                    Docs
                     <ArrowUpRight className="h-4 w-4" />
                   </a>
                 )}
