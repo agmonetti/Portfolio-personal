@@ -25,6 +25,22 @@
   "projects": {
     "title": "Proyectos",
     "items": {
+      "lazyteams": {
+        "title": "LazyTeams",
+        "description": "Cliente de Microsoft Teams que corre completamente en la terminal: chats, hilos, reacciones, gestión de equipos y archivos vía Microsoft Graph API, sin Electron ni navegador. Incluye sitio de documentación propio y pipeline de releases multiplataforma con auto-actualización verificada."
+      },
+      "relm": {
+        "title": "Relm",
+        "description": "Navegador de bases de datos para la terminal con soporte para SQLite, PostgreSQL, MySQL, MariaDB y SQL Server. Permite explorar tablas, ejecutar consultas SQL y exportar a CSV/JSON, todo manejado por teclado y sin salir de la consola."
+      },
+      "mathMcp": {
+        "title": "MathMethods MCP",
+        "description": "Servidor MCP con ~30 herramientas de métodos numéricos (raíces, integración, EDOs, Monte Carlo) que agentes de IA como Claude o Copilot pueden invocar desde VS Code o Zed. Distribuido vía PyPI e implementado con hardening contra ejecución remota de código."
+      },
+      "dotfiles": {
+        "title": "Dotfiles",
+        "description": "Configuración reproducible de Arch Linux + Hyprland (Waybar, Kitty, Rofi, Zsh) gestionada con GNU Stow, con instalador interactivo, scripts propios y listas de paquetes para pacman y AUR."
+      },
       "homelab": {
         "title": "GCP Free-Tier Home Lab",
         "description": "Infraestructura de microservicios a nivel de producción en una instancia restringida de 1GB de RAM. Aloja un bot de Selenium, esta landing page y más, todo optimizado mediante gestión de swap en Linux y orquestación con Docker."

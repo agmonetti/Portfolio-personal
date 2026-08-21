@@ -12,7 +12,7 @@ const Home: React.FC = () => {
       <About />
        <Experience />
       <GithubCalendar />
-      <Projects limit={3} />
+      <Projects limit={4} />
 
     </>
   );

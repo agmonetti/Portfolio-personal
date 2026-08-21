@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Bot, LayoutGrid, ShieldCheck, Server, Laptop, ArrowUpRight } from 'lucide-react';
+import { Code, Bot, LayoutGrid, ShieldCheck, Server, Laptop, MessageSquare, Database, BrainCircuit, Terminal, ArrowUpRight, ExternalLink } from 'lucide-react';
 import { Project } from '../types';
 import { useLanguage } from '../contexts/LanguageContext'; 
 
@@ -13,12 +13,20 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
 
   const projects: Project[] = [
     {
-      title: t('projects.items.homelab.title'),
-      description: t('projects.items.homelab.description'),
-      tags: ["Google Cloud", "Docker", "Linux", "DevOps"],
-      icon: Server,
-      links: { code: "https://github.com/agmonetti/gcp-free-tier-linux-server" },
+      title: t('projects.items.lazyteams.title'),
+      description: t('projects.items.lazyteams.description'),
+      tags: ["Go", "Bubble Tea", "Microsoft Graph API"],
+      icon: MessageSquare,
+      links: { code: "https://github.com/agmonetti/lazyteams", demo: "https://lazyteams.agmonetti.workers.dev" },
       color: "from-indigo-500/40"
+    },
+    {
+      title: t('projects.items.mathMcp.title'),
+      description: t('projects.items.mathMcp.description'),
+      tags: ["Python", "FastMCP", "SymPy", "IA / MCP"],
+      icon: BrainCircuit,
+      links: { code: "https://github.com/agmonetti/mathmethods-mcp" },
+      color: "from-fuchsia-900/40"
     },
     {
       title: t('projects.items.subteBot.title'),
@@ -27,6 +35,30 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
       icon: Bot,
       links: { code: "https://github.com/agmonetti/Bot-Subte" },
       color: "from-blue-900/40"
+    },
+    {
+      title: t('projects.items.homelab.title'),
+      description: t('projects.items.homelab.description'),
+      tags: ["Google Cloud", "Docker", "Linux", "DevOps"],
+      icon: Server,
+      links: { code: "https://github.com/agmonetti/gcp-free-tier-linux-server" },
+      color: "from-indigo-500/40"
+    },
+    {
+      title: t('projects.items.relm.title'),
+      description: t('projects.items.relm.description'),
+      tags: ["Go", "TUI", "SQL", "PostgreSQL"],
+      icon: Database,
+      links: { code: "https://github.com/agmonetti/relm" },
+      color: "from-teal-900/40"
+    },
+    {
+      title: t('projects.items.dotfiles.title'),
+      description: t('projects.items.dotfiles.description'),
+      tags: ["Arch Linux", "Hyprland", "Shell", "GNU Stow"],
+      icon: Terminal,
+      links: { code: "https://github.com/agmonetti/dotfiles" },
+      color: "from-cyan-900/40"
     },
     {
       title: t('projects.items.hackintosh.title'),
@@ -99,6 +131,20 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
                   >
                     <Code className="h-4 w-4" />
                     Ver código
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                )}
+
+                {project.links.demo && (
+                  <a
+                    href={project.links.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ml-5 inline-flex items-center gap-2 text-sm font-medium text-text dark:text-text-dark transition-colors hover:text-primary"
+                    title="View Demo"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    Ver demo
                     <ArrowUpRight className="h-4 w-4" />
                   </a>
                 )}
