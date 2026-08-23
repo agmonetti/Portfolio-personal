@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Code, Bot, LayoutGrid, ShieldCheck, Server, Laptop, MessageSquare, Database, BrainCircuit, Terminal, ArrowUpRight, ExternalLink } from 'lucide-react';
 import { Project } from '../types';
 import { useLanguage } from '../contexts/LanguageContext'; 
@@ -155,10 +156,10 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
 
           {typeof limit === 'number' && projects.length > limit && (
             <div className="pt-2">
-              <a href="/projects" className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/55 dark:bg-surface-dark/55 px-4 py-2 text-sm font-medium text-text dark:text-text-dark transition-colors hover:border-primary/30 hover:text-primary">
+              <Link to="/projects" className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 dark:border-neutral-700 bg-white/55 dark:bg-surface-dark/55 px-4 py-2 text-sm font-medium text-text dark:text-text-dark transition-colors hover:border-primary/30 hover:text-primary">
                 Ver todos los proyectos
                 <ArrowUpRight className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
           )}
         </div>
