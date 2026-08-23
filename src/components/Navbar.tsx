@@ -29,14 +29,14 @@ const Navbar: React.FC = () => {
     <div className="flex items-center gap-2 bg-surface dark:bg-surface-dark border border-neutral-200 dark:border-neutral-700 rounded-full px-3 py-1 text-xs font-mono">
       <button
         onClick={() => setLanguage('es')}
-        className={`transition-colors duration-200 ${language === 'es' ? 'text-primary font-bold' : 'text-text dark:text-text-dark hover:text-primary'}`}
+        className={`transition-colors duration-200 ${language === 'es' ? 'text-secondary dark:text-primary font-bold' : 'text-text dark:text-text-dark hover:text-primary'}`}
       >
         ES
       </button>
-      <span className="text-text/40 dark:text-text-dark/40 select-none">|</span>
+      <span className="text-text/60 dark:text-text-dark/60 select-none">|</span>
       <button
         onClick={() => setLanguage('en')}
-        className={`transition-colors duration-200 ${language === 'en' ? 'text-primary font-bold' : 'text-text dark:text-text-dark hover:text-primary'}`}
+        className={`transition-colors duration-200 ${language === 'en' ? 'text-secondary dark:text-primary font-bold' : 'text-text dark:text-text-dark hover:text-primary'}`}
       >
         EN
       </button>
@@ -108,7 +108,7 @@ const Navbar: React.FC = () => {
                   to={link.href}
                   className={`text-sm font-medium transition-colors ${
                     location.pathname === link.href
-                      ? 'text-primary'
+                      ? 'text-secondary dark:text-primary'
                       : 'text-text dark:text-text-dark hover:text-primary'
                   }`}
                 >

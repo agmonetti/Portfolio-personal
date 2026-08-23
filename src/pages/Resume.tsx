@@ -148,7 +148,7 @@ const Resume: React.FC = () => {
           </div>
 
           <div className="overflow-hidden rounded-[2rem] border border-neutral-200/80 bg-neutral-100/80 shadow-[0_32px_90px_-55px_rgba(15,23,42,0.55)] ring-1 ring-black/5 dark:border-neutral-800 dark:bg-neutral-950/50 dark:ring-white/5">
-            <div className="flex flex-wrap items-center justify-center gap-4 border-b border-neutral-200/80 px-4 py-3 text-xs uppercase tracking-[0.28em] text-text/45 dark:border-neutral-800 dark:text-text-dark/45">
+            <div className="flex flex-wrap items-center justify-center gap-4 border-b border-neutral-200/80 px-4 py-3 text-xs uppercase tracking-[0.28em] text-text/60 dark:border-neutral-800 dark:text-text-dark/60">
               <div className="flex flex-wrap items-center gap-2 normal-case tracking-normal text-text dark:text-text-dark">
                 <div className="inline-flex items-center gap-1 rounded-full border border-neutral-300/80 bg-white/80 px-2 py-1 text-xs shadow-sm dark:border-neutral-700 dark:bg-neutral-900/60">
                   <button
@@ -208,7 +208,7 @@ const Resume: React.FC = () => {
                     <div className="mx-auto h-12 w-12 animate-pulse rounded-2xl border border-neutral-200 bg-neutral-100 shadow-sm dark:border-neutral-700 dark:bg-neutral-800" />
                     <div className="space-y-2">
                       <p className="text-sm font-medium text-text dark:text-text-dark">Cargando visor tipográfico</p>
-                      <p className="text-xs text-text/55 dark:text-text-dark/55">Preparando el PDF cuando entra en pantalla</p>
+                      <p className="text-xs text-text/60 dark:text-text-dark/60">Preparando el PDF cuando entra en pantalla</p>
                     </div>
                   </div>
                 </div>
@@ -259,7 +259,7 @@ const Resume: React.FC = () => {
                         <div className="mx-auto h-12 w-12 animate-pulse rounded-2xl border border-neutral-200 bg-neutral-100 shadow-sm dark:border-neutral-700 dark:bg-neutral-800" />
                         <div className="space-y-2">
                           <p className="text-sm font-medium text-text dark:text-text-dark">Cargando documento</p>
-                          <p className="text-xs text-text/55 dark:text-text-dark/55">Preparando páginas y ajustando el ancho al contenedor</p>
+                          <p className="text-xs text-text/60 dark:text-text-dark/60">Preparando páginas y ajustando el ancho al contenedor</p>
                         </div>
                       </div>
                     </div>

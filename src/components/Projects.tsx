@@ -104,7 +104,7 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-primary">
                   <project.icon className="h-4 w-4" />
-                  <span className="text-xs font-mono uppercase tracking-[0.3em] text-text/55 dark:text-text-dark/55">{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}</span>
+                  <span className="text-xs font-mono uppercase tracking-[0.3em] text-text/60 dark:text-text-dark/60">{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}</span>
                 </div>
                 <h3 className="text-lg font-semibold text-darker dark:text-text-dark" title={project.title}>
                   {project.title}

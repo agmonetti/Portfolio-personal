@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="pt-6 border-t border-neutral-200 dark:border-neutral-800">
-              <p className="text-xs tracking-widest text-text/50 dark:text-text-dark/50 mb-4">CONNECT</p>
+              <p className="text-xs tracking-widest text-text/60 dark:text-text-dark/60 mb-4">CONNECT</p>
               <div className="flex flex-wrap gap-2">
                 <a href="https://github.com/agmonetti" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-neutral-300/60 dark:border-neutral-700 text-sm text-text/80 dark:text-text-dark/80 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors">
                   <Github className="h-4 w-4" />
