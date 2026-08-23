@@ -116,9 +116,9 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-3 text-sm text-text/65">
+                <div className="flex flex-wrap gap-3 text-sm text-text/65 dark:text-text-dark/65">
                   {project.tags.map((tag, tIdx) => (
-                    <span key={tIdx} className="text-xs text-text/60">{tag}</span>
+                    <span key={tIdx} className="text-xs text-text/60 dark:text-text-dark/60">{tag}</span>
                   ))}
                 </div>
 

@@ -41,8 +41,8 @@ export default {
         'secondary-dark': '#10b981',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['Inter Variable', 'sans-serif'],
+        mono: ['JetBrains Mono Variable', 'monospace'],
       },
       boxShadow: {
         'neon': '0 0 10px rgba(102, 252, 241, 0.3), 0 0 20px rgba(102, 252, 241, 0.2)',
