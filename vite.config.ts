@@ -22,9 +22,11 @@ export default defineConfig(({ mode }) => {
       build: {
         rollupOptions: {
           output: {
-            manualChunks: {
-              vendor: ['react', 'react-dom', 'react-router-dom'],
-              icons: ['lucide-react'],
+            manualChunks(id: string) {
+              if (id.includes('node_modules')) {
+                if (/[\\/]node_modules[\\/](lucide-react)[\\/]/.test(id)) return 'icons';
+                if (/[\\/]node_modules[\\/](react-router-dom|react-router|react-dom|react)[\\/]/.test(id)) return 'vendor';
+              }
             },
           },
         },
