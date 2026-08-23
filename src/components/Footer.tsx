@@ -11,7 +11,6 @@ const Footer: React.FC = () => {
           <div className="flex items-center justify-between">
             <div className="flex flex-col space-y-1 text-sm font-mono text-text/60 dark:text-text-dark/60">
               <p>{t('footer.copyright')}</p>
-              <p>{t('footer.builtWith')}</p>
             </div>
           </div>
         </div>
