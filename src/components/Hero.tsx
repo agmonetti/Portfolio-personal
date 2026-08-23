@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
       <div className="mx-auto max-w-4xl px-6 py-8 lg:px-10 border-x border-b border-neutral-300/70 dark:border-neutral-800 bg-white dark:bg-[#0a0a0a]">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-6">
           <button className="group relative flex h-32 w-32 shrink-0 items-center justify-center rounded-md border-2 border-dashed border-neutral-300/80 dark:border-neutral-700 bg-white dark:bg-black shadow-[0_12px_30px_-24px_rgba(0,0,0,0.4)] transition-transform hover:-translate-y-0.5 overflow-hidden" aria-label="Avatar">
-            <img src="/avatar.png" alt="Agustín" className="h-full w-full rounded-md object-cover transform scale-110 transition-transform group-hover:scale-125" />
+            <img src="/avatar.webp" alt="Agustín" width={128} height={128} className="h-full w-full rounded-md object-cover transform scale-110 transition-transform group-hover:scale-125" />
           </button>
 
           <div className="flex-1 space-y-4">
