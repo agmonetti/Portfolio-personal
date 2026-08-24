@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 lh-report/
+lh-audit/
 
 # Editor directories and files
 .vscode/*

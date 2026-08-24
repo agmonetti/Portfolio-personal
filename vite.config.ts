@@ -26,6 +26,7 @@ export default defineConfig(({ mode }) => {
               if (id.includes('node_modules')) {
                 if (/[\\/]node_modules[\\/](lucide-react)[\\/]/.test(id)) return 'icons';
                 if (/[\\/]node_modules[\\/](react-router-dom|react-router|react-dom|react)[\\/]/.test(id)) return 'vendor';
+                if (/[\\/]node_modules[\\/](pdfjs-dist|react-pdf)[\\/]/.test(id)) return 'pdf-vendor';
               }
             },
           },

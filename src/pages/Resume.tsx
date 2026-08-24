@@ -18,7 +18,10 @@ const Resume: React.FC = () => {
   const { t } = useLanguage();
   const cvUrl = t('footer.cv') as string;
   const viewerRef = useRef<HTMLDivElement | null>(null);
-  const [containerWidth, setContainerWidth] = useState(0);
+  const [containerWidth, setContainerWidth] = useState(() => {
+    if (typeof window === 'undefined') return 776;
+    return Math.min(776, Math.max(280, window.innerWidth - 64));
+  });
   const [pageCount, setPageCount] = useState(0);
   const [pageAspectRatio, setPageAspectRatio] = useState(1.414);
   const [status, setStatus] = useState<ViewerStatus>('idle');
@@ -44,7 +47,10 @@ const Resume: React.FC = () => {
     if (!element) return;
 
     const updateSize = () => {
-      setContainerWidth(element.clientWidth);
+      const newWidth = element.clientWidth;
+      if (newWidth > 0) {
+        setContainerWidth((prev) => (Math.abs(prev - newWidth) > 2 ? newWidth : prev));
+      }
     };
 
     updateSize();
@@ -131,7 +137,7 @@ const Resume: React.FC = () => {
             <a
               href={cvUrl}
               download
-              className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/15"
+              className="inline-flex items-center gap-2 rounded-full border border-secondary/30 dark:border-primary/30 bg-secondary/10 dark:bg-primary/10 px-4 py-2 text-sm font-medium text-secondary dark:text-primary transition-colors hover:bg-secondary/15 dark:hover:bg-primary/15"
             >
               <Download className="h-4 w-4" />
               {t('resume.download')}
@@ -140,7 +146,7 @@ const Resume: React.FC = () => {
               href={cvUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 bg-white/70 px-4 py-2 text-sm font-medium text-text transition-colors hover:border-primary/30 hover:text-primary dark:border-neutral-700 dark:bg-surface-dark/55 dark:text-text-dark"
+              className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 bg-white/70 px-4 py-2 text-sm font-medium text-text transition-colors hover:border-secondary/30 dark:hover:border-primary/30 hover:text-secondary dark:hover:text-primary dark:border-neutral-700 dark:bg-surface-dark/55 dark:text-text-dark"
             >
               <ArrowUpRight className="h-4 w-4" />
               {t('resume.open')}
@@ -175,7 +181,8 @@ const Resume: React.FC = () => {
                 <button
                   type="button"
                   onClick={resetZoom}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300/80 bg-white/80 px-3 py-1.5 text-xs font-medium transition-colors hover:border-primary/30 hover:text-primary dark:border-neutral-700 dark:bg-neutral-900/60"
+                  aria-label="Restablecer zoom"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300/80 bg-white/80 px-3 py-1.5 text-xs font-medium text-text dark:text-text-dark transition-colors hover:border-secondary/30 dark:hover:border-primary/30 hover:text-secondary dark:hover:text-primary dark:border-neutral-700 dark:bg-neutral-900/60"
                 >
                   <RotateCcw className="h-3.5 w-3.5" />
                   Reset
@@ -203,7 +210,10 @@ const Resume: React.FC = () => {
               style={{ overflowX: visualPageWidth > (containerWidth || 0) ? 'auto' : 'hidden' }}
             >
               {!isVisible && (
-                <div className="flex min-h-[48vh] w-full items-center justify-center rounded-[1.5rem] border border-dashed border-neutral-300/80 bg-white/70 px-6 sm:min-h-[72vh] dark:border-neutral-700 dark:bg-neutral-950/50">
+                <div
+                  className="mx-auto flex items-center justify-center rounded-[1.5rem] border border-dashed border-neutral-300/80 bg-white/70 dark:border-neutral-700 dark:bg-neutral-950/50"
+                  style={{ width: visualPageWidth, height: pageHeight, maxWidth: '100%' }}
+                >
                   <div className="space-y-4 text-center">
                     <div className="mx-auto h-12 w-12 animate-pulse rounded-2xl border border-neutral-200 bg-neutral-100 shadow-sm dark:border-neutral-700 dark:bg-neutral-800" />
                     <div className="space-y-2">
@@ -215,7 +225,10 @@ const Resume: React.FC = () => {
               )}
 
               {isVisible && status === 'error' && (
-                <div className="flex min-h-[48vh] w-full items-center justify-center rounded-[1.5rem] border border-dashed border-red-300/70 bg-white/80 px-6 py-10 sm:min-h-[72vh] text-center dark:border-red-900/70 dark:bg-neutral-950/55">
+                <div
+                  className="mx-auto flex items-center justify-center rounded-[1.5rem] border border-dashed border-red-300/70 bg-white/80 px-6 py-10 text-center dark:border-red-900/70 dark:bg-neutral-950/55"
+                  style={{ width: visualPageWidth, minHeight: pageHeight, maxWidth: '100%' }}
+                >
                   <div className="max-w-xl space-y-4">
                     <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-red-50 text-red-600 dark:bg-red-950/40 dark:text-red-300">
                       <FileText className="h-5 w-5" />
@@ -230,7 +243,7 @@ const Resume: React.FC = () => {
                       <button
                         type="button"
                         onClick={handleRetry}
-                        className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 bg-white px-4 py-2 text-sm font-medium text-text transition-colors hover:border-primary/30 hover:text-primary dark:border-neutral-700 dark:bg-neutral-900 dark:text-text-dark"
+                        className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 bg-white px-4 py-2 text-sm font-medium text-text transition-colors hover:border-secondary/30 dark:hover:border-primary/30 hover:text-secondary dark:hover:text-primary dark:border-neutral-700 dark:bg-neutral-900 dark:text-text-dark"
                       >
                         <RefreshCcw className="h-4 w-4" />
                         Reintentar
@@ -239,7 +252,7 @@ const Resume: React.FC = () => {
                         href={cvUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/15"
+                        className="inline-flex items-center gap-2 rounded-full border border-secondary/30 dark:border-primary/30 bg-secondary/10 dark:bg-primary/10 px-4 py-2 text-sm font-medium text-secondary dark:text-primary transition-colors hover:bg-secondary/15 dark:hover:bg-primary/15"
                       >
                         <ArrowUpRight className="h-4 w-4" />
                         Abrir PDF
@@ -254,7 +267,10 @@ const Resume: React.FC = () => {
                   key={`${cvUrl}-${retryToken}`}
                   file={cvUrl}
                   loading={
-                    <div className="flex min-h-[48vh] w-full items-center justify-center rounded-[1.5rem] border border-dashed border-neutral-300/80 bg-white/70 px-6 sm:min-h-[72vh] dark:border-neutral-700 dark:bg-neutral-950/50">
+                    <div
+                      className="mx-auto flex items-center justify-center rounded-[1.5rem] border border-dashed border-neutral-300/80 bg-white/70 dark:border-neutral-700 dark:bg-neutral-950/50"
+                      style={{ width: visualPageWidth, height: pageHeight, maxWidth: '100%' }}
+                    >
                       <div className="space-y-5 text-center">
                         <div className="mx-auto h-12 w-12 animate-pulse rounded-2xl border border-neutral-200 bg-neutral-100 shadow-sm dark:border-neutral-700 dark:bg-neutral-800" />
                         <div className="space-y-2">
@@ -265,7 +281,10 @@ const Resume: React.FC = () => {
                     </div>
                   }
                   error={
-                    <div className="flex min-h-[48vh] w-full items-center justify-center rounded-[1.5rem] border border-dashed border-red-300/70 bg-white/80 px-6 py-10 sm:min-h-[72vh] text-center dark:border-red-900/70 dark:bg-neutral-950/55">
+                    <div
+                      className="mx-auto flex items-center justify-center rounded-[1.5rem] border border-dashed border-red-300/70 bg-white/80 px-6 py-10 text-center dark:border-red-900/70 dark:bg-neutral-950/55"
+                      style={{ width: visualPageWidth, minHeight: pageHeight, maxWidth: '100%' }}
+                    >
                       <div className="max-w-xl space-y-4">
                         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-red-50 text-red-600 dark:bg-red-950/40 dark:text-red-300">
                           <FileText className="h-5 w-5" />
@@ -280,7 +299,7 @@ const Resume: React.FC = () => {
                           <button
                             type="button"
                             onClick={handleRetry}
-                            className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 bg-white px-4 py-2 text-sm font-medium text-text transition-colors hover:border-primary/30 hover:text-primary dark:border-neutral-700 dark:bg-neutral-900 dark:text-text-dark"
+                            className="inline-flex items-center gap-2 rounded-full border border-neutral-300/80 bg-white px-4 py-2 text-sm font-medium text-text transition-colors hover:border-secondary/30 dark:hover:border-primary/30 hover:text-secondary dark:hover:text-primary dark:border-neutral-700 dark:bg-neutral-900 dark:text-text-dark"
                           >
                             <RefreshCcw className="h-4 w-4" />
                             Reintentar
@@ -289,7 +308,7 @@ const Resume: React.FC = () => {
                             href={cvUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/15"
+                            className="inline-flex items-center gap-2 rounded-full border border-secondary/30 dark:border-primary/30 bg-secondary/10 dark:bg-primary/10 px-4 py-2 text-sm font-medium text-secondary dark:text-primary transition-colors hover:bg-secondary/15 dark:hover:bg-primary/15"
                           >
                             <ArrowUpRight className="h-4 w-4" />
                             Abrir PDF

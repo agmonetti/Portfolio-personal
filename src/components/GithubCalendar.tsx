@@ -6,9 +6,35 @@ import { useTheme } from '../contexts/ThemeContext';
 const GithubCalendar: React.FC = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
+  const [isVisible, setIsVisible] = React.useState(false);
+  const containerRef = React.useRef<HTMLDivElement | null>(null);
 
   // Tu usuario de GitHub (sacado de tus links del Hero)
   const username = "agmonetti";
+
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const el = containerRef.current;
+    if (!el) return;
+
+    if (typeof IntersectionObserver === 'undefined') {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px 0px' }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const calendarTheme = useMemo(() => ({
 
@@ -40,14 +66,18 @@ const GithubCalendar: React.FC = () => {
       </div>
 
       <div className="mx-auto max-w-4xl px-6 py-8 lg:px-10 border-x border-b border-neutral-300/70 dark:border-neutral-800 bg-white dark:bg-[#0a0a0a]">
-        <div className="flex justify-center p-6 border border-neutral-300/70 dark:border-neutral-800 rounded-xl bg-white/60 dark:bg-[#0b0f12]/70 overflow-x-auto">
-          <GitHubCalendar 
-            username={username} 
-            colorScheme={theme as 'light' | 'dark'}
-            theme={calendarTheme}
-            fontSize={14}
-            blockSize={12}
-          />
+        <div ref={containerRef} className="flex justify-center p-6 min-h-[160px] border border-neutral-300/70 dark:border-neutral-800 rounded-xl bg-white/60 dark:bg-[#0b0f12]/70 overflow-x-auto">
+          {isVisible ? (
+            <GitHubCalendar 
+              username={username} 
+              colorScheme={theme as 'light' | 'dark'}
+              theme={calendarTheme}
+              fontSize={14}
+              blockSize={12}
+            />
+          ) : (
+            <div className="h-6 w-6 animate-pulse rounded-full bg-neutral-200 dark:bg-neutral-800 self-center" />
+          )}
         </div>
       </div>
     </section>

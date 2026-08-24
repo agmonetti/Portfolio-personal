@@ -1,0 +1,22 @@
+# Agustín Monetti
+
+> Software Developer & Computer Engineering Student
+
+Portfolio personal de Agustín Monetti, desarrollador de software enfocado en backend, sistemas, infraestructura cloud y automatización. Buenos Aires, Argentina.
+
+## Proyectos Destacados
+
+- [LazyTeams](https://github.com/agmonetti/lazyteams): Cliente de terminal (TUI) para Microsoft Teams desarrollado en Go y Bubble Tea mediante Microsoft Graph API.
+- [MathMethods MCP](https://github.com/agmonetti/mathmethods-mcp): Servidor MCP en Python con herramientas de métodos numéricos para modelos de lenguaje.
+- [Subte Alerta Bot](https://github.com/agmonetti/Bot-Subte): Bot de Telegram para reportes en tiempo real del subte de Buenos Aires.
+- [GCP Free-Tier Home Lab](https://github.com/agmonetti/gcp-free-tier-linux-server): Infraestructura de microservicios con Docker y Linux en Google Cloud.
+- [Relm](https://github.com/agmonetti/relm): TUI para gestión y consulta de bases de datos relacionales en Go.
+- [Hackintosh](https://github.com/agmonetti/Hackintosh-Dell-Latitude-7480): Configuración optimizada de OpenCore para Dell Latitude 7480.
+
+## Enlaces
+
+- Sitio web: https://agus-monetti.is-a.dev/
+- Proyectos: https://agus-monetti.is-a.dev/projects
+- Curriculum: https://agus-monetti.is-a.dev/resume
+- GitHub: https://github.com/agmonetti
+- LinkedIn: https://www.linkedin.com/in/agustin-monetti/
