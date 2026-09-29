@@ -29,9 +29,17 @@
         "title": "LazyTeams",
         "description": "Cliente de Microsoft Teams que corre completamente en la terminal: chats, hilos, reacciones, gestión de equipos y archivos vía Microsoft Graph API, sin Electron ni navegador. Incluye sitio de documentación propio y pipeline de releases multiplataforma con auto-actualización verificada."
       },
-      "relm": {
-        "title": "Relm",
-        "description": "Navegador de bases de datos para la terminal con soporte para SQLite, PostgreSQL, MySQL, MariaDB y SQL Server. Permite explorar tablas, ejecutar consultas SQL y exportar a CSV/JSON, todo manejado por teclado y sin salir de la consola."
+      "picklock": {
+        "title": "picklock",
+        "description": "Navegador de bases de datos para la terminal (TUI) con soporte para múltiples paradigmas: relacionales (PostgreSQL, MySQL, MariaDB, SQLite, SQL Server), documentos (MongoDB), clave-valor (Redis), columnas anchas (Cassandra/ScyllaDB) y grafos (Neo4j). Permite inspeccionar esquemas, ejecutar consultas y explorar estructuras sin salir de la consola."
+      },
+      "disambiguator": {
+        "title": "Disambiguator",
+        "description": "Gatekeeper de instrucciones ambiguas con cero ejecución previa para agentes de desarrollo con IA (Antigravity, Cursor, Claude Code, Pi). Intercepta instrucciones vagas antes de que se ejecuten herramientas o se modifique código, agrupando supuestos y generando opciones estructuradas de opción múltiple (a/b/c/d)."
+      },
+      "planExport": {
+        "title": "plan-export-mcp",
+        "description": "Motor de exportación visual para agentes de desarrollo (Cursor, Claude Code, Pi). Servidor MCP y CLI que transforma planes de implementación en Markdown y diagramas Mermaid en documentos de alta fidelidad: capturas PNG de alta resolución (2x Retina para Slack y WhatsApp), PDFs A4 listos para imprimir y páginas HTML autocontenidas con resaltado Shiki y GitHub callouts."
       },
       "mathMcp": {
         "title": "MathMethods MCP",
@@ -54,8 +62,8 @@
         "description": "Exhibición de arquitectura integral que demuestra el manejo de datos a través de múltiples paradigmas de bases de datos simultáneamente, asegurando la integridad de los mismos."
       },
       "subteBot": {
-        "title": "Subte Alerta Bot",
-        "description": "Bot automatizado de Telegram que proporciona alertas en tiempo real sobre el estado de la red de subtes de Buenos Aires. Extrae datos eficientemente para mantener a los usuarios informados al instante."
+        "title": "Bot Subte BA",
+        "description": "Bot automatizado que monitorea en tiempo real las líneas del subte de Buenos Aires consumiendo el canal SignalR/SSE de EMOVA. Envía alertas inmediatas a Telegram únicamente cuando cambia el estado de una línea, con persistencia atómica, prevención de duplicados y soporte de comandos en vivo."
       },
       "cookieAnalyzer": {
         "title": "Cookie Analyzer",

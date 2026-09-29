@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Code, Bot, LayoutGrid, ShieldCheck, Server, Laptop, MessageSquare, Database, BrainCircuit, Terminal, ArrowUpRight, ExternalLink } from 'lucide-react';
+import { Code, Bot, LayoutGrid, ShieldCheck, Server, Laptop, MessageSquare, Database, BrainCircuit, Terminal, ArrowUpRight, ExternalLink, GitFork, FileOutput } from 'lucide-react';
 import { Project } from '../types';
 import { useLanguage } from '../contexts/LanguageContext'; 
 
@@ -16,10 +16,42 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
     {
       title: t('projects.items.lazyteams.title'),
       description: t('projects.items.lazyteams.description'),
-      tags: ["Go", "Bubble Tea", "Microsoft Graph API"],
+      tags: ["Go", "Bubble Tea", "Microsoft Graph API", "TUI"],
       icon: MessageSquare,
       links: { code: "https://github.com/agmonetti/lazyteams", demo: "https://lazyteams.agmonetti.workers.dev" },
       color: "from-indigo-500/40"
+    },
+    {
+      title: t('projects.items.picklock.title'),
+      description: t('projects.items.picklock.description'),
+      tags: ["Go", "Bubble Tea", "TUI", "Multi-Paradigm"],
+      icon: Database,
+      links: { code: "https://github.com/agmonetti/picklock" },
+      color: "from-teal-900/40"
+    },
+    {
+      title: t('projects.items.disambiguator.title'),
+      description: t('projects.items.disambiguator.description'),
+      tags: ["TypeScript", "AI Agents", "Prompt Engineering", "Developer Tools"],
+      icon: GitFork,
+      links: { code: "https://github.com/agmonetti/disambiguator" },
+      color: "from-amber-900/40"
+    },
+    {
+      title: t('projects.items.subteBot.title'),
+      description: t('projects.items.subteBot.description'),
+      tags: ["Python", "SignalR", "Telegram Bot API", "Docker"],
+      icon: Bot,
+      links: { code: "https://github.com/agmonetti/bot-subte-argentina" },
+      color: "from-blue-900/40"
+    },
+    {
+      title: t('projects.items.planExport.title'),
+      description: t('projects.items.planExport.description'),
+      tags: ["TypeScript", "MCP Server", "Puppeteer", "Shiki", "Mermaid"],
+      icon: FileOutput,
+      links: { code: "https://github.com/agmonetti/plan-export-mcp" },
+      color: "from-emerald-900/40"
     },
     {
       title: t('projects.items.mathMcp.title'),
@@ -30,28 +62,12 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
       color: "from-fuchsia-900/40"
     },
     {
-      title: t('projects.items.subteBot.title'),
-      description: t('projects.items.subteBot.description'),
-      tags: ["Python", "Telegram API", "Scraping"],
-      icon: Bot,
-      links: { code: "https://github.com/agmonetti/Bot-Subte" },
-      color: "from-blue-900/40"
-    },
-    {
       title: t('projects.items.homelab.title'),
       description: t('projects.items.homelab.description'),
       tags: ["Google Cloud", "Docker", "Linux", "DevOps"],
       icon: Server,
       links: { code: "https://github.com/agmonetti/gcp-free-tier-linux-server" },
       color: "from-indigo-500/40"
-    },
-    {
-      title: t('projects.items.relm.title'),
-      description: t('projects.items.relm.description'),
-      tags: ["Go", "TUI", "SQL", "PostgreSQL"],
-      icon: Database,
-      links: { code: "https://github.com/agmonetti/relm" },
-      color: "from-teal-900/40"
     },
     {
       title: t('projects.items.dotfiles.title'),

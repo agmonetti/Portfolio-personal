@@ -28,9 +28,17 @@
         "title": "LazyTeams",
         "description": "A Microsoft Teams client that runs entirely in the terminal: chats, threads, reactions, team management and files via the Microsoft Graph API, with no Electron or browser. Ships with its own documentation site and a cross-platform release pipeline featuring verified self-updates."
       },
-      "relm": {
-        "title": "Relm",
-        "description": "A keyboard-driven terminal UI database browser supporting SQLite, PostgreSQL, MySQL, MariaDB and SQL Server. Browse tables, run SQL queries and export to CSV/JSON, all without leaving the console."
+      "picklock": {
+        "title": "picklock",
+        "description": "A keyboard-driven terminal UI data browser supporting multiple database paradigms: Relational (PostgreSQL, MySQL, MariaDB, SQLite, SQL Server), Document (MongoDB), Key-Value (Redis), Wide-Column (Cassandra/ScyllaDB), and Graph (Neo4j). Inspect schemas, run queries, and explore data structures without leaving the console."
+      },
+      "disambiguator": {
+        "title": "Disambiguator",
+        "description": "A zero-execution ambiguity gatekeeper for AI coding agents (Antigravity, Cursor, Claude Code, Pi). Intercepts vague user instructions before any tool actions are taken, surfacing assumptions as actionable multiple-choice options (a/b/c/d) to prevent wasted tokens and unintended code modifications."
+      },
+      "planExport": {
+        "title": "plan-export-mcp",
+        "description": "The visual export engine for AI coding agents (Cursor, Claude Code, Pi). MCP server and CLI tool turning Markdown implementation plans and Mermaid diagrams into high-fidelity documents: high-res 2x Retina long PNG screenshots for Slack/WhatsApp, print-ready A4 PDFs, and self-contained HTML files with Shiki syntax highlighting and GitHub callouts."
       },
       "mathMcp": {
         "title": "MathMethods MCP",
@@ -54,7 +62,7 @@
       },
       "subteBot": {
         "title": "Subte Alerta Bot",
-        "description": "An automated Telegram bot that provides real-time alerts for the Buenos Aires subway system. It scrapes data efficiently to keep commuters informed instantly."
+        "description": "An automated Telegram bot monitoring Buenos Aires subway lines in real time by tapping into EMOVA's public SignalR/SSE stream. Dispatches instant alerts strictly upon state changes, backed by atomic persistence, duplicate suppression, and on-demand status commands."
       },
       "cookieAnalyzer": {
         "title": "Cookie Analyzer",

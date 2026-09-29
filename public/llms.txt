@@ -7,10 +7,12 @@ Portfolio personal de Agustín Monetti, desarrollador de software enfocado en ba
 ## Proyectos Destacados
 
 - [LazyTeams](https://github.com/agmonetti/lazyteams): Cliente de terminal (TUI) para Microsoft Teams desarrollado en Go y Bubble Tea mediante Microsoft Graph API.
+- [picklock](https://github.com/agmonetti/picklock): TUI para exploración y consulta de bases de datos multi-paradigma (SQL, MongoDB, Redis, Cassandra, Neo4j) en Go.
+- [Disambiguator](https://github.com/agmonetti/disambiguator): Gatekeeper de instrucciones ambiguas con opciones múltiples estructuradas para agentes de programación con IA.
+- [Subte Alerta Bot](https://github.com/agmonetti/bot-subte-argentina): Bot de Telegram para reportes en tiempo real del subte de Buenos Aires vía EMOVA SignalR.
+- [plan-export-mcp](https://github.com/agmonetti/plan-export-mcp): Servidor MCP y CLI para exportación visual de planes Markdown y diagramas Mermaid a PNG/PDF/HTML.
 - [MathMethods MCP](https://github.com/agmonetti/mathmethods-mcp): Servidor MCP en Python con herramientas de métodos numéricos para modelos de lenguaje.
-- [Subte Alerta Bot](https://github.com/agmonetti/Bot-Subte): Bot de Telegram para reportes en tiempo real del subte de Buenos Aires.
 - [GCP Free-Tier Home Lab](https://github.com/agmonetti/gcp-free-tier-linux-server): Infraestructura de microservicios con Docker y Linux en Google Cloud.
-- [Relm](https://github.com/agmonetti/relm): TUI para gestión y consulta de bases de datos relacionales en Go.
 - [Hackintosh](https://github.com/agmonetti/Hackintosh-Dell-Latitude-7480): Configuración optimizada de OpenCore para Dell Latitude 7480.
 
 ## Enlaces

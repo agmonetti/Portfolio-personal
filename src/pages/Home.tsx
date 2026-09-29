@@ -30,7 +30,7 @@ const Home: React.FC = () => {
       >
         <GithubCalendar />
       </Suspense>
-      <Projects limit={4} />
+      <Projects limit={5} />
     </>
   );
 };
