@@ -68,10 +68,6 @@
       "subteBot": {
         "title": "Bot Subte BA",
         "description": "Bot automatizado que monitorea en tiempo real las líneas del subte de Buenos Aires consumiendo el canal SignalR/SSE de EMOVA. Envía alertas inmediatas a Telegram únicamente cuando cambia el estado de una línea, con persistencia atómica, prevención de duplicados y soporte de comandos en vivo."
-      },
-      "cookieAnalyzer": {
-        "title": "Cookie Analyzer",
-        "description": "Herramienta de seguridad para navegador diseñada para analizar cookies de seguimiento, visualizando el flujo de datos y los riesgos de privacidad para los usuarios finales a través de una interfaz intuitiva."
       }
     }
   },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Code, Bot, LayoutGrid, ShieldCheck, Server, Laptop, MessageSquare, Database, BrainCircuit, Terminal, ArrowUpRight, ExternalLink, GitFork, FileOutput, Eye } from 'lucide-react';
+import { Code, Bot, LayoutGrid, Server, Laptop, MessageSquare, Database, BrainCircuit, Terminal, ArrowUpRight, ExternalLink, GitFork, FileOutput, Eye } from 'lucide-react';
 import { Project } from '../types';
 import { useLanguage } from '../contexts/LanguageContext'; 
 
@@ -100,14 +100,6 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
       icon: LayoutGrid,
       links: { code: "https://github.com/agmonetti/Sistema-Clima_TUI" },
       color: "from-pink-900/40"
-    },
-    {
-      title: t('projects.items.cookieAnalyzer.title'),
-      description: t('projects.items.cookieAnalyzer.description'),
-      tags: ["JavaScript", "Privacy", "API"],
-      icon: ShieldCheck,
-      links: { code: "https://github.com/agmonetti/cookie_analyzer"},
-      color: "from-emerald-900/40"
     }
   ];
   const visibleProjects = typeof limit === 'number' ? projects.slice(0, limit) : projects;

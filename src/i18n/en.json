@@ -67,10 +67,6 @@
       "subteBot": {
         "title": "Subte Alerta Bot",
         "description": "An automated Telegram bot monitoring Buenos Aires subway lines in real time by tapping into EMOVA's public SignalR/SSE stream. Dispatches instant alerts strictly upon state changes, backed by atomic persistence, duplicate suppression, and on-demand status commands."
-      },
-      "cookieAnalyzer": {
-        "title": "Cookie Analyzer",
-        "description": "A browser-based security tool to analyze tracking cookies, visualizing data flow and privacy risks for end-users in an intuitive interface."
       }
     }
   },
