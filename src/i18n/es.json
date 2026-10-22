@@ -24,49 +24,81 @@
   },
   "projects": {
     "title": "Proyectos",
+    "catalog": {
+      "title": "Proyectos",
+      "search": "Buscar proyectos",
+      "placeholder": "Buscar por nombre, tecnología o tema…",
+      "category": "Categoría",
+      "categories": {
+        "all": "Todos",
+        "developer": "Herramientas de desarrollo",
+        "ai": "IA / MCP",
+        "infrastructure": "Infraestructura",
+        "applications": "Aplicaciones"
+      },
+      "count": "{count} de {total} proyectos",
+      "reset": "Limpiar búsqueda y filtros",
+      "empty": "No hay proyectos que coincidan. Probá otra búsqueda o limpiá los filtros de arriba.",
+      "details": "Descripción completa",
+      "tags": "Tecnologías",
+      "source": "Código fuente",
+      "docs": "Documentación",
+      "newTab": "se abre en una pestaña nueva"
+    },
     "items": {
       "lazyteams": {
         "title": "LazyTeams",
+        "summary": "Chats, archivos y gestión de equipos de Microsoft Teams desde la terminal.",
         "description": "Cliente de Microsoft Teams que corre completamente en la terminal: chats, hilos, reacciones, gestión de equipos y archivos vía Microsoft Graph API, sin Electron ni navegador. Incluye sitio de documentación propio y pipeline de releases multiplataforma con auto-actualización verificada."
       },
       "picklock": {
         "title": "picklock",
+        "summary": "Explorá bases de datos de cinco paradigmas desde una interfaz de terminal con teclado.",
         "description": "Navegador de bases de datos para la terminal (TUI) con soporte para múltiples paradigmas: relacionales (PostgreSQL, MySQL, MariaDB, SQLite, SQL Server), documentos (MongoDB), clave-valor (Redis), columnas anchas (Cassandra/ScyllaDB) y grafos (Neo4j). Permite inspeccionar esquemas, ejecutar consultas y explorar estructuras sin salir de la consola."
       },
       "disambiguator": {
         "title": "Disambiguator",
+        "summary": "Aclara instrucciones ambiguas antes de que los agentes de desarrollo con IA actúen.",
         "description": "Gatekeeper de instrucciones ambiguas con cero ejecución previa para agentes de desarrollo con IA (Antigravity, Cursor, Claude Code, Pi). Intercepta instrucciones vagas antes de que se ejecuten herramientas o se modifique código, agrupando supuestos y generando opciones estructuradas de opción múltiple (a/b/c/d)."
       },
       "planExport": {
         "title": "plan-export-mcp",
+        "summary": "Exporta planes Markdown y diagramas Mermaid a PNG, PDF o HTML independiente.",
         "description": "Motor de exportación visual para agentes de desarrollo (Cursor, Claude Code, Pi). Servidor MCP y CLI que transforma planes de implementación en Markdown y diagramas Mermaid en documentos de alta fidelidad: capturas PNG de alta resolución (2x Retina para Slack y WhatsApp), PDFs A4 listos para imprimir y páginas HTML autocontenidas con resaltado Shiki y GitHub callouts."
       },
       "mdview": {
         "title": "mdview.nvim",
+        "summary": "Previsualización nativa de Markdown dentro de Neovim, sin navegador.",
         "description": "Plugin de Neovim para previsualización nativa de Markdown renderizado en terminal mediante el protocolo gráfico de Kitty. Construido sobre un pipeline de C++ de alto rendimiento (cmark-gfm → litehtml + Cairo/Pango) sin dependencias de navegador, Node.js ni Python. Ofrece modo lector a ventana completa y split sincronizado con el cursor desde buffers no guardados, además de CLI independiente (md2png)."
       },
       "mathMcp": {
         "title": "MathMethods MCP",
+        "summary": "Herramientas de métodos numéricos que los agentes de IA invocan mediante MCP.",
         "description": "Servidor MCP con ~30 herramientas de métodos numéricos (raíces, integración, EDOs, Monte Carlo) que agentes de IA como Claude o Copilot pueden invocar desde VS Code o Zed. Distribuido vía PyPI e implementado con hardening contra ejecución remota de código."
       },
       "dotfiles": {
         "title": "Dotfiles",
+        "summary": "Escritorio reproducible de Arch Linux y Hyprland gestionado con GNU Stow.",
         "description": "Configuración reproducible de Arch Linux + Hyprland (Waybar, Kitty, Rofi, Zsh) gestionada con GNU Stow, con instalador interactivo, scripts propios y listas de paquetes para pacman y AUR."
       },
       "homelab": {
         "title": "GCP Free-Tier Home Lab",
+        "summary": "Microservicios Docker y automatización en una instancia de nube de 1 GB.",
         "description": "Infraestructura de microservicios a nivel de producción en una instancia restringida de 1GB de RAM. Aloja un bot de Selenium, esta landing page y más, todo optimizado mediante gestión de swap en Linux y orquestación con Docker."
       },
       "hackintosh": {
         "title": "Hackintosh Dell Latitude 7480",
+        "summary": "Configuración OpenCore a medida para macOS Ventura en una notebook Dell.",
         "description": "Entorno macOS Ventura altamente optimizado ejecutándose en hardware no nativo de Apple. Cuenta con un EFI de OpenCore personalizado, hot-patching de ACPI y ajuste de controladores específicos para dispositivos de entrada ALPS I2C."
       },
       "polyglot": {
         "title": "Persistencia Políglota",
+        "summary": "Arquitectura de datos que combina múltiples paradigmas de bases de datos.",
         "description": "Exhibición de arquitectura integral que demuestra el manejo de datos a través de múltiples paradigmas de bases de datos simultáneamente, asegurando la integridad de los mismos."
       },
       "subteBot": {
         "title": "Bot Subte BA",
+        "summary": "Alertas del subte de Buenos Aires en tiempo real, directamente en Telegram.",
         "description": "Bot automatizado que monitorea en tiempo real las líneas del subte de Buenos Aires consumiendo el canal SignalR/SSE de EMOVA. Envía alertas inmediatas a Telegram únicamente cuando cambia el estado de una línea, con persistencia atómica, prevención de duplicados y soporte de comandos en vivo."
       }
     }

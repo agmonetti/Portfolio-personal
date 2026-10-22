@@ -23,49 +23,81 @@
   },
   "projects": {
     "title": "Featured Projects",
+    "catalog": {
+      "title": "Projects",
+      "search": "Search projects",
+      "placeholder": "Search by name, technology or topic…",
+      "category": "Category",
+      "categories": {
+        "all": "All",
+        "developer": "Developer tools",
+        "ai": "AI / MCP",
+        "infrastructure": "Infrastructure",
+        "applications": "Applications"
+      },
+      "count": "{count} of {total} projects",
+      "reset": "Clear search and filters",
+      "empty": "No projects match. Try another search or clear the filters above.",
+      "details": "Full description",
+      "tags": "Technologies",
+      "source": "Source code",
+      "docs": "Documentation",
+      "newTab": "opens in a new tab"
+    },
     "items": {
       "lazyteams": {
         "title": "LazyTeams",
+        "summary": "Microsoft Teams chats, files and team management, straight from the terminal.",
         "description": "A Microsoft Teams client that runs entirely in the terminal: chats, threads, reactions, team management and files via the Microsoft Graph API, with no Electron or browser. Ships with its own documentation site and a cross-platform release pipeline featuring verified self-updates."
       },
       "picklock": {
         "title": "picklock",
+        "summary": "Explore databases across five paradigms with a keyboard-driven terminal UI.",
         "description": "A keyboard-driven terminal UI data browser supporting multiple database paradigms: Relational (PostgreSQL, MySQL, MariaDB, SQLite, SQL Server), Document (MongoDB), Key-Value (Redis), Wide-Column (Cassandra/ScyllaDB), and Graph (Neo4j). Inspect schemas, run queries, and explore data structures without leaving the console."
       },
       "disambiguator": {
         "title": "Disambiguator",
+        "summary": "Clarify ambiguous instructions before AI coding agents take action.",
         "description": "A zero-execution ambiguity gatekeeper for AI coding agents (Antigravity, Cursor, Claude Code, Pi). Intercepts vague user instructions before any tool actions are taken, surfacing assumptions as actionable multiple-choice options (a/b/c/d) to prevent wasted tokens and unintended code modifications."
       },
       "planExport": {
         "title": "plan-export-mcp",
+        "summary": "Export Markdown plans and Mermaid diagrams to PNG, PDF or standalone HTML.",
         "description": "The visual export engine for AI coding agents (Cursor, Claude Code, Pi). MCP server and CLI tool turning Markdown implementation plans and Mermaid diagrams into high-fidelity documents: high-res 2x Retina long PNG screenshots for Slack/WhatsApp, print-ready A4 PDFs, and self-contained HTML files with Shiki syntax highlighting and GitHub callouts."
       },
       "mdview": {
         "title": "mdview.nvim",
+        "summary": "Native Markdown previews inside Neovim, without a browser.",
         "description": "A high-performance Neovim plugin for native Markdown previews rendered directly in the terminal using the Kitty graphics protocol. Built with a C++ rendering pipeline (cmark-gfm → litehtml + Cairo/Pango) with zero runtime dependencies on browsers, Node.js, or Python. Features full-window reader and synchronized split modes tracking unsaved buffers in real-time, plus a standalone CLI (md2png)."
       },
       "mathMcp": {
         "title": "MathMethods MCP",
+        "summary": "Numerical methods tools that AI agents can invoke through MCP.",
         "description": "An MCP server exposing ~30 numerical methods tools (root finding, integration, ODEs, Monte Carlo) that AI agents like Claude or Copilot can invoke from VS Code or Zed. Distributed via PyPI and hardened against remote code execution."
       },
       "dotfiles": {
         "title": "Dotfiles",
+        "summary": "A reproducible Arch Linux and Hyprland desktop managed with GNU Stow.",
         "description": "Reproducible Arch Linux + Hyprland setup (Waybar, Kitty, Rofi, Zsh) managed with GNU Stow, featuring an interactive installer, custom scripts and package lists for pacman and AUR."
       },
       "homelab": {
         "title": "GCP Free-Tier Home Lab",
+        "summary": "Docker microservices and automation on a 1 GB cloud instance.",
         "description": "Production-grade microservices infrastructure on a restricted 1GB RAM instance. Hosts a Selenium bot, this landing page and more, all optimized via Linux swap management and Docker orchestration."
       },
       "hackintosh": {
         "title": "Dell Latitude 7480 Hackintosh",
+        "summary": "A tailored OpenCore setup for macOS Ventura on a Dell laptop.",
         "description": "A highly optimized macOS Ventura environment running on non-Apple hardware. Features a custom OpenCore EFI, ACPI hot-patching, and specific driver tuning for ALPS I2C input devices."
       },
       "polyglot": {
         "title": "Polyglot Persistence",
+        "summary": "A data architecture combining multiple database paradigms.",
         "description": "A comprehensive architecture showcase demonstrating data handling across multiple database paradigms simultaneously, ensuring data integrity."
       },
       "subteBot": {
         "title": "Subte Alerta Bot",
+        "summary": "Real-time Buenos Aires subway alerts delivered to Telegram.",
         "description": "An automated Telegram bot monitoring Buenos Aires subway lines in real time by tapping into EMOVA's public SignalR/SSE stream. Dispatches instant alerts strictly upon state changes, backed by atomic persistence, duplicate suppression, and on-demand status commands."
       }
     }
