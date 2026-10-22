@@ -41,6 +41,10 @@
         "title": "plan-export-mcp",
         "description": "Motor de exportación visual para agentes de desarrollo (Cursor, Claude Code, Pi). Servidor MCP y CLI que transforma planes de implementación en Markdown y diagramas Mermaid en documentos de alta fidelidad: capturas PNG de alta resolución (2x Retina para Slack y WhatsApp), PDFs A4 listos para imprimir y páginas HTML autocontenidas con resaltado Shiki y GitHub callouts."
       },
+      "mdview": {
+        "title": "mdview.nvim",
+        "description": "Plugin de Neovim para previsualización nativa de Markdown renderizado en terminal mediante el protocolo gráfico de Kitty. Construido sobre un pipeline de C++ de alto rendimiento (cmark-gfm → litehtml + Cairo/Pango) sin dependencias de navegador, Node.js ni Python. Ofrece modo lector a ventana completa y split sincronizado con el cursor desde buffers no guardados, además de CLI independiente (md2png)."
+      },
       "mathMcp": {
         "title": "MathMethods MCP",
         "description": "Servidor MCP con ~30 herramientas de métodos numéricos (raíces, integración, EDOs, Monte Carlo) que agentes de IA como Claude o Copilot pueden invocar desde VS Code o Zed. Distribuido vía PyPI e implementado con hardening contra ejecución remota de código."

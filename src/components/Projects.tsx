@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Code, Bot, LayoutGrid, ShieldCheck, Server, Laptop, MessageSquare, Database, BrainCircuit, Terminal, ArrowUpRight, ExternalLink, GitFork, FileOutput } from 'lucide-react';
+import { Code, Bot, LayoutGrid, ShieldCheck, Server, Laptop, MessageSquare, Database, BrainCircuit, Terminal, ArrowUpRight, ExternalLink, GitFork, FileOutput, Eye } from 'lucide-react';
 import { Project } from '../types';
 import { useLanguage } from '../contexts/LanguageContext'; 
 
@@ -52,6 +52,14 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
       icon: FileOutput,
       links: { code: "https://github.com/agmonetti/plan-export-mcp" },
       color: "from-emerald-900/40"
+    },
+    {
+      title: t('projects.items.mdview.title'),
+      description: t('projects.items.mdview.description'),
+      tags: ["Neovim", "Lua", "C++", "Cairo / Pango", "Kitty Protocol"],
+      icon: Eye,
+      links: { code: "https://github.com/agmonetti/mdview.nvim" },
+      color: "from-sky-900/40"
     },
     {
       title: t('projects.items.mathMcp.title'),
