@@ -7,12 +7,14 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import ProjectsPage from './pages/ProjectsPage';
 import Resume from './pages/Resume';
+import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
   return (
     <ThemeProvider>
       <LanguageProvider>
         <div className="min-h-screen flex flex-col text-text dark:text-text-dark font-sans antialiased selection:bg-primary/15 selection:text-darker dark:selection:text-text-dark transition-colors duration-300">
+          <ScrollToTop />
           <Navbar />
 
           {/* Wrapper principal: añade marco y margen lateral solo en pantallas pequeñas */}
