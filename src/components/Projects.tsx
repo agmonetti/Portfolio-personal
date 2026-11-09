@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Code, Bot, LayoutGrid, Server, Laptop, MessageSquare, Database, BrainCircuit, Terminal, ArrowUpRight, ExternalLink, GitFork, FileOutput, Eye } from 'lucide-react';
+import { Code, Bot, LayoutGrid, Server, Laptop, MessageSquare, Database, BrainCircuit, Terminal, ArrowUpRight, ExternalLink, GitFork, FileOutput, Eye, Gamepad2, GitCompare } from 'lucide-react';
 import { Project, ProjectCategory } from '../types';
 import { filterProjects } from '../utils/projectFilters';
 import { useLanguage } from '../contexts/LanguageContext'; 
@@ -68,6 +68,28 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
       icon: FileOutput,
       links: { code: "https://github.com/agmonetti/plan-export-mcp" },
       color: "from-emerald-900/40"
+    },
+    {
+      id: 'mcTui',
+      category: 'applications',
+      summary: t('projects.items.mcTui.summary'),
+      title: t('projects.items.mcTui.title'),
+      description: t('projects.items.mcTui.description'),
+      tags: ["Go", "Bubble Tea", "TUI", "Modrinth API"],
+      icon: Gamepad2,
+      links: { code: "https://github.com/agmonetti/mcTUI", demo: "https://agmonetti.github.io/mcTuiDocs/" },
+      color: "from-lime-900/40"
+    },
+    {
+      id: 'iterationDiff',
+      category: 'ai',
+      summary: t('projects.items.iterationDiff.summary'),
+      title: t('projects.items.iterationDiff.title'),
+      description: t('projects.items.iterationDiff.description'),
+      tags: ["TypeScript", "Pi Coding Agent", "TUI", "Developer Tools"],
+      icon: GitCompare,
+      links: { code: "https://github.com/agmonetti/pi-iteration-diff" },
+      color: "from-orange-900/40"
     },
     {
       id: 'mdview',

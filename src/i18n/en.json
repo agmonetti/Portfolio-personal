@@ -50,6 +50,11 @@
         "summary": "Microsoft Teams chats, files and team management, straight from the terminal.",
         "description": "A Microsoft Teams client that runs entirely in the terminal: chats, threads, reactions, team management and files via the Microsoft Graph API, with no Electron or browser. Ships with its own documentation site and a cross-platform release pipeline featuring verified self-updates."
       },
+      "mcTui": {
+        "title": "mcTUI",
+        "summary": "A terminal launcher for Minecraft: Java Edition, written in Go and cross-platform.",
+        "description": "A terminal launcher for Minecraft: Java Edition written in Go (Bubble Tea) for Linux, macOS and Windows. Manages accounts with Microsoft OAuth, separate instances with their own Minecraft version, Fabric loader, Java runtime and memory allocation; Modrinth search and installation of mods, resource packs and shaders with dependency resolution, .mrpack modpack import/export, world copying between instances, and concurrent downloads with hash verification."
+      },
       "picklock": {
         "title": "picklock",
         "summary": "Explore databases across five paradigms with a keyboard-driven terminal UI.",
@@ -64,6 +69,11 @@
         "title": "plan-export-mcp",
         "summary": "Export Markdown plans and Mermaid diagrams to PNG, PDF or standalone HTML.",
         "description": "The visual export engine for AI coding agents (Cursor, Claude Code, Pi). MCP server and CLI tool turning Markdown implementation plans and Mermaid diagrams into high-fidelity documents: high-res 2x Retina long PNG screenshots for Slack/WhatsApp, print-ready A4 PDFs, and self-contained HTML files with Shiki syntax highlighting and GitHub callouts."
+      },
+      "iterationDiff": {
+        "title": "pi-iteration-diff",
+        "summary": "An iteration-scoped diff viewer for the Pi coding agent, in a side-by-side dock.",
+        "description": "An extension for the Pi Coding Agent that reviews the net changes from the last completed request in a side-by-side terminal dock. Navigate files, expand hunks and select line ranges to append them to the prompt, without modifying Git state or sending the message automatically."
       },
       "mdview": {
         "title": "mdview.nvim",

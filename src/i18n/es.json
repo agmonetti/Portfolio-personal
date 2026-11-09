@@ -51,6 +51,11 @@
         "summary": "Chats, archivos y gestión de equipos de Microsoft Teams desde la terminal.",
         "description": "Cliente de Microsoft Teams que corre completamente en la terminal: chats, hilos, reacciones, gestión de equipos y archivos vía Microsoft Graph API, sin Electron ni navegador. Incluye sitio de documentación propio y pipeline de releases multiplataforma con auto-actualización verificada."
       },
+      "mcTui": {
+        "title": "mcTUI",
+        "summary": "Launcher de Minecraft: Java Edition para la terminal, en Go y multiplataforma.",
+        "description": "Launcher de Minecraft: Java Edition escrito en Go con interfaz de terminal (Bubble Tea) para Linux, macOS y Windows. Gestiona cuentas con OAuth de Microsoft, instancias separadas con su propia versión del juego, loader de Fabric, runtime de Java y memoria; búsqueda e instalación de mods, resource packs y shaders desde Modrinth con resolución de dependencias, importación/exportación de modpacks .mrpack, copia de mundos entre instancias y descargas concurrentes con verificación de hash."
+      },
       "picklock": {
         "title": "picklock",
         "summary": "Explorá bases de datos de cinco paradigmas desde una interfaz de terminal con teclado.",
@@ -65,6 +70,11 @@
         "title": "plan-export-mcp",
         "summary": "Exporta planes Markdown y diagramas Mermaid a PNG, PDF o HTML independiente.",
         "description": "Motor de exportación visual para agentes de desarrollo (Cursor, Claude Code, Pi). Servidor MCP y CLI que transforma planes de implementación en Markdown y diagramas Mermaid en documentos de alta fidelidad: capturas PNG de alta resolución (2x Retina para Slack y WhatsApp), PDFs A4 listos para imprimir y páginas HTML autocontenidas con resaltado Shiki y GitHub callouts."
+      },
+      "iterationDiff": {
+        "title": "pi-iteration-diff",
+        "summary": "Visor de diffs por iteración para el agente de código Pi, en un dock lado a lado.",
+        "description": "Extensión para Pi Coding Agent que muestra los cambios netos de la última solicitud completada en un dock lado a lado dentro de la terminal. Permite navegar archivos, expandir hunks y seleccionar rangos de líneas para adjuntarlos al prompt, sin modificar el estado de Git ni enviar el mensaje automáticamente."
       },
       "mdview": {
         "title": "mdview.nvim",
